@@ -1,20 +1,35 @@
-import React, {FunctionComponent} from 'react';
+import React, {Dispatch, FunctionComponent, SetStateAction, useState} from 'react';
 import HeaderSection from "./HeaderSection";
 import ExperienceSection from "./ExperienceSection";
 import ProjectSection from "./ProjectSection";
 import EducationSection from "./EducationSection";
 import ContactSection from "./ContactSection";
 
+export interface AppState {
+    [key: string]: boolean
+}
+
+const initialState = {
+    showSeniorExperience: false,
+    showMidExperience: false
+}
+
+export const StateContext = React.createContext<[AppState?, Dispatch<SetStateAction<AppState>>?]>([]);
+
 function App() {
-  return (
-    <SectionContainer>
-      <HeaderSection/>
-      <ExperienceSection/>
-      <ProjectSection/>
-      <EducationSection/>
-      <ContactSection/>
-    </SectionContainer>
-  );
+    const appState = useState<AppState>(initialState)
+
+    return (
+        <StateContext.Provider value={appState}>
+            <SectionContainer>
+                <HeaderSection/>
+                <ExperienceSection/>
+                <ProjectSection/>
+                <EducationSection/>
+                <ContactSection/>
+            </SectionContainer>
+        </StateContext.Provider>
+    );
 }
 
 export default App;
