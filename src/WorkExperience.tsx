@@ -3,30 +3,35 @@ import React, {FunctionComponent} from "react";
 interface WorkProps {
     companyName: string
     city: string
-    title: string
-    dateString: string
+    titles: string[]
+    dateString: string[]
     description?: string | JSX.Element
     image: string
 }
 
-export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, title, dateString, description, city, image}) => {
+export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image}) => {
     return <div style={{marginBottom: "7rem"}}>
         <div className="mb-5" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div>
                 <div className="is-size-5 header-font has-text-weight-light has-text-weight-semibold">
                     {companyName}
                 </div>
-                <div className="is-size-6 header-font has-text-weight-light">
-                    {title}
-                </div>
+                {
+                    titles.map((title, index) => <div key={index} className="is-size-6 header-font has-text-weight-light">
+                        {title}
+                    </div>)
+                }
+
             </div>
             <div>
                 <div className="is-size-5 header-font has-text-weight-semibold has-text-right">
                     {city}
                 </div>
-                <div className="is-size-6 header-font has-text-weight-light has-text-right">
-                    {dateString}
-                </div>
+                {
+                    dateString.map((date, index) => <div key={index} className="is-size-6 header-font has-text-weight-light has-text-right">
+                        {date}
+                    </div>)
+                }
             </div>
         </div>
 

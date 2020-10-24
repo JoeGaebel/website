@@ -22,7 +22,7 @@ export const ClientList: FunctionComponent<ClientListProps> = ({children, experi
         setState!((oldState: AppState) => {
             return {
                 ...oldState,
-                [experienceName]: true
+                [experienceName]: !oldState[experienceName]
             }
         })
     }
@@ -36,13 +36,15 @@ export const ClientList: FunctionComponent<ClientListProps> = ({children, experi
             <div className="columns is-multiline">
                 {children}
             </div>
+
+            <button className="button is-medium" onClick={handleClick}>Hide portfolio</button>
         </>
     }
 
 
     return <>
         <div className="mb-5 mt-6">
-            <button className="button is-medium" onClick={handleClick}>Show products Joe's built</button>
+            <button className="button is-medium" onClick={handleClick}>Show portfolio...</button>
         </div>
     </>
 }

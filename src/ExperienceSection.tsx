@@ -1,15 +1,12 @@
 import React from "react";
 import {Section, SectionHeader} from "./Layout";
-import SeniorPivotalExperience from "./SeniorPivotalExperience";
-import MidPivotalExperience from "./MidPivotalExperience";
+import PivotalExperience from "./PivotalExperience";
 
 
 const ExperienceSection = () => {
     return <Section>
         <SectionHeader>Experience</SectionHeader>
-
-        <SeniorPivotalExperience/>
-        <MidPivotalExperience/>
+        <PivotalExperience/>
     </Section>
 }
 

@@ -10,8 +10,7 @@ export interface AppState {
 }
 
 const initialState = {
-    showSeniorExperience: false,
-    showMidExperience: false
+    pivotalExperience: false
 }
 
 export const StateContext = React.createContext<[AppState?, Dispatch<SetStateAction<AppState>>?]>([]);
