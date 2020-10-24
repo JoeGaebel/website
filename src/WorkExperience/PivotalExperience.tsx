@@ -29,7 +29,7 @@ const PivotalExperience = () => {
             Firstly, I help teams <b>build and deliver kick ass products.</b><br/><br/>
             Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
             training
-            sessions, workshops, <br/>and most importantly, <b>pair programming while we build said
+            sessions, workshops, <br/>and most importantly, <b>pair programming while we build those
             products.</b><br/><br/>
             The practices I hold dear are:
 

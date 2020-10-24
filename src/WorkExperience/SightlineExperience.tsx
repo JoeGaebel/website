@@ -1,5 +1,6 @@
 import {WorkExperience} from "./WorkExperience";
 import sightline from "../logos/sightline.png";
+import morgan from "../reviews/morgan.png";
 import React from "react";
 
 const SightlineExperience = () => {
@@ -9,6 +10,7 @@ const SightlineExperience = () => {
         titles={["Software Developer"]}
         dateString={["Sep 2014 to Mar 2015"]}
         image={sightline}
+        reviewImages={[morgan]}
         description={<div>
             <ul>
                 <li>- Built a web app with Node and Sencha ExtJS for visualizing real time data for clients in traffic monitoring</li>

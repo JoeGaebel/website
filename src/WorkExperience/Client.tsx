@@ -30,21 +30,21 @@ export const ClientList: FunctionComponent<ClientListProps> = ({children, experi
     if (state?.[experienceName]) {
         return <>
             <div className="mb-5 mt-6">
-                <div className="subtitle body-font is-size-6 header-font">Products I've helped build:</div>
+                <div className="header-font title is-size-4 mb-6">Products I've helped build:</div>
             </div>
 
             <div className="columns is-multiline">
                 {children}
             </div>
 
-            <button className="button is-medium is-info is-light" onClick={handleClick}>Hide portfolio</button>
+            <button className="button is-medium is-info is-light" style={{width: "100%"}} onClick={handleClick}>Hide portfolio</button>
         </>
     }
 
 
     return <>
         <div className="mb-5 mt-6">
-            <button className="button is-medium is-info is-light" onClick={handleClick}>Show portfolio...</button>
+            <button className="button is-medium is-info is-light" style={{width: "100%"}} onClick={handleClick}>Show portfolio...</button>
         </div>
     </>
 }
