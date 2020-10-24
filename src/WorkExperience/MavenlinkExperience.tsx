@@ -1,6 +1,8 @@
 import {WorkExperience} from "./WorkExperience";
-import mavenlink from "./logos/mavenlink.png";
+import mavenlink from "../logos/mavenlink.png";
 import React from "react";
+import huth from '../reviews/huth.png'
+import paulette from '../reviews/paulette.png'
 
 const MavenlinkExperience = () => {
     return <WorkExperience
@@ -9,6 +11,7 @@ const MavenlinkExperience = () => {
         titles={["Mid Software Engineer", "Junior Software Engineer"]}
         dateString={["July 2017 to Feb 2018", "June 2015 to June 2016"]}
         image={mavenlink}
+        reviewImages={[paulette, huth]}
         description={<div>
            Mavenlink is a project management SaaS
             <ul>

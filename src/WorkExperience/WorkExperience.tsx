@@ -1,4 +1,6 @@
 import React, {FunctionComponent} from "react";
+import Carousel from 'react-elastic-carousel'
+import styled from "styled-components";
 
 interface WorkProps {
     companyName: string
@@ -7,9 +9,10 @@ interface WorkProps {
     dateString: string[]
     description?: string | JSX.Element
     image: string
+    reviewImages?: string[]
 }
 
-export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image}) => {
+export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages}) => {
     return <div style={{marginBottom: "7rem"}}>
         <div className="mb-5" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div>
@@ -46,6 +49,16 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
             </div>
         </div>
 
+        {reviewImages && <div className="mt-4 is-hidden-mobile" style={{display: "flex", justifyContent: "center"}}>
+            <StyledCarousel>
+                {reviewImages.map((review, index) => <img key={index} src={review}/>)}
+            </StyledCarousel>
+        </div>}
+
         {children}
     </div>
 }
+
+const StyledCarousel = styled(Carousel)`
+  width: 60rem;
+`

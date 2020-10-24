@@ -1,10 +1,11 @@
-import pivotal from "./logos/pivotal.png";
+import pivotal from "../logos/pivotal.png";
 import {Client, ClientList} from "./Client";
-import service from "./logos/service.png";
+import service from "../logos/service.png";
 import {WorkExperience} from "./WorkExperience";
 import React from "react";
-import corelogic from "./logos/corelogic.png";
-import telstra from "./logos/telstra.png";
+import corelogic from "../logos/corelogic.png";
+import telstra from "../logos/telstra.png";
+import joseph from "../reviews/joseph.png"
 
 const principles = [
     "Lean",
@@ -17,6 +18,7 @@ const principles = [
 
 const PivotalExperience = () => {
     return <WorkExperience
+        reviewImages={[joseph]}
         city="Sydney, Australia"
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Mid Software Engineer"]}
@@ -25,7 +27,8 @@ const PivotalExperience = () => {
         description={<div>
             At Pivotal Labs, I do two things:<br/><br/>
             Firstly, I help teams <b>build and deliver kick ass products.</b><br/><br/>
-            Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke training
+            Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
+            training
             sessions, workshops, <br/>and most importantly, <b>pair programming while we build said
             products.</b><br/><br/>
             The practices I hold dear are:

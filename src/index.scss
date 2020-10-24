@@ -14,3 +14,17 @@ html, body {
 .body-font {
   font-family: 'Open Sans', sans-serif;
 }
+
+.rec-arrow {
+  box-shadow: unset !important;
+  background-color: white !important;
+}
+
+.rec-dot {
+  box-shadow: 0 0 1px 3px black !important;
+  background-color: white !important;
+}
+
+.rec-dot.rec-dot_active {
+  background-color: black !important;
+}

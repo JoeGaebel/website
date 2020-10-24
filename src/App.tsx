@@ -1,6 +1,6 @@
 import React, {Dispatch, FunctionComponent, SetStateAction, useState} from 'react';
 import HeaderSection from "./HeaderSection";
-import ExperienceSection from "./ExperienceSection";
+import ExperienceSection from "./WorkExperience/ExperienceSection";
 import ProjectSection from "./ProjectSection";
 import EducationSection from "./EducationSection";
 import ContactSection from "./ContactSection";

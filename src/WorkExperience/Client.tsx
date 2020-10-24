@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useContext} from "react";
-import {AppState, StateContext} from "./App";
+import {AppState, StateContext} from "../App";
 
 interface ClientProps {
     name: string
@@ -37,14 +37,14 @@ export const ClientList: FunctionComponent<ClientListProps> = ({children, experi
                 {children}
             </div>
 
-            <button className="button is-medium" onClick={handleClick}>Hide portfolio</button>
+            <button className="button is-medium is-info is-light" onClick={handleClick}>Hide portfolio</button>
         </>
     }
 
 
     return <>
         <div className="mb-5 mt-6">
-            <button className="button is-medium" onClick={handleClick}>Show portfolio...</button>
+            <button className="button is-medium is-info is-light" onClick={handleClick}>Show portfolio...</button>
         </div>
     </>
 }
