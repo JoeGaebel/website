@@ -13,7 +13,7 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
     return <div style={{marginBottom: "7rem"}}>
         <div className="mb-5" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div>
-                <div className="is-size-5 header-font has-text-weight-light has-text-weight-semibold">
+                <div className="is-size-4 header-font has-text-weight-light has-text-weight-semibold">
                     {companyName}
                 </div>
                 {
