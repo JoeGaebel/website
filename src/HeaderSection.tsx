@@ -1,9 +1,10 @@
 import React from "react";
-import {Section, SectionHeader} from "./Layout";
+import {Section, SectionHeader, SectionSubHeader} from "./Layout";
 
 const HeaderSection = () => {
     return <Section>
-        <SectionHeader>Header</SectionHeader>
+        <SectionHeader>Joe Gaebel</SectionHeader>
+        <SectionSubHeader>Software Engineer</SectionSubHeader>
     </Section>
 }
 
