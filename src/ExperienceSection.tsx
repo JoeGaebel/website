@@ -24,14 +24,14 @@ const ExperienceSection = () => {
                 name="Mobile App team at Service NSW"
                 projectName="COVID Safe Check-in"
                 image={service}
-                description="As a part of this project, I helped deliver the venue check-ins for COVID contact tracing feature within the Service NSW Mobile App."
-                keywords={["React Native", "Detox", "Node.js", "Firebase", "Jest"]}
+                description="As a part of this project, I helped deliver the venue check-ins for COVID contact tracing feature within the Service NSW Mobile App"
+                keywords={["React Native", "Detox", "Node.js", "Firebase", "Jest", "ES6+"]}
             />
             <Client
                 name="RMS Transactions team at Service NSW"
                 projectName="Renew Registration"
                 image={service}
-                description="I helped from-scratch rewrite the legacy Renew Registration transaction from Mulesoft APIs to Test Driven and easily maintainable Spring Boot"
+                description="I helped rewrite from-scratch the legacy Renew Registration transaction into a Test Driven and easily maintainable Spring Boot application"
                 keywords={["Spring Boot", "Kotlin", "React", "Apigee", "TestCafe", "Jest", "MockK", "Junit 5"]}
             />
             <Client
@@ -39,28 +39,31 @@ const ExperienceSection = () => {
                 projectName="COVID-19 Test Result Notifications"
                 image={service}
                 description="I lead the mobile app team in producing a NodeJS microservice responsible for registering devices and sending push notifications through Firebase to deliver COVID-19 test results"
-                keywords={["React Native", "Detox", "Node.js", "Firebase", "Jest"]}
+                keywords={["React Native", "Detox", "Node.js", "Firebase", "Jest", "ES6+"]}
             />
         </PivotalLabs>
 
         <PivotalLabs title="Mid Software Engineer" dateString="Feb 2018 to May 2020">
             <Client
                 name="Payments team at Service NSW"
-                projectName="Government Payment Platform"
+                projectName="Government Payments Platform"
                 image={service}
-                description="I helped Service NSW build government payments platform"
+                description="I helped the Payments team build the NSW Payment System, responsible for processing millions of dollars daily"
+                keywords={["Spring Boot", "Kotlin", "Vue", "RabbitMQ", "Postgres", "Apigee", "Cypress", "Jest"]}
             />
             <Client
                 name="Service For Business at Service NSW"
                 projectName="Contractor Licence"
                 image={service}
-                description="I helped Service NSW build the Renew Registration transaction"
+                description="I lead the transformation of the time-consuming contractor licence application form into a digital experience. This application form receives the data, and forwards it to the agency directly, saving hours of time for Tradespeople and back office staff"
+                keywords={["Spring Boot", "Kotlin", "React", "Postgres", "Apigee"]}
             />
             <Client
                 name="Vouchers and Rebates team at Service NSW"
                 projectName="Active Kids and Creative Kids vouchers"
                 image={service}
-                description="I helped Service NSW build the ability to recieve COVID test results directly to their phone"
+                description="I helped the Vouchers and Rebates team create the Active Kids/Creative Kids voucher application from scratch to replace the legacy application"
+                keywords={["Spring Boot", "Kotlin", "Vue", "Postgres", "Apigee"]}
             />
             <Client
                 name="Tell Government Once team at Service NSW"
@@ -128,11 +131,11 @@ const PivotalLabs: FunctionComponent<PivotalProps> = ({children, title, dateStri
         </div>
 
         <div style={{display: "flex", flexWrap: "wrap"}}>
-            <div className="column is-full-mobile" style={{flexGrow: 0}}>
+            <div className="column is-full-mobile" style={{minWidth: "fit-content", flexGrow: 0, alignSelf: "center"}}>
                 <img width="100px" src={pivotal}/>
             </div>
             <div className="column">
-                <div className="is-size-6 body-font has-text-weight-light mb-5">
+                <div className="is-size-6 body-font mb-5">
                     {description}
                 </div>
             </div>
@@ -159,7 +162,7 @@ interface ClientProps {
 }
 
 const Client: FunctionComponent<ClientProps> = ({name, image, description, projectName, imageSizeOverride, keywords}) => {
-    return <div className="column is-one-third mb-0" style={{maxWidth: "415px"}}>
+    return <div className="column is-one-third mb-0">
         <div className="card">
             <div className="card-content">
                 <div className="mb-5" style={{display: "flex", justifyContent: "space-between"}}>
@@ -175,7 +178,7 @@ const Client: FunctionComponent<ClientProps> = ({name, image, description, proje
                 <div>{description}</div>
 
                 {keywords && <div className="mt-4">
-                    {keywords?.map((keyword) => <span className="tag is-light mr-1 mt-1 is-size-6">{keyword}</span>)}
+                    {keywords?.map((keyword, index) => <span key={index} className="tag is-light mr-1 mt-1 is-size-7">{keyword}</span>)}
                 </div>}
             </div>
         </div>
