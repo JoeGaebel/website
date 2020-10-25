@@ -2,7 +2,6 @@ import React from "react";
 import {Section, SectionHeader} from "../Layout";
 import PivotalExperience from "./PivotalExperience";
 import MavenlinkExperience from "./MavenlinkExperience";
-import FullSailExperience from "./FullSailExperience";
 import SightlineExperience from "./SightlineExperience";
 
 
@@ -11,7 +10,6 @@ const ExperienceSection = () => {
         <SectionHeader>Experience</SectionHeader>
         <PivotalExperience/>
         <MavenlinkExperience/>
-        <FullSailExperience/>
         <SightlineExperience/>
     </Section>
 }

@@ -72,7 +72,7 @@ export const Client: FunctionComponent<ClientProps> = ({name, image, description
 
                 {keywords && <div className="mt-4">
                     {keywords?.map((keyword, index) => <span key={index}
-                                                             className="tag is-light mr-1 mt-1 is-size-7">{keyword}</span>)}
+                                                             className="tag is-info is-light mr-1 mt-1 is-size-7">{keyword}</span>)}
                 </div>}
             </div>
         </div>

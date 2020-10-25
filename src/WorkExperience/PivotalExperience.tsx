@@ -9,11 +9,25 @@ import joseph from "../reviews/joseph.png"
 
 const principles = [
     "Lean",
+    "Full Stack Development",
     "Test Driven Development",
     "Extreme Programming",
     "Pair Programming",
     "Continuous Integration",
     "Continuous Deployment and Delivery"
+]
+
+const technologies = [
+    "Spring Boot",
+    "Node.js",
+    "Kotlin",
+    "Java",
+    "React.js",
+    "Redux",
+    "TypeScript",
+    "ES6+",
+    "CSS",
+    "PostgreSQL"
 ]
 
 const PivotalExperience = () => {
@@ -30,8 +44,9 @@ const PivotalExperience = () => {
             Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
             training
             sessions, workshops, <br/>and most importantly, <b>pair programming while we build those
-            products.</b><br/><br/>
-            The practices I hold dear are:
+            products.</b>
+
+            <div className="mt-5">The practices I hold dear are:</div>
 
             <div className="mb-3">
                 {principles.map((keyword, index) => <span key={index}
@@ -41,6 +56,14 @@ const PivotalExperience = () => {
             <div>and most importantly</div>
 
             <span className="tag is-danger is-light mr-1 mt-1 is-size-6">Building products users will love ❤️</span>
+
+
+            <div className="mt-5">The technologies I use most are:</div>
+            <div className="mb-3">
+                {technologies.map((keyword, index) => <span key={index}
+                                                          className="tag is-info mr-1 mt-1 is-size-6">{keyword}</span>)}
+            </div>
+
         </div>}
     >
         <ClientList experienceName="pivotalExperience">
@@ -102,7 +125,7 @@ const PivotalExperience = () => {
                 image={service}
                 link="https://mybusiness.service.nsw.gov.au/dashboard"
                 description="Helped Service NSW digitize forms for opening a Cafe/Restaurant/Small Business"
-                keywords={["Spring Boot", "Kotlin", "React", "Redux", "Postgres", "Apigee"]}
+                keywords={["Spring Boot", "Kotlin", "React", "Unistore", "Postgres", "Apigee"]}
             />
             <Client
                 name="CoreLogic"
@@ -117,7 +140,7 @@ const PivotalExperience = () => {
                 image={telstra}
                 imageSizeOverride="35px"
                 description="Built an internal website to be used by the sales team to be a one-stop-shop for supporting enterprise sales"
-                keywords={["Kotlin", "Spring Boot", "React", "Redux", "Semantic UI"]}
+                keywords={["Kotlin", "Spring Boot", "React", "Redux", "Semantic UI", "Apigee"]}
             />
             <Client
                 name="Telstra"
@@ -126,6 +149,7 @@ const PivotalExperience = () => {
                 image={telstra}
                 link="https://www.telstra.com.au/mobile-phones/prepaid-mobiles/prepaid-recharge"
                 description="Built the system to collect payments for Telstra's prepaid service customers"
+                keywords={["Kotlin", "Spring Boot", "React", "Redux"]}
             />
         </ClientList>
     </WorkExperience>
