@@ -42,6 +42,48 @@ const technologies = [
     "PostgreSQL"
 ]
 
+const PivotalImage = <img
+    style={{
+        marginTop: "-0.25rem",
+        width: "100px",
+    }}
+    src={pivotal}
+/>;
+
+const PivotalDescription = <div>
+    <div className="block">At Pivotal Labs, I do two things:</div>
+    <div className="block">Firstly, I help teams <b>build and deliver kick ass products.</b></div>
+    <div className="block">
+        Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
+        training sessions, workshops, <br/>and most importantly, <b>pair programming while we build those products.</b>
+    </div>
+
+    <div className="mt-5">The practices I hold dear are:</div>
+
+    <div className="mb-3">
+        {principles.map((keyword, index) => <span key={index}
+                                                  className="tag is-success mr-1 mt-1 is-size-6">{keyword}</span>)}
+    </div>
+
+    <div>and most importantly</div>
+
+    <span className="tag is-danger is-light mr-1 mt-1 is-size-6">Building products users will love ❤️</span>
+
+
+    <div className="mt-5">The technologies I use most are:</div>
+    <div className="mb-3">
+        {technologies.map((keyword, index) => <span key={index}
+                                                    className="tag is-info mr-1 mt-1 is-size-6">{keyword}</span>)}
+    </div>
+
+    <div className="mt-5">I test drive with:</div>
+    <div className="mb-3">
+        {testingTech.map((keyword, index) => <span key={index}
+                                                   className="tag is-success is-light mr-1 mt-1 is-size-6">{keyword}</span>)}
+    </div>
+
+</div>
+
 const PivotalExperience = () => {
     return <WorkExperience
         reviewImages={[joseph]}
@@ -50,40 +92,8 @@ const PivotalExperience = () => {
         titles={["Senior Software Engineer", "Mid Software Engineer"]}
         dateString={["May 2020 to Present", "Feb 2018 to May 2020"]}
         yearString="3 years"
-        image={pivotal}
-        description={<div>
-            At Pivotal Labs, I do two things:<br/><br/>
-            Firstly, I help teams <b>build and deliver kick ass products.</b><br/><br/>
-            Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
-            training
-            sessions, workshops, <br/>and most importantly, <b>pair programming while we build those
-            products.</b>
-
-            <div className="mt-5">The practices I hold dear are:</div>
-
-            <div className="mb-3">
-                {principles.map((keyword, index) => <span key={index}
-                                                          className="tag is-success mr-1 mt-1 is-size-6">{keyword}</span>)}
-            </div>
-
-            <div>and most importantly</div>
-
-            <span className="tag is-danger is-light mr-1 mt-1 is-size-6">Building products users will love ❤️</span>
-
-
-            <div className="mt-5">The technologies I use most are:</div>
-            <div className="mb-3">
-                {technologies.map((keyword, index) => <span key={index}
-                                                          className="tag is-info mr-1 mt-1 is-size-6">{keyword}</span>)}
-            </div>
-
-            <div className="mt-5">I test drive with:</div>
-            <div className="mb-3">
-                {testingTech.map((keyword, index) => <span key={index}
-                                                           className="tag is-success is-light mr-1 mt-1 is-size-6">{keyword}</span>)}
-            </div>
-
-        </div>}
+        image={PivotalImage}
+        description={PivotalDescription}
     >
         <ClientList experienceName="pivotalExperience">
             <Client

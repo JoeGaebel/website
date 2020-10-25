@@ -8,17 +8,17 @@ interface WorkProps {
     titles: string[]
     dateString: string[]
     description?: string | JSX.Element
-    image: string
+    image: JSX.Element
     reviewImages?: string[]
     yearString?: string
 }
 
 export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages, yearString}) => {
     return <div style={{marginBottom: "7rem"}}>
-        <div className="mb-5" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
+        <div className="mb-4" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex"}}>
                 <div>
-                    <img width="100px" src={image}/>
+                    {image}
                 </div>
                 <div>
                     <div className="is-size-4 header-font has-text-weight-light has-text-weight-semibold">

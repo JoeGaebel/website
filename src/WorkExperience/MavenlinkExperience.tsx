@@ -4,13 +4,23 @@ import React from "react";
 import huth from '../reviews/huth.png'
 import paulette from '../reviews/paulette.png'
 
+const MavenlinkImage = <img
+    style={{
+        marginTop: "1rem",
+        marginRight: "0.5rem",
+        marginLeft: "-0.5rem"
+    }}
+    width="100px"
+    src={mavenlink}
+/>;
+
 const MavenlinkExperience = () => {
     return <WorkExperience
         city="San Francisco, California"
         companyName="Mavenlink"
         titles={["Mid Software Engineer", "Engineering Consultant", "Junior Software Engineer"]}
         dateString={["July 2017 to Feb 2018", "Sep 2016 to June 2017", "June 2015 to June 2016"]}
-        image={mavenlink}
+        image={MavenlinkImage}
         yearString="2.5 years"
         reviewImages={[paulette, huth]}
         description={<MavenlinkDescription/>}
@@ -35,7 +45,7 @@ const testingTech = [
 
 const MavenlinkDescription = () =>
     <div>
-        <div className="block">Mavenlink is a massive project management and resource suite.</div>
+        <div className="block mt-5">Mavenlink is a massive project management and resource suite used by the likes of Coca Cola.</div>
         <div className="block">
             I joined Mavenlink as an intern, and worked with them for a year. During this time, I rotated across multiple feature teams doing <b>full-stack pair programming and test driven development on production features</b>.
             I got to experience <b>Lean Product Management</b> while working with PM's with week long sprints, <b>User Centered Design</b> while working closely with designers, and <b>Extreme programming</b> from doing pair programming day to day with incredibly talented teams.

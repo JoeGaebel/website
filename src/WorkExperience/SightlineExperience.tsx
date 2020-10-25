@@ -3,13 +3,23 @@ import sightline from "../logos/sightline.png";
 import morgan from "../reviews/morgan.png";
 import React from "react";
 
+const SightlineImage = <img
+    style={{
+        marginTop: "-1.25rem",
+        marginRight: "0.5rem",
+        marginLeft: "-1rem"
+    }}
+    width="100px"
+    src={sightline}
+/>;
+
 const SightlineExperience = () => {
     return <WorkExperience
         city="London, Ontario"
         companyName="Sightline Innovation"
         titles={["Software Developer"]}
         dateString={["Sep 2014 to Mar 2015"]}
-        image={sightline}
+        image={SightlineImage}
         reviewImages={[morgan]}
         description={<SightlineDescription/>}
     />
@@ -29,7 +39,7 @@ const SightlineDescription = () => <div>
         By a deadline we were to prove that our team could add full stack features to this codebase. Despite our team trying, we couldn't crack it.
     </div>
     <div className="block">
-        A friend and I pulled an all nighter to figure it out a day before this team's plug was pulled.
+        A friend and I pulled an all-nighter to figure it out a day before this team's plug was pulled.
         We managed to figure out the intricacies of generating UI elements, interfacing with the backend over RPC, and integrating with the database. <b>This massive effort saved the team</b> and allowed us to move forward developing features on this project.
     </div>
     <div className="block">
