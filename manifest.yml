@@ -1,0 +1,9 @@
+applications:
+  - name: joegaebel
+    path: build
+    buildpacks:
+      - staticfile_buildpack
+    instances: 1
+    memory: 1G
+    routes:
+      - route: joegaebel.cfapps.io

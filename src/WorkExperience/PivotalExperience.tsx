@@ -93,7 +93,7 @@ const PivotalExperience = () => {
                 name="Payments team at Service NSW"
                 projectName="Government Payments Platform"
                 image={service}
-                description="Helped the Payments team build the NSW Government Payment System, responsible for processing millions of dollars daily"
+                description="Helped the Payments team build the NSW Government Payment System, responsible for processing tens of millions of dollars every day"
                 keywords={["Spring Boot", "Kotlin", "Vue", "VueX", "RabbitMQ", "Postgres", "Apigee", "Cypress", "Jest"]}
             />
             <Client
@@ -148,7 +148,7 @@ const PivotalExperience = () => {
                 imageSizeOverride="35px"
                 image={telstra}
                 link="https://www.telstra.com.au/mobile-phones/prepaid-mobiles/prepaid-recharge"
-                description="Built the system to collect payments for Telstra's prepaid service customers"
+                description="Built the system to collect payments and reinstate service for Telstra's prepaid service customers"
                 keywords={["Kotlin", "Spring Boot", "React", "Redux"]}
             />
         </ClientList>
