@@ -67,7 +67,7 @@ export const Client: FunctionComponent<ClientProps> = ({name, image, description
 
                 {!link && <div className="mt-4"/>}
 
-                {link && <div className="mb-2 body-font" style={{lineHeight: "16px"}}><a className="is-size-7" href={link}>{link}</a></div>}
+                {link && <div className="mb-2 body-font" style={{lineHeight: "16px"}}><a target="_blank" className="is-size-7" href={link}>{link}</a></div>}
                 <div>{description}</div>
 
                 {keywords && <div className="mt-4">
