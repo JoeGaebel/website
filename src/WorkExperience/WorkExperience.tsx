@@ -24,10 +24,11 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
                         {companyName}
                     </div>
                     {
-                        titles.map((title, index) => <div key={index}
-                                                          className="is-size-6 header-font has-text-weight-light">
-                            {title}
-                        </div>)
+                        titles.map((title, index) =>
+                            <div key={index} className="is-size-6 header-font has-text-weight-semibold">
+                                {title}
+                            </div>
+                        )
                     }
                 </div>
             </div>
@@ -36,10 +37,11 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
                     {city}
                 </div>
                 {
-                    dateString.map((date, index) => <div key={index}
-                                                         className="is-size-6 header-font has-text-weight-light has-text-right">
-                        {date}
-                    </div>)
+                    dateString.map((date, index) =>
+                        <div key={index} className="is-size-6 header-font has-text-weight-normal has-text-right">
+                            {date}
+                        </div>
+                    )
                 }
             </div>
         </div>
