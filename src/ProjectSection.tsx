@@ -7,6 +7,10 @@ import linkIcon from "./icons/link.svg"
 import githubIcon from "./icons/github.png"
 import dylAndJoe from "./projects/dylAndJoe.jpg"
 
+const SneakyTag: FunctionComponent = ({children}) => {
+    return <span style={{fontSize: "0.5rem"}} className="tag is-info is-light mr-1 mt-1">{children}</span>
+}
+
 const ProjectSection = () => {
     return <Section>
         <SectionHeader>Projects</SectionHeader>
@@ -17,7 +21,8 @@ const ProjectSection = () => {
             <DylAndJoeGoToSanFrancisco/>
         </ProjectsList>
         <div className="is-flex is-justify-content-flex-end">
-            <a className="has-text-grey has-text-weight-light is-size-7" href="https://www.github.com/joegaebel/website">This site is also a project...</a>
+            <a className="has-text-grey has-text-weight-light is-size-7" href="https://www.github.com/joegaebel/website">
+                joegaebel.com is also a project <SneakyTag>TypeScript</SneakyTag><SneakyTag>React</SneakyTag><SneakyTag>Bulma</SneakyTag></a>
         </div>
     </Section>
 }
