@@ -10,9 +10,10 @@ interface WorkProps {
     description?: string | JSX.Element
     image: string
     reviewImages?: string[]
+    yearString?: string
 }
 
-export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages}) => {
+export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages, yearString}) => {
     return <div style={{marginBottom: "7rem"}}>
         <div className="mb-5" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex"}}>
@@ -36,13 +37,29 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
                 <div className="is-size-5 header-font has-text-weight-semibold has-text-right">
                     {city}
                 </div>
-                {
-                    dateString.map((date, index) =>
-                        <div key={index} className="is-size-6 header-font has-text-weight-normal has-text-right">
-                            {date}
-                        </div>
-                    )
-                }
+                <div style={{display: "flex"}}>
+                    {yearString && <div style={{display: "flex", alignItems: "center"}}>
+                        <div className="pr-2">{yearString}</div>
+                        <div
+                            className="pr-3"
+                            style={{
+                            fontWeight: 100,
+                            fontSize: "3rem",
+                            lineHeight: "0px",
+                            marginTop: "-0.5rem",
+                        }}>{"{"}</div>
+                    </div>}
+                    <div>
+                        {
+                            dateString.map((date, index) =>
+                                <div key={index} className="is-size-6 header-font has-text-weight-normal has-text-right">
+                                    {date}
+                                </div>
+                            )
+                        }
+                    </div>
+                </div>
+
             </div>
         </div>
 

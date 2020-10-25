@@ -30,7 +30,7 @@ export const ClientList: FunctionComponent<ClientListProps> = ({children, experi
     if (state?.[experienceName]) {
         return <>
             <div className="mb-5 mt-6">
-                <div className="header-font title is-size-4 mb-6">Products I've helped build:</div>
+                <div className="header-font title is-size-4 mb-4">Products I've helped build:</div>
             </div>
 
             <div className="columns is-multiline">

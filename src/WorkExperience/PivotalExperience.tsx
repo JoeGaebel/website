@@ -37,6 +37,7 @@ const PivotalExperience = () => {
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Mid Software Engineer"]}
         dateString={["May 2020 to Present", "Feb 2018 to May 2020"]}
+        yearString="3 years"
         image={pivotal}
         description={<div>
             At Pivotal Labs, I do two things:<br/><br/>

@@ -11,6 +11,7 @@ const MavenlinkExperience = () => {
         titles={["Mid Software Engineer", "Engineering Consultant", "Junior Software Engineer"]}
         dateString={["July 2017 to Feb 2018", "Sep 2016 to June 2017", "June 2015 to June 2016"]}
         image={mavenlink}
+        yearString="2.5 years"
         reviewImages={[paulette, huth]}
         description={<MavenlinkDescription/>}
     />
