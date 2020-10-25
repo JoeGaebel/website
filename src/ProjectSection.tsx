@@ -16,6 +16,9 @@ const ProjectSection = () => {
             <Spherelink/>
             <DylAndJoeGoToSanFrancisco/>
         </ProjectsList>
+        <div className="is-flex is-justify-content-flex-end">
+            <a className="has-text-grey has-text-weight-light is-size-7" href="https://www.github.com/joegaebel/website">This site is also a project...</a>
+        </div>
     </Section>
 }
 
