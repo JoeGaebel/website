@@ -1,11 +1,37 @@
 import React from "react";
-import {Section, SectionHeader, SectionText} from "./Layout";
+import {Section, SectionHeader} from "./Layout";
+import joe from './projects/joe.jpg'
+import sailboat from './icons/sailboat.svg'
 
 const ContactSection = () => {
     return <Section>
-        <SectionHeader>Let's Talk!</SectionHeader>
-        <SectionText>Green juice adaptogen mlkshk chillwave trust fund direct trade, hella marfa cloud bread. Fingerstache taiyaki mumblecore, cloud bread neutra meditation forage single-origin coffee viral unicorn butcher vexillologist fashion axe master cleanse. Waistcoat letterpress gochujang polaroid. Selfies yuccie hashtag glossier vinyl. Organic vape flexitarian, blog lumbersexual gentrify asymmetrical succulents vegan. Tumblr lomo selfies, flannel thundercats lo-fi polaroid synth taxidermy everyday carry bespoke wolf letterpress tattooed intelligentsia.</SectionText>
+        <div className="is-flex is-flex-direction-column is-align-items-center">
+            <SectionHeader>Let's Talk!</SectionHeader>
+            <div className="card" style={{width: "500px"}}>
+                <div className="card-image">
+                    <figure className="image">
+                        <img src={joe}/>
+                    </figure>
+                </div>
+                <div className="card-content">
+                    <div className="media">
+                        <div className="media-left">
+                            <figure className="image is-48x48 mt-3">
+                                <img src={sailboat} alt="Placeholder image"/>
+                            </figure>
+                        </div>
+                        <div className="media-content">
+                            <p className="title is-4">Joe Gaebel</p>
+                            <p className="subtitle is-6 mb-0"><a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a></p>
+                            <p className="subtitle is-6 mb-0">joe.gaebel@hotmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </Section>
 }
+
+
 
 export default ContactSection

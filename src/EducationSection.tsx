@@ -1,10 +1,20 @@
 import React from "react";
 import {Section, SectionHeader, SectionText} from "./Layout";
+import western from './logos/western.png'
 
 const EducationSection = () => {
     return <Section>
         <SectionHeader>Education</SectionHeader>
-        <SectionText>Green juice adaptogen mlkshk chillwave trust fund direct trade, hella marfa cloud bread. Fingerstache taiyaki mumblecore, cloud bread neutra meditation forage single-origin coffee viral unicorn butcher vexillologist fashion axe master cleanse. Waistcoat letterpress gochujang polaroid. Selfies yuccie hashtag glossier vinyl. Organic vape flexitarian, blog lumbersexual gentrify asymmetrical succulents vegan. Tumblr lomo selfies, flannel thundercats lo-fi polaroid synth taxidermy everyday carry bespoke wolf letterpress tattooed intelligentsia.</SectionText>
+        <div className="is-flex is-flex-direction-row">
+            <div className="mr-6">
+                <img width="110px" src={western}/>
+            </div>
+            <div className="mt-1">
+                <div className="subtitle is-size-3 mb-1">Western University</div>
+                <div className="subtitle is-size-5 mb-1">Bachelors of Engineering Science: Software Engineering</div>
+                <div className="subtitle is-size-6">London Ontario, Canada</div>
+            </div>
+        </div>
     </Section>
 }
 
