@@ -45,12 +45,13 @@ const testingTech = [
 
 const MavenlinkDescription = () =>
     <div>
-        <div className="block mt-5">Mavenlink is a massive project management and resource suite used by the likes of Coca Cola.</div>
+        <div className="block mt-5">Mavenlink is a massive project management and resource suite used by the likes of Coca Cola and Salesforce.</div>
         <div className="block">
             I joined Mavenlink as an intern, and worked with them for a year. During this time, I rotated across multiple feature teams doing <b>full-stack pair programming and test driven development on production features</b>.
             I got to experience <b>Lean Product Management</b> while working with PM's with week long sprints, <b>User Centered Design</b> while working closely with designers, and <b>Extreme programming</b> from doing pair programming day to day with incredibly talented teams.
-            <br/><br/>Near the end of the internship, I <b>lead a team to develop the core search capabilities</b> on Mavenlink user-generated content using ElasticSearch.
         </div>
+
+        <div className="block">Near the end of the internship, I <b>lead a team to develop the core search capabilities</b> on Mavenlink user-generated content using ElasticSearch.</div>
 
         <div className="block">
             After finishing the internship, I moved back home to Canada, and <b>started a software consultancy</b> where I hired a few engineers and contracted with Mavenlink.

@@ -104,7 +104,7 @@ const Spherelink = () => <Project
     description={<>
         <div className="block">Immortalize your most cherished memories.</div>
         <div className="block">
-            Upload and link together 360 photos to recreate your memories. Tag the most important areas, add additional images, make it fully immersive with sound and music.
+            Upload and link together 360 photos to recreate your memories. Tag the most important areas, embed content, make it fully immersive with sound and music, and fully preserve the memories that matter most.
         </div>
     </>}
     githubLink="https://github.com/JoeGaebel/spherelink"
@@ -116,7 +116,7 @@ const DylAndJoeGoToSanFrancisco = () => <Project
     name="Dyl And Joe Go To San Francisco .com"
     image={dylAndJoe}
     description={<>
-        <div className="block">Went on a do or die journey to get jobs in San Francisco</div>
+        <div className="block">Went on a do or die journey to get jobs in San Francisco.</div>
         <div className="block">
             In the span of two weeks, my good friend Dylan and I built a quick website, flew out to San Francisco, and knocked on as many company doors as we could.
         </div>
