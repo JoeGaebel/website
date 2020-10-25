@@ -38,7 +38,10 @@ export const SectionText: FunctionComponent = ({children}) => <div className="
     {children}
 </div>
 
-export const Section: FunctionComponent = ({children}) => <div className="
+interface SectionProps {
+    id?: string
+}
+export const Section: FunctionComponent<SectionProps> = ({children, id}) => <div id={id} className="
     section
 ">
     {children}

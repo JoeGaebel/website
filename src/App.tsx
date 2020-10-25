@@ -4,6 +4,7 @@ import ExperienceSection from "./WorkExperience/ExperienceSection";
 import ProjectSection from "./ProjectSection";
 import EducationSection from "./EducationSection";
 import ContactSection from "./ContactSection";
+import Navigation from "./Navigation";
 
 export interface AppState {
     [key: string]: boolean
@@ -20,6 +21,7 @@ function App() {
 
     return (
         <StateContext.Provider value={appState}>
+            <Navigation/>
             <SectionContainer>
                 <HeaderSection/>
                 <ExperienceSection/>

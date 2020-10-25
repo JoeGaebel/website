@@ -4,7 +4,7 @@ import joe from './projects/joe.jpg'
 import sailboat from './icons/sailboat.svg'
 
 const ContactSection = () => {
-    return <Section>
+    return <Section id="contact">
         <div className="is-flex is-flex-direction-column is-align-items-center">
             <SectionHeader>Let's Talk!</SectionHeader>
             <div className="card" style={{width: "500px"}}>

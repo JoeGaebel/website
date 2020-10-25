@@ -3,7 +3,7 @@ import {Section, SectionHeader, SectionText} from "./Layout";
 import western from './logos/western.png'
 
 const EducationSection = () => {
-    return <Section>
+    return <Section id="education">
         <SectionHeader>Education</SectionHeader>
         <div className="is-flex is-flex-direction-row">
             <div className="mr-6">

@@ -6,7 +6,7 @@ import SightlineExperience from "./SightlineExperience";
 
 
 const ExperienceSection = () => {
-    return <Section>
+    return <Section id="experience">
         <SectionHeader>Experience</SectionHeader>
         <PivotalExperience/>
         <MavenlinkExperience/>
