@@ -73,7 +73,7 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
                 display: "flex",
                 justifyContent: "center"
             }}>
-                <StyledCarousel>
+                <StyledCarousel disableArrowsOnEnd={false}>
                     {reviewImages.map((review, index) => <img key={index} src={review}/>)}
                 </StyledCarousel>
             </div>

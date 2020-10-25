@@ -17,6 +17,18 @@ const principles = [
     "Continuous Deployment and Delivery"
 ]
 
+const testingTech = [
+    "Jest",
+    "Enzyme",
+    "React Testing Library",
+    "JUnit 5",
+    "Mockito",
+    "MockK",
+    "WireMock",
+    "Cypress",
+    "TestCafe"
+]
+
 const technologies = [
     "Spring Boot",
     "Node.js",
@@ -63,6 +75,12 @@ const PivotalExperience = () => {
             <div className="mb-3">
                 {technologies.map((keyword, index) => <span key={index}
                                                           className="tag is-info mr-1 mt-1 is-size-6">{keyword}</span>)}
+            </div>
+
+            <div className="mt-5">I test drive with:</div>
+            <div className="mb-3">
+                {testingTech.map((keyword, index) => <span key={index}
+                                                           className="tag is-success is-light mr-1 mt-1 is-size-6">{keyword}</span>)}
             </div>
 
         </div>}

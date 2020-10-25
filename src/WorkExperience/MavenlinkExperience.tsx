@@ -22,7 +22,15 @@ const technologies = [
     "Rails",
     "ES6+",
     "React",
+    "Selenium",
     "Elastic Search"
+]
+
+const testingTech = [
+    "Jasmine",
+    "Jest",
+    "RSpec",
+    "Selenium"
 ]
 
 const MavenlinkDescription = () =>
@@ -49,6 +57,12 @@ const MavenlinkDescription = () =>
         <div className="mb-3">
             {technologies.map((keyword, index) => <span key={index}
                                                         className="tag is-info mr-1 mt-1 is-size-6">{keyword}</span>)}
+        </div>
+
+        <div className="mt-5">I test drove with:</div>
+        <div className="mb-3">
+            {testingTech.map((keyword, index) => <span key={index}
+                                                        className="tag is-success is-light mr-1 mt-1 is-size-6">{keyword}</span>)}
         </div>
 
     </div>
