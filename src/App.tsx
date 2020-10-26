@@ -7,11 +7,11 @@ import ContactSection from "./ContactSection";
 import Navigation from "./Navigation";
 
 export interface AppState {
-    [key: string]: boolean
+    showPivotalClients: boolean
 }
 
 const initialState = {
-    pivotalExperience: false
+    showPivotalClients: false
 }
 
 export const StateContext = React.createContext<[AppState?, Dispatch<SetStateAction<AppState>>?]>([]);

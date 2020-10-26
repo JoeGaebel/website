@@ -20,13 +20,13 @@ const principles = [
 ]
 
 const testingTech = [
+    "JUnit 5",
+    "WireMock",
+    "MockK",
+    "Mockito",
     "Jest",
     "Enzyme",
     "React Testing Library",
-    "JUnit 5",
-    "Mockito",
-    "MockK",
-    "WireMock",
     "Cypress",
     "TestCafe"
 ]
@@ -57,7 +57,7 @@ const PivotalDescription = <div>
     <div className="block">Firstly, I help teams <b>build and deliver kick ass products.</b></div>
     <div className="block">
         Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
-        training sessions, workshops, <br/>and most importantly, <b>pair programming while we build those products.</b>
+        training sessions, workshops, <br/>and most importantly, <b>pair programming on those products.</b>
     </div>
 
     <div className="mt-5">The practices I hold dear are:</div>
@@ -66,11 +66,6 @@ const PivotalDescription = <div>
         {principles.map((keyword, index) => <span key={index}
                                                   className="tag is-success mr-1 mt-1 is-size-6">{keyword}</span>)}
     </div>
-
-    <div>and most importantly</div>
-
-    <span className="tag is-danger is-light mr-1 mt-1 is-size-6">Building products users will love ❤️</span>
-
 
     <div className="mt-5">The technologies I use most are:</div>
     <div className="mb-3">
@@ -97,7 +92,7 @@ const PivotalExperience = () => {
         image={PivotalImage}
         description={PivotalDescription}
     >
-        <ClientList experienceName="pivotalExperience">
+        <ClientList>
             <Client
                 name="Mobile App team at Service NSW"
                 projectName="COVID Safe Check-in"

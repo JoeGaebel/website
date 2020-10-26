@@ -11,10 +11,6 @@ interface ClientProps {
     link?: string
 }
 
-interface ClientListProps {
-    experienceName?: string
-}
-
 const overflowHiddenStyle: CSSProperties = {
     maxHeight: "40rem",
     position: "relative",
@@ -31,6 +27,7 @@ const seeMoreStyle: CSSProperties = {
     width: "100%",
     textAlign: "center",
     height: "40%",
+    paddingBottom: "0.5rem",
     backgroundImage: "linear-gradient(to bottom, transparent, white)"
 }
 
@@ -59,34 +56,36 @@ interface HidingButtonProps {
 const HidingButton: FunctionComponent<HidingButtonProps> = ({showingProjects, onClick}) => {
     if (!showingProjects) {
         return <div style={seeMoreStyle}>
-            <button className="button is-medium is-info" onClick={onClick}>See more</button>
+            <button className="button is-medium is-dark" onClick={onClick}>See more</button>
         </div>
     } else {
         return <div style={seeLessStyle}>
-            <button className="mt-4 button is-medium is-info" onClick={onClick}>See less</button>
+            <button className="mt-4 button is-medium is-dark" onClick={onClick}>See less</button>
         </div>
     }
 }
 
-export const ClientList: FunctionComponent<ClientListProps> = ({children, experienceName = ""}) => {
-    const [state, setState] = useContext(StateContext);
+export const ClientList: FunctionComponent = ({children}) => {
+    const [appState, setState] = useContext(StateContext);
     const ref = useRef<HTMLDivElement>(null)
 
+    const showPivotalClients = appState!.showPivotalClients
+
     function handleClick() {
-        setState!((oldState: AppState) => {
+        setState!((oldState: AppState): AppState => {
             return {
                 ...oldState,
-                [experienceName]: !oldState[experienceName]
+                showPivotalClients: !oldState.showPivotalClients
             }
         })
 
-        if (state?.[experienceName]) {
+        if (showPivotalClients) {
             window.scrollTo(0, ref.current!.offsetTop)
         }
     }
 
     return <div ref={ref}>
-        <HidingWrapper showingProjects={state?.[experienceName]}>
+        <HidingWrapper showingProjects={showPivotalClients}>
             <div className="mb-5 mt-6">
                 <div className="header-font title is-size-4 mb-4">Products I've helped build:</div>
             </div>
@@ -95,7 +94,7 @@ export const ClientList: FunctionComponent<ClientListProps> = ({children, experi
                 {children}
             </div>
 
-            <HidingButton showingProjects={state?.[experienceName]} onClick={handleClick}/>
+            <HidingButton showingProjects={showPivotalClients} onClick={handleClick}/>
         </HidingWrapper>
     </div>
 }
