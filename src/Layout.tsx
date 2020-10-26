@@ -2,14 +2,11 @@ import React, {FunctionComponent} from "react";
 
 export const SectionHeader: FunctionComponent = ({children}) => <div
     className="
-        is-size-5-mobile
-        is-size-4-touch
-        is-size-4-tablet
-        is-size-3-desktop
-        is-size-3-widescreen
-        is-size-3-fullhd
+        is-full
+        has-text-centered
+        is-size-1
         header-font
-        mb-4
+        mb-6
     ">
     {children}
 </div>
