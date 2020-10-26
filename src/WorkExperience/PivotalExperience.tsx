@@ -7,6 +7,7 @@ import corelogic from "../logos/corelogic.png";
 import telstra from "../logos/telstra.png";
 import joseph from "../reviews/joseph.png"
 import amjad from "../reviews/amjad.png"
+import fede from "../reviews/fede.png"
 
 const principles = [
     "Lean",
@@ -87,7 +88,7 @@ const PivotalDescription = <div>
 
 const PivotalExperience = () => {
     return <WorkExperience
-        reviewImages={[amjad, joseph]}
+        reviewImages={[amjad, joseph, fede]}
         city="Sydney, Australia"
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Mid Software Engineer"]}
