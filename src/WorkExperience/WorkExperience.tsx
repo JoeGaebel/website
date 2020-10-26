@@ -14,7 +14,7 @@ interface WorkProps {
 }
 
 export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages, yearString}) => {
-    return <div style={{marginBottom: "7rem"}}>
+    return <div style={{marginBottom: "10rem"}}>
         <div className="mb-4" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex"}}>
                 <div>

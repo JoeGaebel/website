@@ -43,6 +43,7 @@ interface SectionProps {
 }
 export const Section: FunctionComponent<SectionProps> = ({children, id}) => <div id={id} className="
     section
+    mb-5
 ">
     {children}
 </div>
