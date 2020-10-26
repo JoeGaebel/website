@@ -1,11 +1,10 @@
 import React from "react";
-import {Section, SectionHeader, SectionSubHeader} from "./Layout";
 
 const HeaderSection = () => {
-    return <Section>
-        <SectionHeader>Joe Gaebel</SectionHeader>
-        <SectionSubHeader>Software Engineer</SectionSubHeader>
-    </Section>
+    return <div style={{margin: "10rem 0"}}>
+        <div className="title header-font is-size-2 mb-5">Joe Gaebel</div>
+        <div className="subtitle header-font is-size-4 mb-0">Engineer, Student of Zen, Adventurer</div>
+    </div>
 }
 
 export default HeaderSection
