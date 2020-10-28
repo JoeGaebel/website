@@ -43,7 +43,7 @@ const SightlineDescription = () => <div>
         We managed to figure out the intricacies of generating UI elements, interfacing with the backend over RPC, and integrating with the database. <b>This massive effort saved the team</b> and allowed us to move forward developing features on this project.
     </div>
     <div className="block">
-        I went on to lead the team in architecture patterns such that we could parallelize feature development and integrate them.
+        Went on to lead the team in architecture patterns such that we could parallelize feature development and integrate features seamlessly.
     </div>
 
     <div className="mt-5">The technologies I used most were:</div>
