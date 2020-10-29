@@ -18,7 +18,10 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
     return <div style={{marginBottom: "10rem"}}>
         <div className="mb-4" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex", flexWrap: "wrap"}}>
-                <div>
+                <div style={{
+                    margin: "0 auto",
+                    display: "block"
+                }}>
                     {image}
                 </div>
                 <div>
