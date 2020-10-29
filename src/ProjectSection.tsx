@@ -54,7 +54,7 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
                 </div>
                 <div className="column">
                     {description}
-                    <div className="block is-flex-direction-row is-flex">
+                    <div className="block is-flex">
                         <div className="subtitle body-font is-size-7 mb-2">
                             <a target="_blank" href={projectLink}><img width="30px" src={linkIcon}/></a>
                         </div>
