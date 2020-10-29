@@ -88,7 +88,7 @@ const WatchWithDad = () => <Project
     </>}
     projectLink="http://watch-with-dad.cfapps.io"
     githubLink="https://www.github.com/joegaebel/watch-with-dad"
-    keywords={["Fully test driven", "React", "Node.js", "Websockets", "Kubernetes"]}
+    keywords={["Fully test driven", "React", "Node.js", "Websockets", "Kubernetes", "A love for Top Gun"]}
 />
 
 const Rentifier = () => <Project
@@ -103,7 +103,7 @@ const Rentifier = () => <Project
     </>}
     githubLink="https://github.com/JoeGaebel/rentifier"
     projectLink="https://joegaebel.medium.com/find-the-perfect-apartment-out-of-thousands-using-web-scraping-google-apis-and-sheets-860ef462de41"
-    keywords={["Web Scraping", "Node.js", "Test Cafe", "Google Distance Matrix API"]}
+    keywords={["Web Scraping", "Node.js", "Test Cafe", "Google Distance Matrix API", "A fair dash of desperation"]}
 />
 
 const Spherelink = () => <Project
@@ -114,24 +114,29 @@ const Spherelink = () => <Project
         <div className="block">
             Upload and link together 360 photos to recreate your memories. Tag the most important areas, embed content, make it fully immersive with sound and music, and fully preserve the memories that matter most.
         </div>
+        <div className="block">I bought and lived on a sail boat so I could afford the rent in SF, check it out!</div>
     </>}
     githubLink="https://github.com/JoeGaebel/spherelink"
     projectLink="https://www.spherelink.io"
-    keywords={["Ruby on Rails", "CoffeeScript"]}
+    keywords={["Ruby on Rails", "CoffeeScript", "A deep sense of nostalgia"]}
 />
 
 const DylAndJoeGoToSanFrancisco = () => <Project
-    name="Dyl And Joe Go To San Francisco .com"
+    name="Dyl And Joe Go To San Francisco.com"
     image={dylAndJoe}
     description={<>
         <div className="block">Went on a do or die journey to get jobs in San Francisco.</div>
         <div className="block">
-            In the span of two weeks, my good friend Dylan and I built a quick website, flew out to San Francisco, and knocked on as many company doors as we could.
+            In the span of two weeks, my good friend and I built a quick website, flew out to San Francisco, and knocked on as many company doors as we could.
+        </div>
+
+        <div className="block">
+            Afterwards we spend the next few months avoiding school work and doing interviews. In the end, we both got to work for San Frantastic companies.
         </div>
     </>}
     githubLink="https://github.com/JoeGaebel/dylandjoegotosanfrancisco"
     projectLink="http://www.dylandjoegotosanfrancisco.com"
-    keywords={["Bootstrap", "Angular"]}
+    keywords={["Guts", "A whole lot of hope", "Sheer willpower", "Can-do attitude", "Polite Canadian demeanor", "Bootstrap", "Angular"]}
 />
 
 export default ProjectSection

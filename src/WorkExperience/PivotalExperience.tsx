@@ -57,7 +57,7 @@ const PivotalImage = <img
 const PivotalDescription = <div>
     <div className="block">At Pivotal Labs, I do two things:</div>
     <div className="block">Firstly, I help teams <b>build and deliver kick ass products.</b></div>
-    <div className="block">
+    <div className="block" style={{maxWidth: "980px"}}>
         Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
         training sessions, workshops, and most importantly, <b>pair programming on those products.</b>
     </div>
@@ -90,7 +90,7 @@ const PivotalExperience = () => {
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Mid Software Engineer"]}
         dateString={["May 2020 to Present", "Feb 2018 to May 2020"]}
-        yearString="3 years"
+        years={3}
         image={PivotalImage}
         description={PivotalDescription}
     >

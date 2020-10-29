@@ -1,6 +1,6 @@
 import React from "react"
 
-const Navigation = () => <nav className="navbar is-transparent is-fixed-top is-flex is-justify-content-center is-align-items-center is-hidden-mobile">
+const Navigation = () => <nav className="navbar is-transparent is-fixed-top is-flex is-justify-content-center is-align-items-center is-hidden-tablet">
     <div>
         <div className="navbar-menu">
             <div className="navbar-start">

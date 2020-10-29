@@ -10,56 +10,46 @@ interface WorkProps {
     description?: string | JSX.Element
     image: JSX.Element
     reviewImages?: string[]
-    yearString?: string
+    years?: number
 }
 
-export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages, yearString}) => {
+export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages, years = 0}) => {
+    const shortYearString = `${years} yrs.`
     return <div style={{marginBottom: "10rem"}}>
         <div className="mb-4" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
-            <div style={{display: "flex"}}>
+            <div style={{display: "flex", flexWrap: "wrap"}}>
                 <div>
                     {image}
                 </div>
                 <div>
-                    <div className="is-size-4 header-font has-text-weight-light has-text-weight-semibold">
-                        {companyName}
+                    <div className="is-flex-desktop">
+                        <div className="is-flex is-flex-wrap-nowrap">
+                            <div className="is-size-4 header-font has-text-weight-light has-text-weight-semibold">{companyName}</div>
+                            {years > 0 && <div className="ml-2 has-text-weight-light has-text-grey is-size-6 header-font" style={{marginTop: "0.5rem"}}>
+                                {shortYearString}
+                            </div>}
+                        </div>
                     </div>
-                    {
-                        titles.map((title, index) =>
-                            <div key={index} className="is-size-6 header-font has-text-weight-semibold">
-                                {title}
-                            </div>
-                        )
-                    }
-                </div>
-            </div>
-            <div>
-                <div className="is-size-5 header-font has-text-weight-semibold has-text-right">
-                    {city}
-                </div>
-                <div style={{display: "flex"}}>
-                    {yearString && <div style={{display: "flex", alignItems: "center"}}>
-                        <div className="pr-2">{yearString}</div>
-                        <div
-                            className="pr-3"
-                            style={{
-                            fontWeight: 100,
-                            fontSize: "3rem",
-                            lineHeight: "0px",
-                            marginTop: "-0.5rem",
-                        }}>{"{"}</div>
-                    </div>}
+
                     <div>
                         {
-                            dateString.map((date, index) =>
-                                <div key={index} className="is-size-6 header-font has-text-weight-normal has-text-right">
-                                    {date}
+                            titles.map((title, index) =><div className="is-flex is-justify-content-space-between">
+                                    <div key={index} className="is-size-6 header-font has-text-weight-semibold">
+                                        {title}<span className="is-hidden-mobile">,</span>
+                                    </div>
+                                    <div className="ml-2 has-text-weight-light has-text-grey is-hidden-mobile">
+                                        {dateString[index]}
+                                    </div>
                                 </div>
                             )
                         }
                     </div>
                 </div>
-
+            </div>
+            <div>
+                <div className="is-size-5 header-font has-text-weight-semibold has-text-right is-hidden-mobile">
+                    {city}
+                </div>
             </div>
         </div>
 
