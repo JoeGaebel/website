@@ -16,14 +16,14 @@ const ContactSection = () => {
                 <div className="card-content">
                     <div className="media">
                         <div className="media-left">
-                            <figure className="image is-48x48 mt-3">
+                            <figure className="image is-48x48" style={{marginTop: "1.5rem"}}>
                                 <img src={sailboat} alt="Placeholder image"/>
                             </figure>
                         </div>
                         <div className="media-content">
-                            <p className="title is-4">Joe Gaebel</p>
-                            <p className="subtitle is-6 mb-0"><a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a></p>
-                            <p className="subtitle is-6 mb-0">joe.gaebel@hotmail.com</p>
+                            <p className="is-size-4 has-text-dark has-text-weight-semibold">Joe Gaebel</p>
+                            <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}><a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a></p>
+                            <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>joe.gaebel@hotmail.com</p>
                         </div>
                     </div>
                 </div>

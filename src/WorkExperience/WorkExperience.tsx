@@ -20,7 +20,7 @@ export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
     const shortYearString = `${years} yrs.`
     return <div style={{marginBottom: "10rem"}}>
         <div style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
-            <div style={{display: "flex", flexWrap: "wrap"}}>
+            <div style={{display: "flex", flexWrap: "wrap", marginBottom: "-0.25rem"}}>
                 <StyledImageContainer marginRightOverride={imageContainerMarginRight}>
                     {image}
                 </StyledImageContainer>
@@ -33,14 +33,14 @@ export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
                             </div>}
                         </div>
                     </div>
-                    <div className="is-size-6 header-font has-text-weight-normal has-text-grey mb-1" style={{marginTop: "-0.4rem"}}>
+                    <div className="is-size-6 header-font has-text-weight-normal has-text-grey mb-4" style={{marginTop: "-0.4rem"}}>
                         {city}
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style={{marginBottom: "1.5rem"}}>
+        <div style={{marginBottom: "1rem"}}>
             {
                 titles.map((title, index) =><div className="is-flex is-flex-wrap-wrap">
                         <div key={index} className="is-size-6 header-font has-text-weight-semibold">
