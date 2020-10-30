@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from "react";
 import Carousel from 'react-elastic-carousel'
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 interface WorkProps {
     companyName: string
@@ -11,20 +11,20 @@ interface WorkProps {
     image: JSX.Element
     reviewImages?: string[]
     years?: number
+    imageContainerMarginRight?: string
 }
 
-export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, children, titles, dateString, description, city, image, reviewImages, years = 0}) => {
+export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
+    const {companyName, children, titles, dateString, description, city, image, reviewImages, years = 0, imageContainerMarginRight} = props
+
     const shortYearString = `${years} yrs.`
     return <div style={{marginBottom: "10rem"}}>
-        <div className="mb-4" style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
+        <div style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex", flexWrap: "wrap"}}>
-                <div style={{
-                    margin: "0 auto",
-                    display: "block"
-                }}>
+                <StyledImageContainer marginRightOverride={imageContainerMarginRight}>
                     {image}
-                </div>
-                <div>
+                </StyledImageContainer>
+                <div style={{minWidth: "233px"}}>
                     <div className="is-flex-desktop">
                         <div className="is-flex is-flex-wrap-nowrap">
                             <div className="is-size-4 header-font has-text-weight-light has-text-weight-semibold">{companyName}</div>
@@ -33,27 +33,25 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
                             </div>}
                         </div>
                     </div>
-
-                    <div>
-                        {
-                            titles.map((title, index) =><div className="is-flex is-justify-content-space-between">
-                                    <div key={index} className="is-size-6 header-font has-text-weight-semibold">
-                                        {title}<span className="is-hidden-mobile">,</span>
-                                    </div>
-                                    <div className="ml-2 has-text-weight-light has-text-grey is-hidden-mobile">
-                                        {dateString[index]}
-                                    </div>
-                                </div>
-                            )
-                        }
+                    <div className="is-size-6 header-font has-text-weight-normal has-text-grey mb-1" style={{marginTop: "-0.4rem"}}>
+                        {city}
                     </div>
                 </div>
             </div>
-            <div>
-                <div className="is-size-5 header-font has-text-weight-semibold has-text-right is-hidden-mobile">
-                    {city}
-                </div>
-            </div>
+        </div>
+
+        <div style={{marginBottom: "1.5rem"}}>
+            {
+                titles.map((title, index) =><div className="is-flex is-flex-wrap-wrap">
+                        <div key={index} className="is-size-6 header-font has-text-weight-semibold">
+                            {title},&nbsp;&nbsp;
+                        </div>
+                        <div className="has-text-weight-light has-text-grey">
+                            {dateString[index]}
+                        </div>
+                    </div>
+                )
+            }
         </div>
 
         <div className="is-size-6 body-font mb-5">
@@ -78,4 +76,22 @@ export const WorkExperience: FunctionComponent<WorkProps> = ({companyName, child
 
 const StyledCarousel = styled(Carousel)`
   width: 60rem;
+`
+
+interface StyledDivContainerProps {
+    marginRightOverride?: string
+}
+
+const StyledImageContainer = styled.div<StyledDivContainerProps>`
+  margin-right: ${props => props.marginRightOverride || "initial"};
+  
+  @media only screen and (max-width: 414px) {
+    display: block;
+    margin: 0 auto !important;
+    
+    > img {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
 `

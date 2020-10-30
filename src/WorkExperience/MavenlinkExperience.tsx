@@ -6,9 +6,9 @@ import paulette from '../reviews/paulette.png'
 
 const MavenlinkImage = <img
     style={{
-        marginTop: "1rem",
+        marginTop: "-0.75rem",
         marginRight: "0.5rem",
-        marginLeft: "-0.5rem"
+        marginLeft: "-0.55rem"
     }}
     width="100px"
     src={mavenlink}
@@ -19,7 +19,7 @@ const MavenlinkExperience = () => {
         city="San Francisco, California"
         companyName="Mavenlink"
         titles={["Mid Software Engineer", "Engineering Consultant", "Intern, Junior Engineer"]}
-        dateString={["July 2017 to Feb 2018", "Sep 2016 to June 2017", "June 2015 to June 2016"]}
+        dateString={["Jul 2017 to Feb 2018", "Sep 2016 to Jun 2017", "Jun 2015 to Jun 2016"]}
         image={MavenlinkImage}
         years={2.5}
         reviewImages={[paulette, huth]}
@@ -45,13 +45,13 @@ const testingTech = [
 
 const MavenlinkDescription = () =>
     <div>
-        <div className="block mt-5">Mavenlink is a massive project management and resource suite used by the likes of Coca Cola and Salesforce.</div>
+        <div className="block mt-5">Mavenlink is a project management and resource suite used by the likes of Coca Cola and Salesforce.</div>
         <div className="block">
-            I rotated across multiple feature teams doing <b>full-stack pair programming and test driven development on production features</b>.
-            I got to experience <b>Lean Product Management</b> while working with PM's with week long sprints, <b>User Centered Design</b> while working closely with designers, and <b>Extreme programming</b> from doing pair programming day to day with incredibly talented teams.
+            I rotated across multiple feature teams doing <b>full-stack pair programming and test-driven development on production features</b>.
+            I got to experience <b>Lean Product Management</b> while working with PMs with week-long sprints, <b>User Centered Design</b> while working closely with designers, and <b>Extreme programming</b> from doing pair programming day to day with incredibly talented teams.
         </div>
 
-        <div className="block"><b>Lead a team to develop the core search capabilities</b> on Mavenlink user-generated content using ElasticSearch.</div>
+        <div className="block"><b>Led a team to develop the core search capabilities</b> on Mavenlink user-generated content using ElasticSearch.</div>
 
         <div className="block">
             <b>Started a software consultancy</b> where I hired a few engineers and contracted with Mavenlink.
@@ -60,7 +60,7 @@ const MavenlinkDescription = () =>
         </div>
 
         <div className="block">
-            As a Mid level engineer on the Business Intelligence I <b>built and maintained an ETL</b> that converts relational data into a data model for business analytics, using AWS SNS and SQS.
+            As a Mid-level Engineer on the Business Intelligence team, I <b>built and maintained an ETL</b> that converts relational data into a data model for business analytics.
             As well, I worked on the support team where I investigated <b>complex system bugs and designed comprehensive solutions</b>.
         </div>
 

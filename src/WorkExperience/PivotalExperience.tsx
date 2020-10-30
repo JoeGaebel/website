@@ -48,8 +48,9 @@ const technologies = [
 
 const PivotalImage = <img
     style={{
-        marginTop: "-0.25rem",
-        width: "100px",
+        marginTop: "-1.5rem",
+        marginLeft: "-1.25rem",
+        width: "120px",
     }}
     src={pivotal}
 />;
@@ -85,6 +86,7 @@ const PivotalDescription = <div>
 
 const PivotalExperience = () => {
     return <WorkExperience
+        imageContainerMarginRight="-1.5rem"
         reviewImages={[amjad, joseph, christian, fede]}
         city="Sydney, Australia"
         companyName="VMware Pivotal Labs"

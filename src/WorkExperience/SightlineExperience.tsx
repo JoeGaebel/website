@@ -7,7 +7,7 @@ const SightlineImage = <img
     style={{
         marginTop: "-1.25rem",
         marginRight: "0.5rem",
-        marginLeft: "-1rem"
+        marginLeft: "-0.9rem"
     }}
     width="100px"
     src={sightline}
@@ -15,6 +15,7 @@ const SightlineImage = <img
 
 const SightlineExperience = () => {
     return <WorkExperience
+        imageContainerMarginRight="-0.6rem"
         city="London, Ontario"
         companyName="Sightline Innovation"
         titles={["Software Developer"]}
