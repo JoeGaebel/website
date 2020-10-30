@@ -57,9 +57,9 @@ const PivotalImage = <img
 
 const PivotalDescription = <div>
     <div className="block">At Pivotal Labs, I do two things:</div>
-    <div className="block">Firstly, I help teams <b>build and deliver kick ass products.</b></div>
+    <div className="block">First, I help teams <b>build and deliver kick ass products.</b></div>
     <div className="block" style={{maxWidth: "980px"}}>
-        Secondly, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
+        Second, I <b>upskill teams of engineers</b> in modern software development practices through bespoke
         training sessions, workshops, and most importantly, <b>pair programming on those products.</b>
     </div>
 

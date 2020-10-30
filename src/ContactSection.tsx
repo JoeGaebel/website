@@ -16,7 +16,7 @@ const ContactSection = () => {
                 <div className="card-content">
                     <div className="media">
                         <div className="media-left">
-                            <figure className="image is-48x48" style={{marginTop: "1.5rem"}}>
+                            <figure className="image is-48x48" style={{marginTop: "1.18rem"}}>
                                 <img src={sailboat} alt="Placeholder image"/>
                             </figure>
                         </div>

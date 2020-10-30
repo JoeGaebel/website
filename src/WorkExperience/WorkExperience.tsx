@@ -46,9 +46,10 @@ export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
                         <div key={index} className="is-size-6 header-font has-text-weight-semibold">
                             {title},&nbsp;&nbsp;
                         </div>
-                        <div className="has-text-weight-light has-text-grey">
+                        <div className="has-text-weight-light has-text-grey" style={{minWidth: "200px"}}>
                             {dateString[index]}
                         </div>
+                        <div className="is-hidden-tablet" style={{height: "2rem"}}/>
                     </div>
                 )
             }
