@@ -12,7 +12,7 @@ const SneakyTag: FunctionComponent = ({children}) => {
 }
 
 const ProjectSection = () => {
-    return <Section id="projects">
+    return <Section id="projects" style={{marginTop: "-10rem"}}>
         <SectionHeader>Projects</SectionHeader>
         <ProjectsList>
             <WatchWithDad/>

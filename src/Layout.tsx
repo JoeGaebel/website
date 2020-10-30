@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react";
+import React, {CSSProperties, FunctionComponent} from "react";
 
 export const SectionHeader: FunctionComponent = ({children}) => <div
     className="
@@ -23,24 +23,13 @@ export const SectionSubHeader: FunctionComponent = ({children}) => <div classNam
     {children}
 </div>
 
-export const SectionText: FunctionComponent = ({children}) => <div className="
-    is-size-6-mobile
-    is-size-6-touch
-    is-size-6-tablet
-    is-size-6-desktop
-    is-size-5-widescreen
-    is-size-5-fullhd
-    body-font
-">
-    {children}
-</div>
-
 interface SectionProps {
     id?: string
+    style?: CSSProperties
 }
-export const Section: FunctionComponent<SectionProps> = ({children, id}) => <div id={id} className="
-    section
-    mb-5
-">
+export const Section: FunctionComponent<SectionProps> = ({children, id, style}) => <div
+    id={id}
+    className="section mb-5"
+    style={{...style}}>
     {children}
 </div>
