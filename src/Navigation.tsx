@@ -7,6 +7,9 @@ const Navigation = () => <nav className="navbar is-transparent is-fixed-top is-f
                 <a className="navbar-item" href="#experience">
                     Experience
                 </a>
+                <a className="navbar-item" href="#reviews">
+                    Reviews
+                </a>
                 <a className="navbar-item" href="#projects">
                     Projects
                 </a>

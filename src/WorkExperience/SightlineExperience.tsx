@@ -1,6 +1,5 @@
 import {WorkExperience} from "./WorkExperience";
 import sightline from "../logos/sightline.png";
-import morgan from "../reviews/morgan.png";
 import React from "react";
 
 const SightlineImage = <img
@@ -21,7 +20,6 @@ const SightlineExperience = () => {
         titles={["Software Developer"]}
         dateString={["Sep 2014 to Mar 2015"]}
         image={SightlineImage}
-        reviewImages={[morgan]}
         description={<SightlineDescription/>}
     />
 }

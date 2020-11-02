@@ -5,10 +5,6 @@ import {WorkExperience} from "./WorkExperience";
 import React from "react";
 import corelogic from "../logos/corelogic.png";
 import telstra from "../logos/telstra.png";
-import joseph from "../reviews/joseph.png"
-import amjad from "../reviews/amjad.png"
-import fede from "../reviews/fede.png"
-import christian from "../reviews/christian.png"
 
 const principles = [
     "Lean",
@@ -87,7 +83,6 @@ const PivotalDescription = <div>
 const PivotalExperience = () => {
     return <WorkExperience
         imageContainerMarginRight="-1.5rem"
-        reviewImages={[amjad, joseph, christian, fede]}
         city="Sydney, Australia"
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Mid Software Engineer"]}

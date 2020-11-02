@@ -1,6 +1,5 @@
 import React, {FunctionComponent} from "react";
-import Carousel from 'react-elastic-carousel'
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 interface WorkProps {
     companyName: string
@@ -9,13 +8,12 @@ interface WorkProps {
     dateString: string[]
     description?: string | JSX.Element
     image: JSX.Element
-    reviewImages?: string[]
     years?: number
     imageContainerMarginRight?: string
 }
 
 export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
-    const {companyName, children, titles, dateString, description, city, image, reviewImages, years = 0, imageContainerMarginRight} = props
+    const {companyName, children, titles, dateString, description, city, image, years = 0, imageContainerMarginRight} = props
 
     const shortYearString = `${years} yrs.`
     return <div style={{marginBottom: "10rem"}}>
@@ -59,25 +57,9 @@ export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
             {description}
         </div>
 
-        {reviewImages && <div className="mt-6 is-hidden-mobile">
-            <div className="header-font title is-size-4 mb-6">Reviews I've been given:</div>
-            <div style={{
-                display: "flex",
-                justifyContent: "center"
-            }}>
-                <StyledCarousel disableArrowsOnEnd={false}>
-                    {reviewImages.map((review, index) => <img key={index} src={review}/>)}
-                </StyledCarousel>
-            </div>
-        </div>}
-
         {children}
     </div>
 }
-
-const StyledCarousel = styled(Carousel)`
-  width: 60rem;
-`
 
 interface StyledDivContainerProps {
     marginRightOverride?: string

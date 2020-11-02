@@ -5,6 +5,7 @@ import ProjectSection from "./ProjectSection";
 import EducationSection from "./EducationSection";
 import ContactSection from "./ContactSection";
 import Navigation from "./Navigation";
+import ReviewsSection from "./ReviewsSection";
 
 export interface AppState {
     showPivotalClients: boolean
@@ -25,6 +26,7 @@ function App() {
             <SectionContainer>
                 <HeaderSection/>
                 <ExperienceSection/>
+                <ReviewsSection/>
                 <ProjectSection/>
                 <EducationSection/>
                 <ContactSection/>

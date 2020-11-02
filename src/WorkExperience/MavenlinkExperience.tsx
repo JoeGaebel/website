@@ -1,8 +1,6 @@
 import {WorkExperience} from "./WorkExperience";
 import mavenlink from "../logos/mavenlink.png";
 import React from "react";
-import huth from '../reviews/huth.png'
-import paulette from '../reviews/paulette.png'
 
 const MavenlinkImage = <img
     style={{
@@ -22,7 +20,6 @@ const MavenlinkExperience = () => {
         dateString={["Jul 2017 to Feb 2018", "Sep 2016 to Jun 2017", "Jun 2015 to Jun 2016"]}
         image={MavenlinkImage}
         years={2.5}
-        reviewImages={[paulette, huth]}
         description={<MavenlinkDescription/>}
     />
 }
