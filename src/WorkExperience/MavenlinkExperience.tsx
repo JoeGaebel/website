@@ -51,7 +51,7 @@ const MavenlinkDescription = () =>
         <div className="block"><b>Led a team to develop the core search capabilities</b> on Mavenlink user-generated content using ElasticSearch.</div>
 
         <div className="block">
-            <b>Started a software consultancy</b> and engineers to contract with Mavenlink.
+            <b>Started a software consultancy</b> and hired engineers to contract with Mavenlink.
             Led development of invoice templating system <b>used by thousands of Mavenlink customers</b>.
             Designed and <b>implemented a library used across Mavenlink</b> to parse and format international currencies.
         </div>
