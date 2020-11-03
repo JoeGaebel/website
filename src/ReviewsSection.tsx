@@ -8,6 +8,9 @@ import christian from "./reviews/christian.jpeg"
 import paulette from "./reviews/paulette.jpeg"
 import andrew from "./reviews/andrew.jpeg"
 import morgan from "./reviews/morgan.jpeg"
+import pivotal from "./logos/pivotal.png"
+import mavenlink from "./logos/mavenlink.png"
+import sightline from "./logos/sightline.png"
 
 
 interface ReviewProps {
@@ -17,34 +20,47 @@ interface ReviewProps {
     relationship: string
     sharedWork?: string
     image: string
+    isFull?: boolean
     content: JSX.Element
 }
 
-const Review: FunctionComponent<ReviewProps> = ({name, title, work, content, relationship, sharedWork, image}) => {
-    return <div className="card my-5">
-        <div className="card-content">
-            <div className="media">
-                <div className="media-left">
-                    <figure className="image is-48x48">
-                        <img className="is-rounded" src={image} alt="Placeholder image"/>
-                    </figure>
-                </div>
-                <div className="media-content">
-                    <p className="title is-4 mb-0">{name}</p>
-                    <p className="subtitle is-6">{title}, {work}</p>
-                </div>
-            </div>
 
-            <div className="content">
-                {content}
+const reviewColors: { [key: string]: string } = {
+    "VMware Pivotal Labs": "has-background-success-light",
+    "Service NSW": "has-background-success-light",
+    "Mavenlink": "has-background-info-light",
+    "Sightline Innovation": "has-background-link-light"
+}
+
+const Review: FunctionComponent<ReviewProps> = ({name, title, work, content, relationship, sharedWork, image, isFull}) => {
+    const backgroundColor = reviewColors[sharedWork || work]
+
+    return <div className={`column ${isFull ? "is-full" : "is-half"}`}>
+        <div className={`card ${backgroundColor}`}>
+            <div className="card-content">
+                <div className="media">
+                    <div className="media-left">
+                        <figure className="image is-48x48">
+                            <img className="is-rounded" src={image} alt="Placeholder image"/>
+                        </figure>
+                    </div>
+                    <div className="media-content">
+                        <p className="title is-4 mb-0">{name}</p>
+                        <p className="subtitle is-6">{title}, {work}</p>
+                    </div>
+                </div>
+
+                <div className="content has-text-dark">
+                    {content}
+                </div>
+                <time dateTime="2016-1-1">{relationship} at {sharedWork || work}</time>
             </div>
-            <time dateTime="2016-1-1">{relationship} at {sharedWork || work}</time>
         </div>
     </div>
 }
 
 const ReviewsList: FunctionComponent = ({children}) => {
-    return <div className="is-flex-direction-column">
+    return <div className="columns is-multiline">
         {children}
     </div>
 }
@@ -53,19 +69,35 @@ const ReviewsSection = () => {
     return <Section id="reviews" style={{marginTop: "-10rem"}}>
         <SectionHeader>Reviews</SectionHeader>
         <ReviewsList>
+            <ReviewLabel name="VMware Pivotal Labs" image={pivotal}/>
             <Amjad/>
             <David/>
             <Fede/>
             <Joseph/>
             <Christian/>
+            <ReviewLabel name="Mavenlink" image={mavenlink} extraClasses="mt-5"/>
             <Paulette/>
             <Andrew/>
+            <ReviewLabel name="Sightline Innovation" image={sightline} extraClasses="mt-5"/>
             <Morgan/>
         </ReviewsList>
     </Section>
 }
 
+interface ReviewLabelProps {
+    name: string
+    image: string
+    extraClasses?: string
+}
+const ReviewLabel: FunctionComponent<ReviewLabelProps> = ({name, image, extraClasses}) => {
+    return <div className={`is-flex is-align-items-center is-justify-content-center is-full column ${extraClasses ? extraClasses : ''}`}>
+        <div><img width="100px" src={image}/></div>
+        <div className="title has-text-weight-normal is-size-4 pb-1">{name}</div>
+    </div>
+}
+
 const Amjad = () => <Review
+    isFull={true}
     image={amjad}
     name="Amjad Sidqi"
     title="Managing Director"
@@ -145,6 +177,7 @@ const Joseph = () => <Review
 />
 
 const Paulette = () => <Review
+    isFull={true}
     image={paulette}
     name="Paulette Luftig"
     title="Director of Engineering"
@@ -160,6 +193,7 @@ const Paulette = () => <Review
 
 const Andrew = () => <Review
     image={andrew}
+    isFull={true}
     name="Andrew Huth"
     title="Staff Software Engineer"
     work="Chan Zuckerberg Initiative"
@@ -176,6 +210,7 @@ const Andrew = () => <Review
 
 const Morgan = () => <Review
     image={morgan}
+    isFull={true}
     name="Morgan Moskalyk"
     title="Founder & Computer Researcher"
     work="Deep6"
