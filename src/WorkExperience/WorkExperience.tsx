@@ -40,8 +40,8 @@ export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
 
         <div style={{marginBottom: "1rem"}}>
             {
-                titles.map((title, index) =><div className="is-flex is-flex-wrap-wrap">
-                        <div key={index} className="is-size-6 header-font has-text-weight-semibold">
+                titles.map((title, index) =><div key={index} className="is-flex is-flex-wrap-wrap">
+                        <div className="is-size-6 header-font has-text-weight-semibold">
                             {title},&nbsp;&nbsp;
                         </div>
                         <div className="has-text-weight-light has-text-grey" style={{minWidth: "200px"}}>
