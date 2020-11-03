@@ -9,10 +9,12 @@ import ReviewsSection from "./ReviewsSection";
 
 export interface AppState {
     showPivotalClients: boolean
+    showReviews: boolean
 }
 
 const initialState = {
-    showPivotalClients: false
+    showPivotalClients: false,
+    showReviews: false
 }
 
 export const StateContext = React.createContext<[AppState?, Dispatch<SetStateAction<AppState>>?]>([]);

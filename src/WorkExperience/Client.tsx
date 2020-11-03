@@ -1,5 +1,6 @@
-import React, {CSSProperties, FunctionComponent, useContext, useRef} from "react";
+import React, {FunctionComponent, useContext, useRef} from "react";
 import {AppState, StateContext} from "../App";
+import {HidingButton, HidingWrapper} from "../HidingComponents";
 
 interface ClientProps {
     name: string
@@ -9,60 +10,6 @@ interface ClientProps {
     imageSizeOverride?: string
     keywords?: string[]
     link?: string
-}
-
-const overflowHiddenStyle: CSSProperties = {
-    maxHeight: "40rem",
-    position: "relative",
-    overflow: "hidden"
-}
-
-const seeMoreStyle: CSSProperties = {
-    position: "absolute",
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "center",
-    bottom: "0",
-    left: "0",
-    width: "100%",
-    textAlign: "center",
-    height: "40%",
-    paddingBottom: "0.5rem",
-    backgroundImage: "linear-gradient(to bottom, transparent, white)"
-}
-
-const seeLessStyle: CSSProperties = {
-    display: "flex",
-    alignItems: "flex-end",
-    justifyContent: "center",
-}
-
-interface HidingWrapperProps {
-    showingProjects: boolean | undefined
-}
-const HidingWrapper: FunctionComponent<HidingWrapperProps> = ({children, showingProjects}) => {
-    if (!showingProjects) {
-        return <div style={overflowHiddenStyle}>{children}</div>
-    } else {
-        return <div>{children}</div>
-    }
-}
-
-
-interface HidingButtonProps {
-    showingProjects: boolean | undefined
-    onClick: () => void
-}
-const HidingButton: FunctionComponent<HidingButtonProps> = ({showingProjects, onClick}) => {
-    if (!showingProjects) {
-        return <div style={seeMoreStyle}>
-            <button className="button is-medium is-dark" onClick={onClick}>See more</button>
-        </div>
-    } else {
-        return <div style={seeLessStyle}>
-            <button className="mt-4 button is-medium is-dark" onClick={onClick}>See less</button>
-        </div>
-    }
 }
 
 export const ClientList: FunctionComponent = ({children}) => {
@@ -85,7 +32,7 @@ export const ClientList: FunctionComponent = ({children}) => {
     }
 
     return <div ref={ref}>
-        <HidingWrapper showingProjects={showPivotalClients}>
+        <HidingWrapper showing={showPivotalClients}>
             <div className="mb-5 mt-6">
                 <div className="header-font title is-size-4 mb-4">Products I've helped build:</div>
             </div>
@@ -94,7 +41,7 @@ export const ClientList: FunctionComponent = ({children}) => {
                 {children}
             </div>
 
-            <HidingButton showingProjects={showPivotalClients} onClick={handleClick}/>
+            <HidingButton showing={showPivotalClients} onClick={handleClick}/>
         </HidingWrapper>
     </div>
 }
