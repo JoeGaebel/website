@@ -33,9 +33,11 @@ const SlidingList = () => {
     const [index, setIndex] = useState<number>(0)
 
     useEffect(() => {
-        setInterval(() => {
+        const timer = setInterval(() => {
             setIndex(i => (i + 1) % proofs.length)
-        }, 4000)
+        }, 4500)
+
+        return () => clearInterval(timer)
     }, [setIndex, proofs.length])
 
     return <SlideInDiv key={index}>{proofs[index]},&nbsp;</SlideInDiv>
