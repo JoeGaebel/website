@@ -7,16 +7,16 @@ const fadeSlideIn = merge(fadeIn, slideInLeft)
 const slideInAnimation = keyframes`${fadeSlideIn}`;
 
 const SlideInDiv = styled.div`
-  animation: 1s ${slideInAnimation};
+  animation: 2s ${slideInAnimation};
 `;
 
 const HeaderSection = () => {
     return <div style={{margin: "10rem 1rem"}}>
         <div className="title header-font is-size-1" style={{marginBottom: "0.5rem"}}>Joe Gaebel</div>
-        <div className="subtitle header-font is-size-4 is-flex">
+        <div className="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
             <div>Engineer,&nbsp;</div>
             <SlidingList/>
-            <div>,&nbsp;Adventurer</div>
+            <div>Adventurer</div>
         </div>
     </div>
 }
@@ -38,7 +38,7 @@ const SlidingList = () => {
         }, 4000)
     }, [setIndex, proofs.length])
 
-    return <SlideInDiv key={index}>{proofs[index]}</SlideInDiv>
+    return <SlideInDiv key={index}>{proofs[index]},&nbsp;</SlideInDiv>
 }
 
 export default HeaderSection
