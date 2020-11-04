@@ -56,12 +56,12 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
                 </figure>
             </div>
             <div className="subtitle header-font has-text-weight-semibold is-size-4">{name}</div>
-            {description}
-            <div className="block is-flex">
-                <div className="subtitle body-font is-size-7 mb-2">
+            <div className="mb-3">{description}</div>
+            <div className="block is-flex" style={{marginBottom: "0.75rem"}}>
+                <div className="subtitle body-font is-size-7 mb-0">
                     <a target="_blank" href={projectLink}><img width="30px" src={linkIcon}/></a>
                 </div>
-                <div className="subtitle body-font is-size-7 mb-2">
+                <div className="subtitle body-font is-size-7 mb-0">
                     <a target="_blank" href={githubLink}><img width="30px" src={githubIcon}/></a>
                 </div>
             </div>
