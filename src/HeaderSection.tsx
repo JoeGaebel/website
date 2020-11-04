@@ -15,19 +15,19 @@ const HeaderSection = () => {
         <div className="title header-font is-size-1" style={{marginBottom: "0.5rem"}}>Joe Gaebel</div>
         <div className="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
             <div>Engineer,&nbsp;</div>
+            <div>Adventurer,&nbsp;</div>
             <SlidingList/>
-            <div>Adventurer</div>
         </div>
     </div>
 }
 
 const SlidingList = () => {
     const proofs = [
-        "Amateur Sailor",
         "Fitness Geek",
+        "Amateur Sailor",
         "Meditator",
         "Motorcycle Enthusiast",
-        "Kombucha lover"
+        "Kombucha Lover"
     ]
 
     const [index, setIndex] = useState<number>(0)
@@ -40,7 +40,7 @@ const SlidingList = () => {
         return () => clearInterval(timer)
     }, [setIndex, proofs.length])
 
-    return <SlideInDiv key={index}>{proofs[index]},&nbsp;</SlideInDiv>
+    return <SlideInDiv key={index}>{proofs[index]}</SlideInDiv>
 }
 
 export default HeaderSection
