@@ -1,7 +1,8 @@
 set -e
 
 yarn build
-rm -rf ./joegaebel.github.io/static
+shopt -s extglob
+rm -rf ./joegaebel.github.io/!(CNAME)
 cp -r build/* ./joegaebel.github.io
 cd joegaebel.github.io
 git add .
