@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
-import styled, { keyframes } from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 // @ts-ignore
-import { merge, slideInLeft, fadeIn } from 'react-animations'
+import {fadeIn, merge, slideInLeft} from 'react-animations'
+import joe from './projects/joe.jpg'
+import {StyledImageContainer} from "./WorkExperience/WorkExperience";
 
 const fadeSlideIn = merge(fadeIn, slideInLeft)
 const slideInAnimation = keyframes`${fadeSlideIn}`;
@@ -11,12 +13,18 @@ const SlideInDiv = styled.div`
 `;
 
 const HeaderSection = () => {
-    return <div style={{margin: "10rem 1rem"}}>
-        <div className="title header-font is-size-1" style={{marginBottom: "0.5rem"}}>Joe Gaebel</div>
-        <div className="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
-            <div>Full Stack Engineer,&nbsp;</div>
-            <div>Adventurer,&nbsp;</div>
-            <SlidingList/>
+    return <div className="is-flex is-flex-wrap-wrap" style={{margin: "10rem 1rem"}}>
+        <StyledImageContainer>
+            <figure className="image is-128x128 mr-5">
+                <img className="is-rounded" src={joe}/>
+            </figure>
+        </StyledImageContainer>
+        <div className="mt-4">
+            <div className="title header-font is-size-1" style={{marginBottom: "0.5rem"}}>Joe Gaebel</div>
+            <div className="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
+                <div>Full Stack Engineer,&nbsp;</div>
+                <SlidingList/>
+            </div>
         </div>
     </div>
 }
@@ -28,6 +36,7 @@ const SlidingList = () => {
         "Amateur Sailor",
         "Meditator",
         "Motorcycle Enthusiast",
+        "Adventurer",
         "Kombucha Lover"
     ]
 

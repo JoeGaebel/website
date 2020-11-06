@@ -65,7 +65,7 @@ interface StyledDivContainerProps {
     marginRightOverride?: string
 }
 
-const StyledImageContainer = styled.div<StyledDivContainerProps>`
+export const StyledImageContainer = styled.div<StyledDivContainerProps>`
   margin-right: ${props => props.marginRightOverride || "initial"};
   
   @media only screen and (max-width: 414px) {
