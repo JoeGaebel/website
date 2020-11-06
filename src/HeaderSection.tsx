@@ -35,7 +35,7 @@ const SlidingList = () => {
         "Fitness Geek",
         "Amateur Sailor",
         "Meditator",
-        "Motorcycle Enthusiast",
+        "Motorcyclist",
         "Adventurer",
         "Kombucha Lover"
     ]
