@@ -52,6 +52,7 @@ const PivotalImage = <img
 />;
 
 const PivotalDescription = <div>
+    <div className="block">Pivotal Labs partners with organizations worldwide to accelerate the delivery of software and establish best practices for modern application development.</div>
     <div className="block">At Pivotal Labs, I do two things:</div>
     <div className="block">First, I help teams <b>build and deliver kick ass products.</b></div>
     <div className="block" style={{maxWidth: "980px"}}>

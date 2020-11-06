@@ -42,7 +42,7 @@ const testingTech = [
 
 const MavenlinkDescription = () =>
     <div>
-        <div className="block mt-5">Mavenlink is a project management and resource suite used by the likes of Coca Cola and Salesforce.</div>
+        <div className="block mt-5">Mavenlink is a project management and resourcing suite used by the likes of Coca Cola and Salesforce.</div>
         <div className="block">
             Rotated across multiple feature teams doing <b>full-stack pair programming and test-driven development on production features</b>.
             Experienced <b>Lean Product Management</b> while working with PMs with week-long sprints, <b>User Centered Design</b> while working closely with designers, and <b>Extreme programming</b> from doing pair programming day to day with incredibly talented teams.

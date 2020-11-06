@@ -23,6 +23,7 @@ const HeaderSection = () => {
 
 const SlidingList = () => {
     const proofs = [
+        "Surfer",
         "Fitness Geek",
         "Amateur Sailor",
         "Meditator",
