@@ -14,7 +14,7 @@ const HeaderSection = () => {
     return <div style={{margin: "10rem 1rem"}}>
         <div className="title header-font is-size-1" style={{marginBottom: "0.5rem"}}>Joe Gaebel</div>
         <div className="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
-            <div>Engineer,&nbsp;</div>
+            <div>Full Stack Engineer,&nbsp;</div>
             <div>Adventurer,&nbsp;</div>
             <SlidingList/>
         </div>
