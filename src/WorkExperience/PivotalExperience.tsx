@@ -86,7 +86,7 @@ const PivotalExperience = () => {
         imageContainerMarginRight="-1.5rem"
         city="Sydney, Australia"
         companyName="VMware Pivotal Labs"
-        titles={["Senior Software Engineer", "Mid Software Engineer"]}
+        titles={["Senior Software Engineer", "Software Engineer"]}
         dateString={["May 2020 to Present", "Feb 2018 to May 2020"]}
         years={3}
         image={PivotalImage}

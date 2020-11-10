@@ -16,7 +16,7 @@ const MavenlinkExperience = () => {
     return <WorkExperience
         city="San Francisco, California"
         companyName="Mavenlink"
-        titles={["Mid Software Engineer", "Engineering Consultant", "Intern, Junior Engineer"]}
+        titles={["Software Engineer", "Engineering Consultant", "Engineering Intern"]}
         dateString={["Jul 2017 to Feb 2018", "Sep 2016 to Jun 2017", "Jun 2015 to Jun 2016"]}
         image={MavenlinkImage}
         years={2.5}
