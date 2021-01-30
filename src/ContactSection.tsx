@@ -2,6 +2,8 @@ import React from "react";
 import {Section, SectionHeader} from "./Layout";
 import joe from './projects/joe.jpg'
 import sailboat from './icons/sailboat.svg'
+// @ts-ignore
+import missionStatement from './projects/mission-statement.pdf'
 
 const ContactSection = () => {
     return <Section id="contact">
@@ -22,7 +24,9 @@ const ContactSection = () => {
                         </div>
                         <div className="media-content">
                             <p className="is-size-4 has-text-dark has-text-weight-semibold">Joe Gaebel</p>
-                            <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}><a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a></p>
+                            <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>
+                                <a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a> | <a href={missionStatement}>Mission Statement</a>
+                            </p>
                             <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>joe.gaebel@hotmail.com</p>
                         </div>
                     </div>
