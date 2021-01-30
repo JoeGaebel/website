@@ -4,6 +4,8 @@ import styled, {keyframes} from 'styled-components';
 import {fadeIn, merge, slideInLeft} from 'react-animations'
 import joe from './projects/joe.jpg'
 import {StyledImageContainer} from "./WorkExperience/WorkExperience";
+// @ts-ignore
+import missionStatement from './projects/mission-statement.pdf'
 
 const fadeSlideIn = merge(fadeIn, slideInLeft)
 const slideInAnimation = keyframes`${fadeSlideIn}`;
@@ -15,7 +17,7 @@ const SlideInDiv = styled.div`
 const HeaderSection = () => {
     return <div className="is-flex is-flex-wrap-wrap" style={{margin: "10rem 1rem"}}>
         <StyledImageContainer>
-            <figure className="image is-128x128 mr-5">
+            <figure className="image is-128x128 mr-5 mt-3">
                 <img className="is-rounded" src={joe}/>
             </figure>
         </StyledImageContainer>
@@ -25,6 +27,7 @@ const HeaderSection = () => {
                 <div>Full Stack Engineer,&nbsp;</div>
                 <SlidingList/>
             </div>
+            <div className="subtitle header-font is-size-6 mt-2">Read my <a className="has-text-info" href={missionStatement}>Mission Statement</a></div>
         </div>
     </div>
 }
