@@ -27,7 +27,11 @@ const HeaderSection = () => {
                 <div>Full Stack Engineer,&nbsp;</div>
                 <SlidingList/>
             </div>
-            <div className="subtitle header-font is-size-6 mt-2">Read my <a className="has-text-info" href={missionStatement}>Mission Statement</a></div>
+            <div className="subtitle header-font is-size-6 mt-2">Read my <a
+                className="has-text-info"
+                href={missionStatement}
+                target="_blank"
+            >Mission Statement</a></div>
         </div>
     </div>
 }
