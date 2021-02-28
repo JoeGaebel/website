@@ -56,7 +56,7 @@ export const Client: FunctionComponent<ClientProps> = ({name, image, description
                             className="header-font is-size-6 subtitle mb-1 has-text-weight-semibold">{projectName}</div>
                         <div className="header-font is-size-7 subtitle mb-0">{name}</div>
                     </div>
-                    <div className="pl-2">
+                    <div className="pl-2" style={{flexShrink: 0, flexGrow: 0}}>
                         <img width={imageSizeOverride || "80px"} height="auto" src={image}/>
                     </div>
 

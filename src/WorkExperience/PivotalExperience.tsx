@@ -25,6 +25,7 @@ const testingTech = [
     "Jest",
     "Enzyme",
     "React Testing Library",
+    "Detox",
     "Cypress",
     "TestCafe"
 ]
@@ -34,6 +35,7 @@ const technologies = [
     "Node.js",
     "Kotlin",
     "Java",
+    "React Native",
     "React.js",
     "Redux",
     "TypeScript",
