@@ -24,6 +24,7 @@ const testingTech = [
     "Enzyme",
     "JUnit 5",
     "MockK",
+    "Mockito",
     "WireMock",
     "Detox",
     "Cypress",
@@ -40,7 +41,8 @@ const technologies = [
     "TypeScript",
     "ES6+",
     "CSS",
-    "PostgreSQL"
+    "PostgreSQL",
+    "RabbitMQ"
 ]
 
 const PivotalImage = <img
