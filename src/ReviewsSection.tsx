@@ -8,6 +8,7 @@ import christian from "./reviews/christian.jpeg"
 import paulette from "./reviews/paulette.jpeg"
 import andrew from "./reviews/andrew.jpeg"
 import morgan from "./reviews/morgan.jpeg"
+import gary from "./reviews/gary.jpeg"
 import pivotal from "./logos/pivotal.png"
 import mavenlink from "./logos/mavenlink.png"
 import sightline from "./logos/sightline.png"
@@ -30,6 +31,7 @@ interface ReviewProps {
 const reviewColors: { [key: string]: string } = {
     "VMware Pivotal Labs": "has-background-success-light",
     "Service NSW": "has-background-success-light",
+    "IAG": "has-background-success-light",
     "Mavenlink": "has-background-info-light",
     "Sightline Innovation": "has-background-link-light"
 }
@@ -100,6 +102,7 @@ const ReviewsSection = () => {
             <Fede/>
             <Joseph/>
             <Christian/>
+            <Gary/>
             <ReviewLabel name="Mavenlink" image={mavenlink} extraClasses="mt-5"/>
             <Paulette/>
             <Andrew/>
@@ -123,11 +126,29 @@ const ReviewLabel: FunctionComponent<ReviewLabelProps> = ({name, image, extraCla
     </div>
 }
 
+const Gary = () => <Review
+    name="Gary Barnett"
+    title="Business Architect"
+    work="IAG"
+    relationship="March 8, 2021 - Gary worked with Joe"
+    image={gary}
+    content={
+        <div>
+            <div className="block">
+                It’s been a pleasure to work with Joe for around 5 months on a Pivotal engagement with IAG, he has
+                impressed with his ability to understand the objectives of our initiative, his outstanding software
+                engineering and with the clarity and engaging nature that he has interacted with our stakeholders.
+                I would highly recommend Joe and look forward to the next opportunity to collaborate again.
+            </div>
+        </div>
+    }
+/>
+
 const Amjad = () => <Review
     isFull={true}
     image={amjad}
     name="Amjad Sidqi"
-    title="Managing Director"
+    title="Director of Pivotal Labs Sydney"
     work="VMware Pivotal Labs"
     relationship="October 25, 2020 - Amjad managed Joe directly"
     content={<div>

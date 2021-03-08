@@ -8,7 +8,8 @@ interface ClientProps {
     image: string
     description: string
     imageSizeOverride?: string
-    keywords?: string[]
+    tech?: string[]
+    testing?: string[]
     link?: string
 }
 
@@ -46,7 +47,7 @@ export const ClientList: FunctionComponent = ({children}) => {
     </div>
 }
 
-export const Client: FunctionComponent<ClientProps> = ({name, image, description, projectName, imageSizeOverride, keywords, link}) => {
+export const Client: FunctionComponent<ClientProps> = ({name, image, description, projectName, imageSizeOverride, tech, testing, link}) => {
     return <div className="column is-one-third mb-0">
         <div className="card">
             <div className="card-content">
@@ -68,11 +69,15 @@ export const Client: FunctionComponent<ClientProps> = ({name, image, description
                     <a target="_blank" className="is-size-7" href={link}>{link}</a></div>}
                 <div>{description}</div>
 
-                {keywords && <div className="mt-4">
-                    {keywords?.map((keyword, index) => <span
+                {(tech || testing) && <div className="mt-4">
+                    {tech?.map((technology, index) => <span
                         key={index}
                         className="tag is-info is-light mr-1 mt-1 is-size-7"
-                    >{keyword}</span>)}
+                    >{technology}</span>)}
+                    {testing?.map((test, index) => <span
+                        key={index}
+                        className="tag is-success is-light mr-1 mt-1 is-size-7"
+                    >{test}</span>)}
                 </div>}
             </div>
         </div>
