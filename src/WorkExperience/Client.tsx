@@ -32,8 +32,7 @@ export const ClientList: FunctionComponent = ({children}) => {
         }
     }
 
-    // Sorry Joe, if I'm not looking for a job I can't show this.
-    return <div ref={ref} style={{display: 'none'}}>
+    return <div ref={ref}>
         <HidingWrapper showing={showPivotalClients}>
             <div className="mb-5 mt-6">
                 <div className="header-font title is-size-4 mb-4">Products I've helped build:</div>
