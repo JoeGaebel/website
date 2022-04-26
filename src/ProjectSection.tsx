@@ -90,7 +90,7 @@ const SurfButler = () => <Project
             Aggregated data across surf report websites with webscraping to score conditions and send texts to subscribers.
         </div>
     </>}
-    githubLink="https://www.github.com/joegaebel/watch-with-dad"
+    githubLink="https://www.github.com/joegaebel/surfbutler"
     keywords={["Vue", "Node", "Jest", "AWS Lambda", "AWS Pinpoint", "Frustration from missing good surfs ourselves"]}
 />
 
