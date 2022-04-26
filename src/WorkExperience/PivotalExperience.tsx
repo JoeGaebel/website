@@ -6,11 +6,12 @@ import {WorkExperience} from "./WorkExperience";
 import React from "react";
 import corelogic from "../logos/corelogic.png";
 import telstra from "../logos/telstra.png";
+import FilledClientList from "./FilledClientList";
 
 const principles = [
     "Agile",
-    "Lean Software Development",
     "Extreme Programming",
+    "Lean Software Engineering",
     "Test First Programming",
     "Full Stack Development",
     "Pair Programming",
@@ -19,8 +20,8 @@ const principles = [
 ]
 
 const testingTech = [
+    "Testing Library",
     "Jest",
-    "React Testing Library",
     "Enzyme",
     "JUnit 5",
     "MockK",
@@ -28,21 +29,26 @@ const testingTech = [
     "WireMock",
     "Detox",
     "Cypress",
-    "TestCafe"
+    "TestCafe",
+    "Selenium"
 ]
 
 const technologies = [
     "Spring Boot",
     "Node.js",
-    "React.js",
+    "React",
+    "Vue",
     "React Native",
+    "Angular",
     "Kotlin",
     "Java",
     "TypeScript",
-    "ES6+",
+    "TailwindCSS",
     "CSS",
     "PostgreSQL",
-    "RabbitMQ"
+    "RabbitMQ",
+    "Kubernetes",
+    "AWS"
 ]
 
 const PivotalImage = <img
@@ -91,10 +97,12 @@ const PivotalExperience = () => {
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Software Engineer"]}
         dateString={["May 2020 to Present", "Feb 2018 to May 2020"]}
-        years={3}
+        years={4}
         image={PivotalImage}
         description={PivotalDescription}
-    />
+    >
+        <FilledClientList/>
+    </WorkExperience>
 }
 
 export default PivotalExperience

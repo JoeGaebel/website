@@ -1,6 +1,8 @@
 import React, {FunctionComponent, useContext, useRef} from "react";
 import {Section, SectionHeader} from "./Layout";
 import amjad from "./reviews/amjad.jpeg"
+import ozlem from "./reviews/ozlem.jpeg"
+import liz from "./reviews/liz.jpeg"
 import david from "./reviews/david.jpeg"
 import fede from "./reviews/fede.jpeg"
 import joseph from "./reviews/joseph.jpeg"
@@ -31,6 +33,7 @@ interface ReviewProps {
 const reviewColors: { [key: string]: string } = {
     "VMware Pivotal Labs": "has-background-success-light",
     "Service NSW": "has-background-success-light",
+    "Sonic Healthcare": "has-background-success-light",
     "IAG": "has-background-success-light",
     "Mavenlink": "has-background-info-light",
     "Sightline Innovation": "has-background-link-light"
@@ -103,6 +106,8 @@ const ReviewsSection = () => {
             <Joseph/>
             <Christian/>
             <Gary/>
+            <Ozlem/>
+            <Liz/>
             <ReviewLabel name="Mavenlink" image={mavenlink} extraClasses="mt-5"/>
             <Paulette/>
             <Andrew/>
@@ -125,6 +130,38 @@ const ReviewLabel: FunctionComponent<ReviewLabelProps> = ({name, image, extraCla
         <div className="title has-text-weight-normal is-size-4 pb-1">{name}</div>
     </div>
 }
+
+const Liz = () => <Review
+    name="Elizabeth Bridge"
+    title="Product Manager"
+    work="Sonic Healthcare"
+    relationship="April 4, 2022 - Elizabeth worked with Joe"
+    image={liz}
+    content={
+        <div>
+            <div className="block">
+                I've been working with Joe for several months now, he has an enthusiasm and vibrance worth cloning. Joe brings a wealth of engineering knowledge to the team and he is a great communicator, ensuring he always communicates for mutual understanding. It's been a pleasure working with Joe and I will miss his energy when he moves to another engagement.
+            </div>
+        </div>
+    }
+/>
+
+const Ozlem = () => <Review
+    name="Ozlem Eskicioglu"
+    title="Product Leader"
+    work="Service NSW"
+    relationship="May 14, 2021 - Ozlem worked with Joe"
+    image={ozlem}
+    content={
+        <div>
+            <div className="block">
+                Joe is a rare find - the type of team mate who energises those around him and galvanises them towards an outcome.
+                An excellent coach and communicator, Joe has a real knack for simplifying the complex and getting everyone on the same page.
+                An asset to any team.
+            </div>
+        </div>
+    }
+/>
 
 const Gary = () => <Review
     name="Gary Barnett"

@@ -94,3 +94,9 @@ html, body {
 .title:not(.is-spaced) + .subtitle {
   margin: unset !important;
 }
+
+@media screen and (min-width: 1408px) {
+  .container:not(.is-max-desktop):not(.is-max-widescreen) {
+    max-width: 1200px !important;
+  }
+}

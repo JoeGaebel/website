@@ -3,15 +3,23 @@ import iag from "../logos/iag.png";
 import service from "../logos/service.png";
 import corelogic from "../logos/corelogic.png";
 import telstra from "../logos/telstra.png";
+import sonic from "../logos/sonic.png";
 import React from "react";
 
-// Sorry Joe, if I'm not looking for a job I can't show this.
-//  Add ClientList as a child to Pivotal <WorkExperience> and you'll be gucci 👍
-const Unused = () => <ClientList>
+const FilledClientList = () => <ClientList>
+    <Client
+        name="MyRIS Team at Sonic Healthcare"
+        imageSizeOverride='45px'
+        projectName="MyRIS Appointment Manager"
+        image={sonic}
+        description="Helped build and scale the appointment manager used across Sonic imaging centres in Australia. Responsible for helping hire and upskill Sonic's in-house engineering team with modern software engineering practices."
+        tech={["Angular", "TypeScript", "DotNet", "TailwindCSS", "Kubernetes"]}
+        testing={["Angular Testing Library", "TestCafe", "WireMock"]}
+    />
     <Client
         name="Serenity Team at IAG"
         imageSizeOverride='40px'
-        projectName="Motor Insurance Quotes"
+        projectName="Car Insurance Quotes"
         image={iag}
         description="Rapidly developed a fully functional motor insurance quote web-app that dynamically generates UI inputs and controls based on metadata provided by IAG backend systems. Provided architecture analysis and productization advice to enable third parties to seamlessly integrate."
         tech={["React", "React Hooks", "TypeScript", "Node.js"]}
@@ -113,3 +121,5 @@ const Unused = () => <ClientList>
         testing={["Jest", "Spring Boot Test"]}
     />
 </ClientList>
+
+export default FilledClientList;

@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useContext, useRef} from "react";
+import React, {FunctionComponent, useContext, useMemo, useRef} from "react";
 import {AppState, StateContext} from "../App";
 import {HidingButton, HidingWrapper} from "../HidingComponents";
 
@@ -15,6 +15,10 @@ interface ClientProps {
 
 export const ClientList: FunctionComponent = ({children}) => {
     const [appState, setState] = useContext(StateContext);
+    const isAuthorized = useMemo(
+        () => new URLSearchParams(window.location.search).get('showProducts'), [window.location.search]
+    )
+
     const ref = useRef<HTMLDivElement>(null)
 
     const showPivotalClients = appState!.showPivotalClients
@@ -32,7 +36,7 @@ export const ClientList: FunctionComponent = ({children}) => {
         }
     }
 
-    return <div ref={ref}>
+    return <div ref={ref} style={isAuthorized ? {} : {display: "none"}}>
         <HidingWrapper showing={showPivotalClients}>
             <div className="mb-5 mt-6">
                 <div className="header-font title is-size-4 mb-4">Products I've helped build:</div>
