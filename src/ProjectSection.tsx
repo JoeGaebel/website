@@ -6,6 +6,7 @@ import spherelink from "./projects/spherelink.png"
 import linkIcon from "./icons/link.svg"
 import githubIcon from "./icons/github.png"
 import dylAndJoe from "./projects/dylAndJoe.jpg"
+import surfButler from "./projects/surfbutler.png"
 import styled from "styled-components";
 
 const SneakyTag: FunctionComponent = ({children}) => {
@@ -17,6 +18,7 @@ const ProjectSection = () => {
         <SectionHeader>Projects</SectionHeader>
         <ProjectsList>
             <WatchWithDad/>
+            <SurfButler/>
             <Rentifier/>
             <Spherelink/>
             <DylAndJoeGoToSanFrancisco/>
@@ -41,7 +43,7 @@ interface ProjectProps {
     image: string
     description: JSX.Element
     githubLink: string
-    projectLink: string
+    projectLink?: string
     keywords: string[]
 }
 
@@ -52,15 +54,15 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
         <div className="card-content">
             <div className="card-image mb-5">
                 <figure className="image">
-                    <a target="_blank" href={projectLink}><img src={image}/></a>
+                    <a target="_blank" href={projectLink || githubLink}><img src={image}/></a>
                 </figure>
             </div>
             <div className="subtitle header-font has-text-weight-semibold is-size-4">{name}</div>
             <div className="mb-3">{description}</div>
             <div className="block is-flex" style={{marginBottom: "0.75rem"}}>
-                <div className="subtitle body-font is-size-7 mb-0">
+                {projectLink && <div className="subtitle body-font is-size-7 mb-0">
                     <a target="_blank" href={projectLink}><img width="30px" src={linkIcon}/></a>
-                </div>
+                </div>}
                 <div className="subtitle body-font is-size-7 mb-0">
                     <a target="_blank" href={githubLink}><img width="30px" src={githubIcon}/></a>
                 </div>
@@ -78,6 +80,20 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
 }
 
 
+const SurfButler = () => <Project
+    name="Surf Butler"
+    image={surfButler}
+    description={<>
+        <div className="block">Never miss a great surf again.</div>
+        <div className="block">
+            A friend and I created a subscription service to receive a text the night before good surf conditions on your favourite beaches.
+            Aggregated data across surf report websites with webscraping to score conditions and send texts to subscribers.
+        </div>
+    </>}
+    githubLink="https://www.github.com/joegaebel/watch-with-dad"
+    keywords={["Vue", "Node", "Jest", "AWS Lambda", "AWS Pinpoint", "Frustration from missing good surfs ourselves"]}
+/>
+
 const WatchWithDad = () => <Project
     name="Watch With Dad"
     image={watchWithDad}
@@ -87,7 +103,6 @@ const WatchWithDad = () => <Project
             Allows you to create a room and have friends and family join, and be able to synchronise video playback.
         </div>
     </>}
-    projectLink="http://watch-with-dad.cfapps.io"
     githubLink="https://www.github.com/joegaebel/watch-with-dad"
     keywords={["Fully test driven", "React", "Node.js", "Websockets", "Kubernetes", "A love for Top Gun"]}
 />
