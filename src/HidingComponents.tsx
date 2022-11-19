@@ -1,4 +1,5 @@
-import React, {CSSProperties, FunctionComponent} from "react";
+import React, { CSSProperties } from "react";
+import { FCWithChildren } from "./Layout";
 
 function getWrapperStyle(heightOverride?: string): CSSProperties {
     return {
@@ -32,7 +33,7 @@ interface HidingWrapperProps {
     showing?: boolean
     heightOverride?: string
 }
-export const HidingWrapper: FunctionComponent<HidingWrapperProps> = ({children, showing, heightOverride}) => {
+export const HidingWrapper: FCWithChildren<HidingWrapperProps> = ({children, showing, heightOverride}) => {
     if (!showing) {
         return <div style={getWrapperStyle(heightOverride)}>{children}</div>
     } else {
@@ -44,7 +45,7 @@ interface HidingButtonProps {
     showing?: boolean
     onClick: () => void
 }
-export const HidingButton: FunctionComponent<HidingButtonProps> = ({showing, onClick}) => {
+export const HidingButton: FCWithChildren<HidingButtonProps> = ({showing, onClick}) => {
     if (!showing) {
         return <div style={seeMoreStyle}>
             <button className="button is-medium is-dark" onClick={onClick}>See more</button>

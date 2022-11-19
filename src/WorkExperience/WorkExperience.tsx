@@ -1,5 +1,6 @@
-import React, {FunctionComponent} from "react";
+import React from "react";
 import styled from "styled-components";
+import { FCWithChildren } from "../Layout";
 
 interface WorkProps {
     companyName: string
@@ -12,7 +13,7 @@ interface WorkProps {
     imageContainerMarginRight?: string
 }
 
-export const WorkExperience: FunctionComponent<WorkProps> = (props) => {
+export const WorkExperience: FCWithChildren<WorkProps> = (props) => {
     const {companyName, children, titles, dateString, description, city, image, years = 0, imageContainerMarginRight} = props
 
     const shortYearString = `${years} yrs.`

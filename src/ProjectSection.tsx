@@ -1,15 +1,14 @@
-import React, {FunctionComponent} from "react";
-import {Section, SectionHeader} from "./Layout";
-import watchWithDad from "./projects/watch-with-dad.png"
-import rentifier from "./projects/rentifier.png"
-import spherelink from "./projects/spherelink.png"
-import linkIcon from "./icons/link.svg"
-import githubIcon from "./icons/github.png"
-import dylAndJoe from "./projects/dylAndJoe.jpg"
-import surfButler from "./projects/surfbutler.png"
-import styled from "styled-components";
+import React, { FunctionComponent } from "react";
+import githubIcon from "./icons/github.png";
+import linkIcon from "./icons/link.svg";
+import { FCWithChildren, Section, SectionHeader } from "./Layout";
+import dylAndJoe from "./projects/dylAndJoe.jpg";
+import rentifier from "./projects/rentifier.png";
+import spherelink from "./projects/spherelink.png";
+import surfButler from "./projects/surfbutler.png";
+import watchWithDad from "./projects/watch-with-dad.png";
 
-const SneakyTag: FunctionComponent = ({children}) => {
+const SneakyTag: FCWithChildren = ({children}) => {
     return <span style={{fontSize: "0.5rem"}} className="tag is-info is-light mr-1 mt-1">{children}</span>
 }
 
@@ -24,15 +23,14 @@ const ProjectSection = () => {
             <DylAndJoeGoToSanFrancisco/>
         </ProjectsList>
         <div className="is-flex is-justify-content-flex-end">
-            <a className="has-text-grey has-text-weight-light is-size-7"
-               href="https://www.github.com/joegaebel/website">
+            <a className="has-text-grey has-text-weight-light is-size-7" href="https://www.github.com/joegaebel/website">
                 joegaebel.com is also a
                 project <SneakyTag>TypeScript</SneakyTag><SneakyTag>React</SneakyTag><SneakyTag>Bulma</SneakyTag></a>
         </div>
     </Section>
 }
 
-const ProjectsList: FunctionComponent = ({children}) => {
+const ProjectsList: FCWithChildren = ({children}) => {
     return <div className="columns is-multiline">
         {children}
     </div>
@@ -54,17 +52,17 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
         <div className="card-content">
             <div className="card-image mb-5">
                 <figure className="image">
-                    <a target="_blank" href={projectLink || githubLink}><img src={image}/></a>
+                    <a target="_blank" href={projectLink || githubLink} rel="noreferrer"><img src={image}/></a>
                 </figure>
             </div>
             <div className="subtitle header-font has-text-weight-semibold is-size-4">{name}</div>
             <div className="mb-3">{description}</div>
             <div className="block is-flex" style={{marginBottom: "0.75rem"}}>
                 {projectLink && <div className="subtitle body-font is-size-7 mb-0">
-                    <a target="_blank" href={projectLink}><img width="30px" src={linkIcon}/></a>
+                    <a target="_blank" href={projectLink} rel="noreferrer"><img width="30px" src={linkIcon}/></a>
                 </div>}
                 <div className="subtitle body-font is-size-7 mb-0">
-                    <a target="_blank" href={githubLink}><img width="30px" src={githubIcon}/></a>
+                    <a target="_blank" href={githubLink} rel="noreferrer"><img width="30px" src={githubIcon}/></a>
                 </div>
             </div>
             <div className="block is-relative">
@@ -72,7 +70,7 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
                 <div>
                     {keywords.map((keyword, index) =>
                         <span key={index}
-                              className="tag is-info is-light mr-1 mt-1 is-size-7">{keyword}</span>)}
+                            className="tag is-info is-light mr-1 mt-1 is-size-7">{keyword}</span>)}
                 </div>
             </div>
         </div>

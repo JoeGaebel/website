@@ -1,5 +1,5 @@
 import React, {FunctionComponent, useContext, useRef} from "react";
-import {Section, SectionHeader} from "./Layout";
+import {FCWithChildren, Section, SectionHeader} from "./Layout";
 import amjad from "./reviews/amjad.jpeg"
 import ozlem from "./reviews/ozlem.jpeg"
 import liz from "./reviews/liz.jpeg"
@@ -66,7 +66,7 @@ const Review: FunctionComponent<ReviewProps> = ({name, title, work, content, rel
     </div>
 }
 
-const ReviewsList: FunctionComponent = ({children}) => {
+const ReviewsList: FCWithChildren = ({children}) => {
     const [appState, setState] = useContext(StateContext);
     const ref = useRef<HTMLDivElement>(null)
 

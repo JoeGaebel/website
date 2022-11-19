@@ -11,7 +11,7 @@ const fadeSlideIn = merge(fadeIn, slideInLeft)
 const slideInAnimation = keyframes`${fadeSlideIn}`;
 
 const SlideInDiv = styled.div`
-  animation: 2s ${slideInAnimation};
+    animation: 2s ${slideInAnimation};
 `;
 
 const HeaderSection = () => {
@@ -30,7 +30,7 @@ const HeaderSection = () => {
             <div className="subtitle header-font is-size-6 mt-2">Read my <a
                 className="has-text-info"
                 href={missionStatement}
-                target="_blank"
+                target="_blank" rel="noreferrer"
             >Mission Statement</a></div>
         </div>
     </div>

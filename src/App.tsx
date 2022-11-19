@@ -1,11 +1,11 @@
-import React, {Dispatch, FunctionComponent, SetStateAction, useState} from 'react';
-import HeaderSection from "./HeaderSection";
-import ExperienceSection from "./WorkExperience/ExperienceSection";
-import ProjectSection from "./ProjectSection";
-import EducationSection from "./EducationSection";
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import ContactSection from "./ContactSection";
+import EducationSection from "./EducationSection";
+import HeaderSection from "./HeaderSection";
 import Navigation from "./Navigation";
+import ProjectSection from "./ProjectSection";
 import ReviewsSection from "./ReviewsSection";
+import ExperienceSection from "./WorkExperience/ExperienceSection";
 
 export interface AppState {
     showPivotalClients: boolean
@@ -39,6 +39,6 @@ function App() {
 
 export default App;
 
-const SectionContainer: FunctionComponent = ({children}) => <div className="container">
+const SectionContainer = ({children}: {children: JSX.Element[]}): JSX.Element => <div className="container">
     {children}
 </div>

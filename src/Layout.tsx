@@ -1,6 +1,8 @@
-import React, {CSSProperties, FunctionComponent} from "react";
+import React, { CSSProperties, FC, PropsWithChildren } from "react";
 
-export const SectionHeader: FunctionComponent = ({children}) => <div
+export type FCWithChildren<T = {}> = FC<PropsWithChildren<T>>
+
+export const SectionHeader: FCWithChildren = ({children}) => <div
     className="
         is-full
         has-text-centered
@@ -11,7 +13,7 @@ export const SectionHeader: FunctionComponent = ({children}) => <div
     {children}
 </div>
 
-export const SectionSubHeader: FunctionComponent = ({children}) => <div className="
+export const SectionSubHeader: FCWithChildren = ({children}) => <div className="
     is-size-6-mobile
     is-size-6-touch
     is-size-5-tablet
@@ -27,7 +29,7 @@ interface SectionProps {
     id?: string
     style?: CSSProperties
 }
-export const Section: FunctionComponent<SectionProps> = ({children, id, style}) => <div
+export const Section: FCWithChildren<SectionProps> = ({children, id, style}) => <div
     id={id}
     className="section mb-5"
     style={{...style}}>

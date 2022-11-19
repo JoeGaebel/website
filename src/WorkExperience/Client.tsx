@@ -1,6 +1,7 @@
-import React, {FunctionComponent, useContext, useMemo, useRef} from "react";
+import React, {FC, FunctionComponent, useContext, useMemo, useRef} from "react";
 import {AppState, StateContext} from "../App";
 import {HidingButton, HidingWrapper} from "../HidingComponents";
+import { FCWithChildren } from "../Layout";
 
 interface ClientProps {
     name: string
@@ -13,7 +14,7 @@ interface ClientProps {
     link?: string
 }
 
-export const ClientList: FunctionComponent = ({children}) => {
+export const ClientList: FCWithChildren = ({children}) => {
     const [appState, setState] = useContext(StateContext);
     const isAuthorized = useMemo(
         () => new URLSearchParams(window.location.search).get('showProducts'), [window.location.search]
@@ -51,7 +52,7 @@ export const ClientList: FunctionComponent = ({children}) => {
     </div>
 }
 
-export const Client: FunctionComponent<ClientProps> = ({name, image, description, projectName, imageSizeOverride, tech, testing, link}) => {
+export const Client: FC<ClientProps> = ({name, image, description, projectName, imageSizeOverride, tech, testing, link}) => {
     return <div className="column is-one-third mb-0">
         <div className="card">
             <div className="card-content">
