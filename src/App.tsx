@@ -5,6 +5,7 @@ import HeaderSection from "./HeaderSection";
 import Navigation from "./Navigation";
 import ProjectSection from "./ProjectSection";
 import ReviewsSection from "./ReviewsSection";
+import VolunteeringSection from './VolunteeringSection';
 import ExperienceSection from "./WorkExperience/ExperienceSection";
 
 export interface AppState {
@@ -27,6 +28,7 @@ function App() {
             <Navigation/>
             <SectionContainer>
                 <HeaderSection/>
+                <VolunteeringSection/>
                 <ExperienceSection/>
                 <ReviewsSection/>
                 <ProjectSection/>

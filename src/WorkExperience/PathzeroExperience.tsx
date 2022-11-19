@@ -30,6 +30,7 @@ const technologies = [
     "TypeScript",
     "PostgreSQL",
     "Terraform",
+    "Bitbucket Pipelines"
 ]
 
 const PathzeroImage = <img

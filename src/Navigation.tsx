@@ -4,6 +4,9 @@ const Navigation = () => <nav className="navbar is-transparent is-fixed-top is-f
     <div>
         <div className="navbar-menu">
             <div className="navbar-start is-size-5 has-text-weight-semibold">
+                <a className="navbar-item" href="#volunteering">
+                    Volunteering
+                </a>
                 <a className="navbar-item" href="#experience">
                     Experience
                 </a>
