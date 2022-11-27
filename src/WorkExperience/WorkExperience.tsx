@@ -11,6 +11,7 @@ interface WorkProps {
     image: JSX.Element
     years?: number
     imageContainerMarginRight?: string
+    months?: number
 }
 
 export const WorkExperience: FCWithChildren<WorkProps> = (props) => {
