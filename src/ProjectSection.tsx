@@ -7,6 +7,7 @@ import rentifier from "./projects/rentifier.png";
 import spherelink from "./projects/spherelink.png";
 import surfButler from "./projects/surfbutler.png";
 import watchWithDad from "./projects/watch-with-dad.png";
+import garage from "./projects/garage.png";
 
 const SneakyTag: FCWithChildren = ({children}) => {
     return <span style={{fontSize: "0.5rem"}} className="tag is-info is-light mr-1 mt-1">{children}</span>
@@ -16,6 +17,7 @@ const ProjectSection = () => {
     return <Section id="projects">
         <SectionHeader>Projects</SectionHeader>
         <ProjectsList>
+            <LinkyGarage/>
             <WatchWithDad/>
             <SurfButler/>
             <Rentifier/>
@@ -77,6 +79,18 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
         </div></div>
 }
 
+const LinkyGarage = () => <Project
+    name="Linky Garage"
+    image={garage}
+    description={<>
+        <div className="block">Open my garage door, with your phone!</div>
+        <div className="block">
+            My apartment garage door opener is massive, and I didn't want to carry another thing around. So I set up a Rasberry Pi to serve a website and toggle the garage door for me.
+        </div>
+    </>}
+    githubLink="https://www.github.com/joegaebel/garage"
+    keywords={["NextJs", "Raspberry Pi", "TypeScript", "Annoyance is the mother of invention"]}
+/>
 
 const SurfButler = () => <Project
     name="Surf Butler"
