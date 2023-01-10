@@ -78,7 +78,7 @@ const PathzeroExperience = () => {
         companyName="Pathzero"
         titles={["Senior Software Engineer"]}
         dateString={["July 2022 to Present"]}
-        years={0}
+        years={'6 mos.'}
         image={PathzeroImage}
         description={PathzeroDescription}
     >

@@ -92,7 +92,7 @@ const PivotalExperience = () => {
         companyName="VMware Pivotal Labs"
         titles={["Senior Software Engineer", "Software Engineer"]}
         dateString={["May 2020 to July 2022", "Feb 2018 to May 2020"]}
-        years={4.5}
+        years={5}
         image={PivotalImage}
         description={PivotalDescription}
     >

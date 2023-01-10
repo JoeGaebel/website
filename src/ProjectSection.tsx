@@ -89,7 +89,7 @@ const LinkyGarage = () => <Project
         </div>
     </>}
     githubLink="https://www.github.com/joegaebel/garage"
-    keywords={["NextJs", "Raspberry Pi", "TypeScript", "Annoyance is the mother of invention"]}
+    keywords={["NextJs", "Raspberry Pi", "TypeScript", "Lots of time staring at schematics"]}
 />
 
 const SurfButler = () => <Project

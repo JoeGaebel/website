@@ -16,6 +16,7 @@ const SightlineExperience = () => {
     return <WorkExperience
         imageContainerMarginRight="-0.6rem"
         city="London, Ontario"
+        years="6 mos."
         companyName="Sightline Innovation"
         titles={["Software Developer"]}
         dateString={["Sep 2014 to Mar 2015"]}

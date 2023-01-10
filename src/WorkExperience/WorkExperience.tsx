@@ -9,15 +9,19 @@ interface WorkProps {
     dateString: string[]
     description?: string | JSX.Element
     image: JSX.Element
-    years?: number
+    years?: number | string
     imageContainerMarginRight?: string
     months?: number
 }
 
 export const WorkExperience: FCWithChildren<WorkProps> = (props) => {
-    const {companyName, children, titles, dateString, description, city, image, years = 0, imageContainerMarginRight} = props
-
-    const shortYearString = `${years} yrs.`
+    const {companyName, children, titles, dateString, description, city, image, years, imageContainerMarginRight} = props
+    let yearString;
+    if (years && typeof years === 'string') {
+        yearString = years
+    } else if (years) {
+        yearString = `${years} yrs.`
+    }
     return <div style={{marginBottom: "10rem"}}>
         <div style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex", flexWrap: "wrap", marginBottom: "-0.25rem"}}>
@@ -28,8 +32,8 @@ export const WorkExperience: FCWithChildren<WorkProps> = (props) => {
                     <div className="is-flex-desktop">
                         <div className="is-flex is-flex-wrap-nowrap">
                             <div className="is-size-4 header-font has-text-weight-light has-text-weight-semibold">{companyName}</div>
-                            {years > 0 && <div className="ml-2 has-text-weight-light has-text-grey is-size-6 header-font" style={{marginTop: "0.5rem"}}>
-                                {shortYearString}
+                            {years && <div className="ml-2 has-text-weight-light has-text-grey is-size-6 header-font" style={{marginTop: "0.5rem"}}>
+                                {yearString}
                             </div>}
                         </div>
                     </div>
