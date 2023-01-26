@@ -27,7 +27,7 @@ const ContactSection = () => {
                             <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>
                                 <a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a> | <a target="_blank" href={missionStatement}>Mission Statement</a>
                             </p>
-                            <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>joe.gaebel@hotmail.com</p>
+                            <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>joe.gaebel@gmail.com</p>
                         </div>
                     </div>
                 </div>

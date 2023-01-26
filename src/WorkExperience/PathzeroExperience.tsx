@@ -1,6 +1,5 @@
 import React from "react";
 import PathzeroLogo from '../logos/pathzero.svg';
-import FilledClientList from "./FilledClientList";
 import { WorkExperience } from "./WorkExperience";
 
 const principles = [
