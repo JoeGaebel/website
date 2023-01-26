@@ -29,7 +29,6 @@ const technologies = [
     "Rails",
     "ES6+",
     "React",
-    "Selenium",
     "Elastic Search"
 ]
 
