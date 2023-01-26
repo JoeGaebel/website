@@ -1,17 +1,16 @@
-import React, {useEffect, useState} from "react";
-import styled, {keyframes} from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled, { keyframes } from 'styled-components';
 // @ts-ignore
-import {fadeIn, merge, slideInLeft} from 'react-animations'
-import joe from './projects/joe.jpg'
-import {StyledImageContainer} from "./WorkExperience/WorkExperience";
+import { fadeIn } from 'react-animations';
+import joe from './projects/joe.jpg';
+import { StyledImageContainer } from "./WorkExperience/WorkExperience";
 // @ts-ignore
-import missionStatement from './projects/mission-statement.pdf'
+import missionStatement from './projects/mission-statement.pdf';
 
-const fadeSlideIn = merge(fadeIn, slideInLeft)
-const slideInAnimation = keyframes`${fadeSlideIn}`;
+const slideInAnimation = keyframes`${fadeIn}`;
 
 const SlideInDiv = styled.div`
-    animation: 2s ${slideInAnimation};
+    animation: 1.5s ${slideInAnimation};
 `;
 
 const HeaderSection = () => {

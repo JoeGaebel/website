@@ -1,5 +1,5 @@
-import React, {FunctionComponent, useContext, useRef} from "react";
-import {FCWithChildren, Section, SectionHeader} from "./Layout";
+import React, { FunctionComponent, useContext, useRef } from "react";
+import { FCWithChildren, Section, SectionHeader } from "./Layout";
 import amjad from "./reviews/amjad.jpeg"
 import ozlem from "./reviews/ozlem.jpeg"
 import liz from "./reviews/liz.jpeg"
@@ -11,12 +11,26 @@ import paulette from "./reviews/paulette.jpeg"
 import andrew from "./reviews/andrew.jpeg"
 import morgan from "./reviews/morgan.jpeg"
 import gary from "./reviews/gary.jpeg"
+import carrie from "./reviews/carrie.jpeg"
+import jvdl from "./reviews/jvdl.jpeg"
+import dan from "./reviews/dan.jpeg"
 import pivotal from "./logos/pivotal.png"
+import pathzero from "./logos/pathzero.svg"
 import mavenlink from "./logos/mavenlink.png"
 import sightline from "./logos/sightline.png"
-import {AppState, StateContext} from "./App";
-import {HidingButton, HidingWrapper} from "./HidingComponents";
+import { AppState, StateContext } from "./App";
+import { HidingButton, HidingWrapper } from "./HidingComponents";
 
+
+const reviewColors: Record<string, string> = {
+    "Pathzero": "has-background-primary-light",
+    "VMware Pivotal Labs": "has-background-success-light",
+    "Service NSW": "has-background-success-light",
+    "Sonic Healthcare": "has-background-success-light",
+    "IAG": "has-background-success-light",
+    "Mavenlink": "has-background-info-light",
+    "Sightline Innovation": "has-background-link-light"
+}
 
 interface ReviewProps {
     name: string
@@ -29,17 +43,7 @@ interface ReviewProps {
     content: JSX.Element
 }
 
-
-const reviewColors: { [key: string]: string } = {
-    "VMware Pivotal Labs": "has-background-success-light",
-    "Service NSW": "has-background-success-light",
-    "Sonic Healthcare": "has-background-success-light",
-    "IAG": "has-background-success-light",
-    "Mavenlink": "has-background-info-light",
-    "Sightline Innovation": "has-background-link-light"
-}
-
-const Review: FunctionComponent<ReviewProps> = ({name, title, work, content, relationship, sharedWork, image, isFull}) => {
+const Review: FunctionComponent<ReviewProps> = ({ name, title, work, content, relationship, sharedWork, image, isFull }) => {
     const backgroundColor = reviewColors[sharedWork || work]
 
     return <div className={`column ${isFull ? "is-full" : "is-half"}`}>
@@ -48,7 +52,7 @@ const Review: FunctionComponent<ReviewProps> = ({name, title, work, content, rel
                 <div className="media">
                     <div className="media-left">
                         <figure className="image is-48x48">
-                            <img className="is-rounded" src={image} alt="Placeholder image"/>
+                            <img className="is-rounded" src={image} alt="Placeholder image" />
                         </figure>
                     </div>
                     <div className="media-content">
@@ -66,7 +70,7 @@ const Review: FunctionComponent<ReviewProps> = ({name, title, work, content, rel
     </div>
 }
 
-const ReviewsList: FCWithChildren = ({children}) => {
+const ReviewsList: FCWithChildren = ({ children }) => {
     const [appState, setState] = useContext(StateContext);
     const ref = useRef<HTMLDivElement>(null)
 
@@ -90,29 +94,33 @@ const ReviewsList: FCWithChildren = ({children}) => {
             <div className="columns is-multiline">
                 {children}
             </div>
-            <HidingButton showing={showReviews} onClick={handleClick}/>
+            <HidingButton showing={showReviews} onClick={handleClick} />
         </HidingWrapper>
     </div>
 }
 
 const ReviewsSection = () => {
-    return <Section id="reviews" style={{marginTop: "-10rem"}}>
+    return <Section id="reviews" style={{ marginTop: "-10rem" }}>
         <SectionHeader>Reviews</SectionHeader>
         <ReviewsList>
-            <ReviewLabel name="VMware Pivotal Labs" image={pivotal}/>
-            <Amjad/>
-            <David/>
-            <Fede/>
-            <Joseph/>
-            <Christian/>
-            <Gary/>
-            <Ozlem/>
-            <Liz/>
-            <ReviewLabel name="Mavenlink" image={mavenlink} extraClasses="mt-5"/>
-            <Paulette/>
-            <Andrew/>
-            <ReviewLabel name="Sightline Innovation" image={sightline} extraClasses="mt-5"/>
-            <Morgan/>
+            <ReviewLabel name="Pathzero" image={pathzero} imageWidth="65px" imageClasses="mr-2" />
+            <JVDL />
+            <Carrie />
+            <Daniel />
+            <ReviewLabel name="VMware Pivotal Labs" image={pivotal} extraClasses="mt-4" />
+            <Amjad />
+            <David />
+            <Fede />
+            <Joseph />
+            <Christian />
+            <Gary />
+            <Ozlem />
+            <Liz />
+            <ReviewLabel name="Mavenlink" image={mavenlink} extraClasses="mt-5 mb-3" />
+            <Paulette />
+            <Andrew />
+            <ReviewLabel name="Sightline Innovation" image={sightline} extraClasses="mt-5 mb-3" />
+            <Morgan />
         </ReviewsList>
     </Section>
 }
@@ -121,19 +129,89 @@ interface ReviewLabelProps {
     name: string
     image: string
     extraClasses?: string
+    imageWidth?: string
+    imageClasses?: string
 }
 
-const ReviewLabel: FunctionComponent<ReviewLabelProps> = ({name, image, extraClasses}) => {
+const ReviewLabel: FunctionComponent<ReviewLabelProps> = ({ name, image, extraClasses, imageWidth, imageClasses }) => {
     return <div
         className={`is-flex is-align-items-center is-justify-content-center is-full column ${extraClasses ? extraClasses : ''}`}>
-        <div><img width="100px" src={image}/></div>
+        <div><img width={imageWidth || "100px"} src={image} className={imageClasses || ''} /></div>
         <div className="title has-text-weight-normal is-size-4 pb-1">{name}</div>
     </div>
 }
 
+
+const JVDL = () => <Review
+    isFull
+    name="John van der Loo"
+    title="Senior Frontend Engineer"
+    work="Pathzero"
+    relationship="January 25, 2023 - JVDL worked with Joe"
+    image={jvdl}
+    content={
+        <div>
+            <div className="block">
+                Joe has been amazing to work with. Our working relationship has been short-ish, but during that time it has become clear that he is an incredibly smart and passionate software engineer. During his time at Pathzero, Joe has really improved our testing foundation and strategies – the guy is incredibly passionate about Journey/Integration tests so that user journeys are represented throughout.
+            </div>
+            <div className="block">
+                Straight up engineering isn't the only thing he cares about. Joe has been involved in improving our processes and strategy for working together. By mapping out solutions, and perhaps most importantly, understanding the value of and seeking the input of others while doing this. He's built out some great frameworks that we'll continue to use for gathering input and mapping user journeys. Joe also communicated findings very clearly to engineers and management alike, and he was able to communicate effectively to both audiences.
+            </div>
+            <div className="block">
+                Personality wise, Joe is kind, warm, and has a good sense of humour, all of which helped him to quickly build a rapport with the team.
+            </div>
+            <div className="block">
+                Overall, Joe is an incredibly solid software engineer and I would not hesitate in the slightest to recommend him for a position and I genuinely look forward to working with him again in the future.
+            </div>
+        </div>
+    }
+/>
+
+const Daniel = () => <Review
+    name="Daniel Hay"
+    title="Engineering Team Lead"
+    work="Pathzero"
+    relationship="January 24, 2023 - Daniel worked with Joe"
+    image={dan}
+    content={
+        <div>
+            <div className="block">
+                I worked with Joe for six months, and in that time he designed a complete rebuild of our core server side code and an overhaul of our testing strategy.
+            </div>
+            <div className="block">
+                Joe develops solutions that take input from everyone, that are sane, robust, and that would meet anyone’s standards for excellence.
+            </div>
+            <div className="block">
+                Joe is a very talented and knowledgeable engineer, but more important than that, he is an outstanding solution builder and communicator.
+            </div>
+        </div>
+    }
+/>
+
+const Carrie = () => <Review
+    name="Carrie Markel"
+    title="Senior Product Designer"
+    work="Pathzero"
+    relationship="January 23, 2023 - Carrie worked with Joe"
+    image={carrie}
+    content={
+        <div>
+            <div className="block">
+                Joe is that rare breed of developer who can think through and execute complex technical problems while just as easily switching to conversations around design and product.
+            </div>
+            <div className="block">
+                His thoughtful questions and attention to detail have helped me think through problems more deeply as a designer while also pushing our team to adopt better processes for working together more effectively.
+            </div>
+            <div className="block">
+                On top of it all, Joe's warm demeanour and sense of humour make it easy and enjoyable to work with him every day. I'll truly miss him and hope we'll work again together down the road.
+            </div>
+        </div>
+    }
+/>
+
 const Liz = () => <Review
     name="Elizabeth Bridge"
-    title="Product Manager"
+    title="Senior Product Manager"
     work="Sonic Healthcare"
     relationship="April 4, 2022 - Elizabeth worked with Joe"
     image={liz}
@@ -148,7 +226,7 @@ const Liz = () => <Review
 
 const Ozlem = () => <Review
     name="Ozlem Eskicioglu"
-    title="Product Leader"
+    title="Group Product Director"
     work="Service NSW"
     relationship="May 14, 2021 - Ozlem worked with Joe"
     image={ozlem}
@@ -165,7 +243,7 @@ const Ozlem = () => <Review
 
 const Gary = () => <Review
     name="Gary Barnett"
-    title="Business Architect"
+    title="Executive Manager"
     work="IAG"
     relationship="March 8, 2021 - Gary worked with Joe"
     image={gary}
@@ -185,8 +263,9 @@ const Amjad = () => <Review
     isFull={true}
     image={amjad}
     name="Amjad Sidqi"
-    title="Director of Pivotal Labs Sydney"
-    work="VMware Pivotal Labs"
+    title="Senior Director"
+    work="Roam Digital"
+    sharedWork="VMware Pivotal Labs"
     relationship="October 25, 2020 - Amjad managed Joe directly"
     content={<div>
         <div className="block">
@@ -218,8 +297,9 @@ const Amjad = () => <Review
 const David = () => <Review
     image={david}
     name="David Julia"
-    title="Director Of Pivotal Labs ANZ"
-    work="VMware Pivotal Labs"
+    sharedWork="VMware Pivotal Labs"
+    title="Engineering Leader"
+    work="Netflix"
     relationship="November 2, 2020 - David managed Joe directly"
     content={<div>
         <div className="block">
@@ -237,8 +317,9 @@ const David = () => <Review
 const Fede = () => <Review
     image={fede}
     name="Fede Lopez Laborda"
-    title="Engineering Manager"
-    work="VMware Pivotal Labs"
+    title="Software Development Manager"
+    work="Amazon"
+    sharedWork="VMware Pivotal Labs"
     relationship="October 26, 2020 - Fede managed Joe directly"
     content={<div>
         <div className="block">
@@ -277,9 +358,9 @@ const Christian = () => <Review
 const Joseph = () => <Review
     image={joseph}
     name="Joseph Bonifacio"
-    title="Senior Product Engineer"
+    title="Principal Product Engineer"
     work="Service NSW"
-    relationship="October 24, 2020 - Joe worked with Joseph"
+    relationship="October 24, 2020 - Joseph worked with Joe"
     content={<div>
         <div className="block">
             Joe has a very unique gift of being able to drive a team towards success with not only his technical
@@ -299,8 +380,8 @@ const Joseph = () => <Review
 const Paulette = () => <Review
     isFull={true}
     image={paulette}
-    name="Paulette Luftig"
-    title="Director of Engineering"
+    name="Paulette Carlson"
+    title="VP of Engineering"
     work="Mavenlink"
     relationship="October 28, 2016 - Paulette managed Joe directly"
     content={<div>
