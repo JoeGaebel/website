@@ -82,9 +82,7 @@ const PathzeroExperience = () => {
         years={'6 mos.'}
         image={PathzeroImage}
         description={PathzeroDescription}
-    >
-        <FilledClientList/>
-    </WorkExperience>
+    />
 }
 
 export default PathzeroExperience
