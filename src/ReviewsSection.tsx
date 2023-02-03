@@ -14,6 +14,7 @@ import gary from "./reviews/gary.jpeg"
 import carrie from "./reviews/carrie.jpeg"
 import jvdl from "./reviews/jvdl.jpeg"
 import dan from "./reviews/dan.jpeg"
+import rhett from "./reviews/rhett.jpeg"
 import pivotal from "./logos/pivotal.png"
 import pathzero from "./logos/pathzero.svg"
 import mavenlink from "./logos/mavenlink.png"
@@ -104,6 +105,7 @@ const ReviewsSection = () => {
         <SectionHeader>Reviews</SectionHeader>
         <ReviewsList>
             <ReviewLabel name="Pathzero" image={pathzero} imageWidth="65px" imageClasses="mr-2" />
+            <Rhett />
             <JVDL />
             <Carrie />
             <Daniel />
@@ -141,6 +143,30 @@ const ReviewLabel: FunctionComponent<ReviewLabelProps> = ({ name, image, extraCl
     </div>
 }
 
+const Rhett = () => <Review
+    isFull
+    name="Rhett Blanch"
+    title="Head of Platform Architecture"
+    work="Pathzero"
+    relationship="Feb 3, 2023 - Rhett managed Joe directly"
+    image={rhett}
+    content={
+        <div>
+            <div className="block">
+                I have had the pleasure of working with Joe over the past six months, and I am consistently impressed by his technical skills and desire to take on board the “view of the customer”. A set of workshops he ran with the Engineering team have helped guide decisions on improving the platform.
+            </div>
+            <div className="block">
+                Joe is a great communicator, always making sure to keep the team informed and on track through direct collaboration or running training.
+            </div>
+            <div className="block">
+                Joe is proactive, recommending improvements processes and practices. 
+            </div>
+            <div className="block">
+                He is a great asset to any team. 
+            </div>
+        </div>
+    }
+/>
 
 const JVDL = () => <Review
     isFull
