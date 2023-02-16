@@ -48,7 +48,7 @@ const PathzeroDescription = <div>
     <div className="block">At Pathzero I <b>developed the foundation for delivering modern API services</b> with a well tested NestJS boilerplate API following Clean Architecture, Test-First Programming, and implementing the Command and Query Responsibility Segregation pattern.</div>
     <div className="block">Additionally I <b>paired with product teams</b> to help with adoption of this API foundation, implementing features, and delivering those features to users.</div>
     <div className="block">I <b>helped improve ways of working and engineering practices</b> including test-first programming, one week iterations, running Discovery and Framing workshops, and Lean Inceptions</div>
-    <div className="block">As well, I <b>operated as the team lead and product manager</b> for the User and Login portal of the platform, writing and sequencing user stories, planning the application architecture, running sprint planning meetings, performing code reviews, and helping implement features.</div>
+    <div className="block">As well, I <b>operated as the team engineering lead and product manager</b>, implementing the User and Login portal of the platform, writing and sequencing user stories, planning the application architecture, running sprint planning meetings, performing code reviews, and helping implement features.</div>
 
 
     <div className="mt-5">The practices I help instil are:</div>
