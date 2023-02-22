@@ -1,7 +1,8 @@
-import React, { FC } from "react";
-import { Section, SectionHeader } from "./Layout";
+import React, {FC, useCallback} from "react";
+import {Section, SectionHeader} from "./Layout";
 import surfLifeSaving from './logos/surf-life-saving.png'
 import szc from './logos/SZC.png'
+import {trackInterestInVolunteering} from "./InterestTracking";
 
 
 interface VolunteeringProps {
@@ -12,28 +13,12 @@ interface VolunteeringProps {
     roles: string[];
 }
 
-// const Volunteering: FC<VolunteeringProps> = ({ image, title, roles, description, website }) => {
-//     return <div className="column is-full mb-2">
-//         <div className="is-flex is-justify-content-space-between" style={{maxWidth: '390px'}}>
-//             <div>
-//                 <div><p className="title header-font is-5 mb-0">{title}</p></div>
-//                 {roles.map(role => <p key={role} className="body-font has-text-weight-bold subtitle is-7 mb-0">{role}</p>)}
-//                 <div className="mt-2">{website && <a target="_blank" rel="noreferrer" href={`http://${website}`}>{website}</a>}</div>
-//             </div>
-//             <div>
-//                 <figure className="image is-96x96">
-//                     <img className="is-rounded" src={image} />
-//                 </figure>
-//             </div>
-//         </div>
-//         <div>
-//             <p className="subtitle is-6 body-font mt-2">{description}</p>
-//         </div>
-//     </div>
-// }
-
 const Volunteering: FC<VolunteeringProps> = ({ image, title, roles, description, website }) => {
-    return <div className="column is-full mb-2">
+    const trackInterest = useCallback(() => {
+        trackInterestInVolunteering(title)
+    }, [])
+
+    return <div className="column is-full mb-2" onMouseEnter={trackInterest}>
         <div className="is-flex is-flex-wrap-wrap is-justify-content-center">
             <div className="is-align-self-center mt-5" style={{ marginRight: '30px' }}>
                 <figure className="image is-96x96">

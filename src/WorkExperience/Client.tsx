@@ -1,7 +1,12 @@
-import React, {FC, FunctionComponent, useContext, useMemo, useRef} from "react";
+import React, {FC, useCallback, useContext, useEffect, useMemo, useRef} from "react";
 import {AppState, StateContext} from "../App";
 import {HidingButton, HidingWrapper} from "../HidingComponents";
-import { FCWithChildren } from "../Layout";
+import {FCWithChildren} from "../Layout";
+import {
+    trackAuthorisedToViewProducts,
+    trackPivotalClientInterest,
+    trackTogglingPivotalProjects
+} from "../InterestTracking";
 
 interface ClientProps {
     name: string
@@ -16,7 +21,8 @@ interface ClientProps {
 
 export const ClientList: FCWithChildren = ({children}) => {
     const [appState, setState] = useContext(StateContext);
-    const isAuthorized = useMemo(
+
+    const isAuthorized: string | null = useMemo(
         () => new URLSearchParams(window.location.search).get('showProducts'), [window.location.search]
     )
 
@@ -24,7 +30,12 @@ export const ClientList: FCWithChildren = ({children}) => {
 
     const showPivotalClients = appState!.showPivotalClients
 
+    useEffect(() => {
+        if (isAuthorized) trackAuthorisedToViewProducts()
+    }, [isAuthorized])
+
     function handleClick() {
+        trackTogglingPivotalProjects(!showPivotalClients)
         setState!((oldState: AppState): AppState => {
             return {
                 ...oldState,
@@ -53,7 +64,11 @@ export const ClientList: FCWithChildren = ({children}) => {
 }
 
 export const Client: FC<ClientProps> = ({name, image, description, projectName, imageSizeOverride, tech, testing, link}) => {
-    return <div className="column is-one-third mb-0">
+    const trackInterest = useCallback(() => {
+        trackPivotalClientInterest(projectName)
+    }, [projectName])
+
+    return <div className="column is-one-third mb-0" onMouseEnter={trackInterest}>
         <div className="card">
             <div className="card-content">
                 <div className="mb-2" style={{display: "flex", justifyContent: "space-between"}}>

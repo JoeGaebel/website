@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useCallback} from "react";
 import {Section, SectionHeader} from "./Layout";
 import joe from './projects/joe.jpg'
 import sailboat from './icons/sailboat.svg'
 // @ts-ignore
 import missionStatement from './projects/mission-statement.pdf'
+import {trackInterestInLink} from "./InterestTracking";
+
+const TrackingAnchor = ({children, href}: {children: string, href: string}) => {
+    const trackInterest = useCallback(() => {
+        trackInterestInLink(children)
+    }, [children])
+
+    return <a href={href} target="_blank" onClick={trackInterest}>{children}</a>
+}
 
 const ContactSection = () => {
     return <Section id="contact">
@@ -25,7 +34,7 @@ const ContactSection = () => {
                         <div className="media-content">
                             <p className="is-size-4 has-text-dark has-text-weight-semibold">Joe Gaebel</p>
                             <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>
-                                <a href="https://www.github.com/joegaebel">Github</a> | <a href="https://www.linkedin.com/in/joegaebel">LinkedIn</a> | <a target="_blank" href={missionStatement}>Mission Statement</a>
+                                <TrackingAnchor href="https://www.github.com/joegaebel">Github</TrackingAnchor> | <TrackingAnchor href="https://www.linkedin.com/in/joegaebel">LinkedIn</TrackingAnchor> | <TrackingAnchor href={missionStatement}>Mission Statement</TrackingAnchor>
                             </p>
                             <p className="is-size-6 mb-0 has-text-weight-normal" style={{color: "#4a4a4a", lineHeight: 1.25}}>joe.gaebel@gmail.com</p>
                         </div>

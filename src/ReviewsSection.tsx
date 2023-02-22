@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useContext, useRef } from "react";
-import { FCWithChildren, Section, SectionHeader } from "./Layout";
+import React, {FunctionComponent, useCallback, useContext, useRef} from "react";
+import {FCWithChildren, Section, SectionHeader} from "./Layout";
 import amjad from "./reviews/amjad.jpeg"
 import ozlem from "./reviews/ozlem.jpeg"
 import liz from "./reviews/liz.jpeg"
@@ -19,8 +19,9 @@ import pivotal from "./logos/pivotal.png"
 import pathzero from "./logos/pathzero.svg"
 import mavenlink from "./logos/mavenlink.png"
 import sightline from "./logos/sightline.png"
-import { AppState, StateContext } from "./App";
-import { HidingButton, HidingWrapper } from "./HidingComponents";
+import {AppState, StateContext} from "./App";
+import {HidingButton, HidingWrapper} from "./HidingComponents";
+import {trackInterestInReview, trackTogglingReviews} from "./InterestTracking";
 
 
 const reviewColors: Record<string, string> = {
@@ -47,7 +48,11 @@ interface ReviewProps {
 const Review: FunctionComponent<ReviewProps> = ({ name, title, work, content, relationship, sharedWork, image, isFull }) => {
     const backgroundColor = reviewColors[sharedWork || work]
 
-    return <div className={`column ${isFull ? "is-full" : "is-half"}`}>
+    const registerInterest = useCallback(() => {
+        trackInterestInReview(name)
+    }, [name])
+
+    return <div className={`column ${isFull ? "is-full" : "is-half"}`} onMouseEnter={registerInterest}>
         <div className={`card ${backgroundColor}`}>
             <div className="card-content">
                 <div className="media">
@@ -78,6 +83,8 @@ const ReviewsList: FCWithChildren = ({ children }) => {
     const showReviews = appState!.showReviews
 
     function handleClick() {
+        trackTogglingReviews(!showReviews)
+
         setState!((oldState: AppState): AppState => {
             return {
                 ...oldState,

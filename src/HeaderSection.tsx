@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import styled, { keyframes } from 'styled-components';
 // @ts-ignore
 import { fadeIn } from 'react-animations';
@@ -6,6 +6,7 @@ import joe from './projects/joe.jpg';
 import { StyledImageContainer } from "./WorkExperience/WorkExperience";
 // @ts-ignore
 import missionStatement from './projects/mission-statement.pdf';
+import {trackInterestInLink} from "./InterestTracking";
 
 const slideInAnimation = keyframes`${fadeIn}`;
 
@@ -14,6 +15,10 @@ const SlideInDiv = styled.div`
 `;
 
 const HeaderSection = () => {
+    const trackInterest = useCallback(() => {
+        trackInterestInLink('Mission Statement from top')
+    }, [])
+
     return <div className="is-flex is-flex-wrap-wrap" style={{margin: "10rem 1rem"}}>
         <StyledImageContainer>
             <figure className="image is-128x128 mr-5 mt-3">
@@ -28,6 +33,7 @@ const HeaderSection = () => {
             </div>
             <div className="subtitle header-font is-size-6 mt-2">Read my <a
                 className="has-text-info"
+                onClick={trackInterest}
                 href={missionStatement}
                 target="_blank" rel="noreferrer"
             >Mission Statement</a></div>

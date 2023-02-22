@@ -1,4 +1,5 @@
-import React, { CSSProperties, FC, PropsWithChildren } from "react";
+import React, {CSSProperties, FC, PropsWithChildren, useEffect, useRef} from "react";
+import {trackScrollPast} from "./InterestTracking";
 
 export type FCWithChildren<T = {}> = FC<PropsWithChildren<T>>
 
@@ -29,9 +30,23 @@ interface SectionProps {
     id?: string
     style?: CSSProperties
 }
-export const Section: FCWithChildren<SectionProps> = ({children, id, style}) => <div
-    id={id}
-    className="section mb-5"
-    style={{...style}}>
-    {children}
-</div>
+export const Section: FCWithChildren<SectionProps> = ({children, id, style}) => {
+    const shouldSendSectionEvent = useRef(true);
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            const elementTarget = document.getElementById(id!);
+            if (shouldSendSectionEvent.current && window.scrollY > (elementTarget!.offsetTop + elementTarget!.offsetHeight)) {
+                trackScrollPast(id!);
+                shouldSendSectionEvent.current = false;
+            }
+        });
+    }, [])
+
+    return <div
+        id={id}
+        className="section mb-5"
+        style={{...style}}>
+        {children}
+    </div>
+}

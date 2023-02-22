@@ -1,13 +1,14 @@
-import React, { FunctionComponent } from "react";
+import React, {FunctionComponent, useCallback} from "react";
 import githubIcon from "./icons/github.png";
 import linkIcon from "./icons/link.svg";
-import { FCWithChildren, Section, SectionHeader } from "./Layout";
+import {FCWithChildren, Section, SectionHeader} from "./Layout";
 import dylAndJoe from "./projects/dylAndJoe.jpg";
 import rentifier from "./projects/rentifier.png";
 import spherelink from "./projects/spherelink.png";
 import surfButler from "./projects/surfbutler.png";
 import watchWithDad from "./projects/watch-with-dad.png";
 import garage from "./projects/garage.png";
+import {trackInterestInProject, trackProjectLinkClick} from "./InterestTracking";
 
 const SneakyTag: FCWithChildren = ({children}) => {
     return <span style={{fontSize: "0.5rem"}} className="tag is-info is-light mr-1 mt-1">{children}</span>
@@ -49,7 +50,14 @@ interface ProjectProps {
 
 const Project: FunctionComponent<ProjectProps> = (props) => {
     const {name, image, description, githubLink, projectLink, keywords} = props;
-    return <div className="column is-half">
+    const trackInterest = useCallback(() => {
+        trackInterestInProject(name)
+    }, [name])
+
+    const trackLinkClick = (linkName: string) => () => {
+        trackProjectLinkClick(name, linkName)
+    }
+    return <div className="column is-half" onMouseEnter={trackInterest}>
         <div className="card my-3">
         <div className="card-content">
             <div className="card-image mb-5">
@@ -61,10 +69,10 @@ const Project: FunctionComponent<ProjectProps> = (props) => {
             <div className="mb-3">{description}</div>
             <div className="block is-flex" style={{marginBottom: "0.75rem"}}>
                 {projectLink && <div className="subtitle body-font is-size-7 mb-0">
-                    <a target="_blank" href={projectLink} rel="noreferrer"><img width="30px" src={linkIcon}/></a>
+                    <a onClick={trackLinkClick('project link')} target="_blank" href={projectLink} rel="noreferrer"><img width="30px" src={linkIcon}/></a>
                 </div>}
                 <div className="subtitle body-font is-size-7 mb-0">
-                    <a target="_blank" href={githubLink} rel="noreferrer"><img width="30px" src={githubIcon}/></a>
+                    <a onClick={trackLinkClick('github')} target="_blank" href={githubLink} rel="noreferrer"><img width="30px" src={githubIcon}/></a>
                 </div>
             </div>
             <div className="block is-relative">

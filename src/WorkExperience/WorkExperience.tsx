@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useCallback} from "react";
 import styled from "styled-components";
-import { FCWithChildren } from "../Layout";
+import {FCWithChildren} from "../Layout";
+import {trackExperienceInterest} from "../InterestTracking";
 
 interface WorkProps {
     companyName: string
@@ -22,7 +23,12 @@ export const WorkExperience: FCWithChildren<WorkProps> = (props) => {
     } else if (years) {
         yearString = `${years} yrs.`
     }
-    return <div style={{marginBottom: "10rem"}}>
+
+    const trackInterest = useCallback(() => {
+        trackExperienceInterest(companyName)
+    }, [companyName])
+
+    return <div style={{marginBottom: "10rem"}} onMouseEnter={trackInterest}>
         <div style={{display: "flex", justifyContent: "space-between", flexWrap: "wrap"}}>
             <div style={{display: "flex", flexWrap: "wrap", marginBottom: "-0.25rem"}}>
                 <StyledImageContainer marginRightOverride={imageContainerMarginRight}>
