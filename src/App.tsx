@@ -10,7 +10,11 @@ import ExperienceSection from "./WorkExperience/ExperienceSection";
 import mixpanel from 'mixpanel-browser';
 import {trackHomePageVisited, trackNearBottom} from "./InterestTracking";
 
-mixpanel.init('563caf1e7fe832231b8423b9ade38734', {debug: true, ignore_dnt: true});
+mixpanel.init('563caf1e7fe832231b8423b9ade38734', {
+    debug: true,
+    ignore_dnt: true,
+    api_host: 'https://jqaz8x1jdg.execute-api.ap-southeast-2.amazonaws.com/production'
+});
 
 export interface AppState {
     showPivotalClients: boolean
