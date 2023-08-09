@@ -22,9 +22,7 @@ interface ClientProps {
 export const ClientList: FCWithChildren = ({children}) => {
     const [appState, setState] = useContext(StateContext);
 
-    const isAuthorized: string | null = useMemo(
-        () => new URLSearchParams(window.location.search).get('showProducts'), [window.location.search]
-    )
+    const isAuthorized: string | null = "true";
 
     const ref = useRef<HTMLDivElement>(null)
 
