@@ -65,8 +65,9 @@ const AtlassianExperience = () => {
         imageContainerMarginRight="-1.5rem"
         city="Sydney, Australia"
         companyName="Atlassian"
-        titles={["Backend Engineer"]}
-        dateString={["May 2023 to Present"]}
+        titles={["Senior Software Engineer", "Software Engineer"]}
+        dateString={["September 2024 to present", "May 2023 to September 2024"]}
+        years={'1.5 yrs'}
         image={AtlassianImage}
         description={AtlassianDescription}
     />
