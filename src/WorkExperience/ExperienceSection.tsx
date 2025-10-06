@@ -5,11 +5,13 @@ import MavenlinkExperience from "./MavenlinkExperience";
 import SightlineExperience from "./SightlineExperience";
 import PathzeroExperience from "./PathzeroExperience";
 import AtlassianExperience from "./AtlassianExperience";
+import KFExperience from "./KFExperience";
 
 
 const ExperienceSection = () => {
     return <Section id="experience">
         <SectionHeader>Experience</SectionHeader>
+        <KFExperience/>
         <AtlassianExperience/>
         <PathzeroExperience/>
         <PivotalExperience/>

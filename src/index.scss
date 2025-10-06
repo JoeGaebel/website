@@ -95,6 +95,11 @@ html, body {
   margin: unset !important;
 }
 
+.is-256x256 {
+  width: 256px;
+  height: 256px;
+}
+
 @media screen and (min-width: 1408px) {
   .container:not(.is-max-desktop):not(.is-max-widescreen) {
     max-width: 1200px !important;

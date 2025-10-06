@@ -37,7 +37,8 @@ const AtlassianImage = <img
 />;
 
 const AtlassianDescription = <div>
-    <div className="block">I work on the Jira Platform Team, helping Jira become <b>more scalable and performant</b> through transitioning to a microservices architecture.</div>
+    <div className="block">I spent two years on a Jira platform team <b>delivering significant improvements to performance, scale, and cost efficiency.</b></div>
+    <div className="block">Currently, I'm helping to provide a centralised messaging system for all messages across products at Atlassian.</div>
     <div className="block">Additionally, I <b>help improve ways of working and engineering practices</b>.</div>
 
     <div className="mt-5">The practices I help instil are:</div>
@@ -67,7 +68,7 @@ const AtlassianExperience = () => {
         companyName="Atlassian"
         titles={["Senior Software Engineer", "Software Engineer"]}
         dateString={["September 2024 to present", "May 2023 to September 2024"]}
-        years={'1.5 yrs'}
+        years={'2.5 yrs'}
         image={AtlassianImage}
         description={AtlassianDescription}
     />

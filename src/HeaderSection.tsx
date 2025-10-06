@@ -21,7 +21,11 @@ const HeaderSection = () => {
 
     return <div className="is-flex is-flex-wrap-wrap" style={{margin: "10rem 1rem"}}>
         <StyledImageContainer>
-            <figure className="image is-128x128 mr-5 mt-3">
+            <figure className="image is-256x256" style={{
+                marginTop: "-2.8rem",
+                marginRight: "2.3rem",
+                marginLeft: "2rem",
+            }}>
                 <img className="is-rounded" src={joe}/>
             </figure>
         </StyledImageContainer>
@@ -44,13 +48,13 @@ const HeaderSection = () => {
 const SlidingList = () => {
     const proofs = [
         "Surfer",
-        "Canadian",
-        "Fitness Geek",
+        "Canadian Australian",
+        "Fitness Enthusiast",
         "Amateur Sailor",
         "Meditator",
         "Motorcyclist",
         "Adventurer",
-        "Kombucha Lover"
+        "Sticky Chai Addict"
     ]
 
     const [index, setIndex] = useState<number>(0)

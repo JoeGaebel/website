@@ -1,6 +1,6 @@
 import React, {useCallback} from "react";
 import {Section, SectionHeader} from "./Layout";
-import joe from './projects/joe.jpg'
+import joe from './projects/joe-boat.jpg'
 import sailboat from './icons/sailboat.svg'
 // @ts-ignore
 import missionStatement from './projects/mission-statement.pdf'

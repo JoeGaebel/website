@@ -18,7 +18,7 @@ const Volunteering: FC<VolunteeringProps> = ({ image, title, roles, description,
         trackInterestInVolunteering(title)
     }, [])
 
-    return <div className="column is-full mb-2" onMouseEnter={trackInterest}>
+    return <div className="is-full mb-2" onMouseEnter={trackInterest}>
         <div className="is-flex is-flex-wrap-wrap is-justify-content-center">
             <div className="is-align-self-center mt-5" style={{ marginRight: '30px' }}>
                 <figure className="image is-96x96">
@@ -35,26 +35,17 @@ const Volunteering: FC<VolunteeringProps> = ({ image, title, roles, description,
     </div>
 }
 
-const ManlyLifeSaving = () => <Volunteering
-    image={surfLifeSaving}
-    website={'www.manlylsc.com'}
-    title="Manly Surf Life Saving Club"
-    description="The Manly Life Saving Club is one of Australia's oldest Surf Life Saving Clubs, founded in 1911. We represent one of the most iconic beaches in Sydney, providing beach safety, maintenance of the aquatic environment, education, and training."
-    roles={["Active Beach Patrol, 2022 to Present", "Rescue Boat Crew Member, 2022 to Present"]}
-/>
-
 const SZC = () => <Volunteering
     image={szc}
     website="www.szc.org.au"
     description="Sydney Zen Centre is Australia's original Zen Buddhist community, founded in 1979. We offer weekly meditation sessions and retreats at our bushland retreat site. Currently serving around 70 members."
-    title="Sydney Zen Centre"
-    roles={["Board Member, 2020 to Present", "Treasurer, 2022 to Present"]}
+    title="Board of Directors, Sydney Zen Centre"
+    roles={["2020 to Present"]}
 />
 
 const VolunteeringSection = () => {
     return <Section id="volunteering" style={{ marginTop: "0rem" }}>
         <SectionHeader>Volunteering</SectionHeader>
-        <ManlyLifeSaving />
         <SZC />
     </Section>
 }
