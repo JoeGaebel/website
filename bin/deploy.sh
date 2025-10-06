@@ -1,6 +1,6 @@
 set -ex
 
-yarn build
+NODE_OPTIONS=--openssl-legacy-provider yarn build
 shopt -s extglob
 rm -rf ./joegaebel.github.io/!(CNAME)
 cp -r build/* ./joegaebel.github.io
