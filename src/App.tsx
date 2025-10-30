@@ -40,7 +40,6 @@ function App() {
                 <VolunteeringSection/>
                 <ExperienceSection/>
                 <ReviewsSection/>
-                <ProjectSection/>
                 <EducationSection/>
                 <ContactSection/>
             </SectionContainer>
