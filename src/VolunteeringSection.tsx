@@ -43,10 +43,19 @@ const SZC = () => <Volunteering
     roles={["2020 to Present"]}
 />
 
+const ManlyLifeSaving = () => <Volunteering
+    image={surfLifeSaving}
+    website={'www.manlylsc.com'}
+    title="Manly Surf Life Saving Club"
+    description="The Manly Life Saving Club is one of Australia's oldest Surf Life Saving Clubs, founded in 1911. We represent one of the most iconic beaches in Sydney, providing beach safety, maintenance of the aquatic environment, education, and training."
+    roles={["Active Beach Patrol, 2022 to 2024", "Rescue Boat Crew Member, 2022 to 2024"]}
+/>
+
 const VolunteeringSection = () => {
     return <Section id="volunteering" style={{ marginTop: "0rem" }}>
         <SectionHeader>Volunteering</SectionHeader>
         <SZC />
+        <ManlyLifeSaving/>
     </Section>
 }
 
