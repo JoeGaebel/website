@@ -1,12 +1,14 @@
 import React, {Dispatch, SetStateAction, useCallback, useEffect, useRef, useState} from 'react';
+import {Route, Routes} from 'react-router-dom';
 import ContactSection from "./ContactSection";
 import EducationSection from "./EducationSection";
 import HeaderSection from "./HeaderSection";
 import Navigation from "./Navigation";
-import ProjectSection from "./ProjectSection";
 import ReviewsSection from "./ReviewsSection";
 import VolunteeringSection from './VolunteeringSection';
 import ExperienceSection from "./WorkExperience/ExperienceSection";
+import BlogPage from "./BlogPage";
+import BlogPost from "./BlogPost";
 import mixpanel from 'mixpanel-browser';
 import {trackHomePageVisited, trackNearBottom} from "./InterestTracking";
 
@@ -35,14 +37,20 @@ function App() {
     return (
         <StateContext.Provider value={appState}>
             <Navigation/>
-            <SectionContainer>
-                <HeaderSection/>
-                <VolunteeringSection/>
-                <ExperienceSection/>
-                <ReviewsSection/>
-                <EducationSection/>
-                <ContactSection/>
-            </SectionContainer>
+            <Routes>
+                <Route path="/blog" element={<BlogPage/>}/>
+                <Route path="/blog/:slug" element={<BlogPost/>}/>
+                <Route path="*" element={
+                    <SectionContainer>
+                        <HeaderSection/>
+                        <VolunteeringSection/>
+                        <ExperienceSection/>
+                        <ReviewsSection/>
+                        <EducationSection/>
+                        <ContactSection/>
+                    </SectionContainer>
+                }/>
+            </Routes>
         </StateContext.Provider>
     );
 }

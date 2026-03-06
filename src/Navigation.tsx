@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 const Navigation = () => <nav className="navbar is-transparent is-fixed-top is-flex is-justify-content-center is-align-items-center is-hidden-touch">
     <div>
@@ -19,6 +20,9 @@ const Navigation = () => <nav className="navbar is-transparent is-fixed-top is-f
                 <a className="navbar-item" href="#contact">
                     Contact me
                 </a>
+                <Link className="navbar-item" to="/blog">
+                    Blog
+                </Link>
             </div>
         </div>
     </div>
