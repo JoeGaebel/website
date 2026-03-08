@@ -1,0 +1,29 @@
+---
+import WorkExperience from "./WorkExperience.astro"
+import atlassian from "../../assets/logos/atlassian.png"
+
+const principles = ["Extreme Programming", "Lean Software Engineering", "Lean Product Management", "Test-First Programming", "Pair Programming", "Continuous Integration", "Continuous Deployment & Delivery"]
+const technologies = ["Spring Boot", "Google Guice", "AWS SQS", "PostgreSQL", "Bitbucket Pipelines"]
+const testingTech = ["JUnit 5", "Mockito"]
+---
+<WorkExperience
+    companyName="Atlassian"
+    city="Sydney, Australia"
+    titles={["Senior Software Engineer", "Software Engineer"]}
+    dateString={["September 2024 to present", "May 2023 to September 2024"]}
+    years="2.5 yrs"
+    imageContainerMarginRight="-1.5rem"
+>
+    <img slot="image" style="width: 68px; margin-top: -0.7rem; margin-right: 2rem; margin-bottom: 1rem; margin-left: 0rem" src={atlassian.src} />
+    <Fragment slot="description">
+        <div class="block">I spent two years on a Jira platform team <b>delivering significant improvements to performance, scale, and cost efficiency.</b></div>
+        <div class="block">Currently, I'm helping to provide a centralised messaging system for all messages across products at Atlassian.</div>
+        <div class="block">Additionally, I <b>help improve ways of working and engineering practices</b>.</div>
+        <div class="mt-5">The practices I help instil are:</div>
+        <div class="mb-3">{principles.map(k => <span class="tag is-success mr-1 mt-1 is-size-6">{k}</span>)}</div>
+        <div class="mt-5">The technologies I use most are:</div>
+        <div class="mb-3">{technologies.map(k => <span class="tag is-info mr-1 mt-1 is-size-6">{k}</span>)}</div>
+        <div class="mt-5">I test drive with:</div>
+        <div class="mb-3">{testingTech.map(k => <span class="tag is-success is-light mr-1 mt-1 is-size-6">{k}</span>)}</div>
+    </Fragment>
+</WorkExperience>

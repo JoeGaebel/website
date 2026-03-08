@@ -1,0 +1,50 @@
+---
+import "../styles/global.scss"
+import Navigation from "../components/Navigation.astro"
+
+interface Props {
+    title?: string
+    description?: string
+}
+
+const {
+    title = "Joe Gaebel",
+    description = "Full-Stack XP/TDD Engineer, Small Business owner"
+} = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEYCKJPRR2"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PEYCKJPRR2');
+    </script>
+
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Joe Gaebel",
+        "jobTitle": "Full-Stack XP/TDD Engineer",
+        "description": "Full-Stack XP/TDD Engineer, Small Business owner"
+    })} />
+
+    <title>{title}</title>
+</head>
+<body>
+    <Navigation />
+    <slot />
+</body>
+</html>

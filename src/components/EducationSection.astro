@@ -1,0 +1,18 @@
+---
+import Section from "./Section.astro"
+import SectionHeader from "./SectionHeader.astro"
+import western from "../assets/logos/western.png"
+---
+<Section id="education">
+    <SectionHeader>Education</SectionHeader>
+    <div class="columns">
+        <div class="column has-text-centered">
+            <img width="110px" src={western.src} />
+        </div>
+        <div class="column is-three-fifths-desktop">
+            <div class="subtitle is-size-3 mb-1">Western University</div>
+            <div class="subtitle is-size-5 mb-1">Bachelors of Engineering Science: Software Engineering</div>
+            <div class="subtitle is-size-6">London Ontario, Canada</div>
+        </div>
+    </div>
+</Section>

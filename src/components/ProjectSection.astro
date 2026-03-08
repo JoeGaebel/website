@@ -1,0 +1,134 @@
+---
+import Section from "./Section.astro"
+import SectionHeader from "./SectionHeader.astro"
+import githubIcon from "../assets/icons/github.png"
+import linkIcon from "../assets/icons/link.svg"
+import garage from "../assets/projects/garage.png"
+import surfButler from "../assets/projects/surfbutler.png"
+import watchWithDad from "../assets/projects/watch-with-dad.png"
+import rentifier from "../assets/projects/rentifier.png"
+import spherelink from "../assets/projects/spherelink.png"
+import dylAndJoe from "../assets/projects/dylAndJoe.jpg"
+
+interface Project {
+    name: string
+    image: ImageMetadata
+    description: string[]
+    githubLink: string
+    projectLink?: string
+    keywords: string[]
+}
+
+const projects: Project[] = [
+    {
+        name: "Linky Garage",
+        image: garage,
+        description: [
+            "Open my garage door, with your phone!",
+            "My apartment garage door opener is massive, and I didn't want to carry another thing around. So I set up a Rasberry Pi to serve a website and toggle the garage door for me.",
+        ],
+        githubLink: "https://www.github.com/joegaebel/garage",
+        keywords: ["NextJs", "Raspberry Pi", "TypeScript", "Lots of time staring at schematics"],
+    },
+    {
+        name: "Watch With Dad",
+        image: watchWithDad,
+        description: [
+            "Like Netflix Party, but for content not on Netflix.",
+            "Allows you to create a room and have friends and family join, and be able to synchronise video playback.",
+        ],
+        githubLink: "https://www.github.com/joegaebel/watch-with-dad",
+        keywords: ["Fully test driven", "React", "Node.js", "Websockets", "Kubernetes", "A love for Top Gun"],
+    },
+    {
+        name: "Surf Butler",
+        image: surfButler,
+        description: [
+            "Never miss a great surf again.",
+            "A friend and I created a subscription service to receive a text the night before good surf conditions on your favourite beaches. Aggregated data across surf report websites with webscraping to score conditions and send texts to subscribers.",
+        ],
+        githubLink: "https://www.github.com/joegaebel/surfbutler",
+        keywords: ["Vue", "Node", "Jest", "AWS Lambda", "AWS Pinpoint", "Frustration from missing good surfs ourselves"],
+    },
+    {
+        name: "Rentifier",
+        image: rentifier,
+        description: [
+            "Create a rental property pipeline and filter thousands down to your favourite one.",
+            "Using TestCafe to scrape rental property websites and google distance APIs, this project spits out a CSV, incorporating travel times to your favourite places. This allows you to import the CSV into Google Sheets, immediately simplifying your property hunting.",
+        ],
+        githubLink: "https://github.com/JoeGaebel/rentifier",
+        projectLink: "https://joegaebel.medium.com/find-the-perfect-apartment-out-of-thousands-using-web-scraping-google-apis-and-sheets-860ef462de41",
+        keywords: ["Web Scraping", "Node.js", "Test Cafe", "Google Distance Matrix API", "A fair dash of desperation"],
+    },
+    {
+        name: "Spherelink",
+        image: spherelink,
+        description: [
+            "Immortalize your most cherished memories.",
+            "Upload and link together 360 photos to recreate your memories. Tag the most important areas, embed content, make it fully immersive with sound and music, and fully preserve the memories that matter most.",
+            "I bought and lived on a sail boat so I could afford the rent in SF, check it out!",
+        ],
+        githubLink: "https://github.com/JoeGaebel/spherelink",
+        projectLink: "https://www.spherelink.io",
+        keywords: ["Ruby on Rails", "CoffeeScript", "A deep sense of nostalgia"],
+    },
+    {
+        name: "Dyl And Joe Go To San Francisco.com",
+        image: dylAndJoe,
+        description: [
+            "Went on a do or die journey to get jobs in San Francisco.",
+            "In the span of two weeks, my good friend and I built a quick website, flew out to San Francisco, and knocked on as many company doors as we could.",
+            "Afterwards we spend the next few months avoiding school work and doing interviews. In the end, we both got to work for San Frantastic companies.",
+        ],
+        githubLink: "https://github.com/JoeGaebel/dylandjoegotosanfrancisco",
+        projectLink: "http://www.dylandjoegotosanfrancisco.com",
+        keywords: ["Guts", "A whole lot of hope", "Sheer willpower", "Can-do attitude", "Polite Canadian demeanor", "Bootstrap", "Angular"],
+    },
+]
+---
+<Section id="projects">
+    <SectionHeader>Projects</SectionHeader>
+    <div class="columns is-multiline">
+        {projects.map(({name, image, description, githubLink, projectLink, keywords}) => (
+            <div class="column is-half">
+                <div class="card my-3">
+                    <div class="card-content">
+                        <div class="card-image mb-5">
+                            <figure class="image">
+                                <a target="_blank" href={projectLink || githubLink} rel="noreferrer"><img src={image.src} /></a>
+                            </figure>
+                        </div>
+                        <div class="subtitle header-font has-text-weight-semibold is-size-4">{name}</div>
+                        <div class="mb-3">
+                            {description.map(paragraph => <div class="block">{paragraph}</div>)}
+                        </div>
+                        <div class="block is-flex" style="margin-bottom: 0.75rem">
+                            {projectLink && (
+                                <div class="subtitle body-font is-size-7 mb-0">
+                                    <a target="_blank" href={projectLink} rel="noreferrer"><img width="30px" src={linkIcon.src} /></a>
+                                </div>
+                            )}
+                            <div class="subtitle body-font is-size-7 mb-0">
+                                <a target="_blank" href={githubLink} rel="noreferrer"><img width="30px" src={githubIcon.src} /></a>
+                            </div>
+                        </div>
+                        <div class="block is-relative">
+                            <div>Built with:</div>
+                            <div>
+                                {keywords.map(keyword => (
+                                    <span class="tag is-info is-light mr-1 mt-1 is-size-7">{keyword}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+    <div class="is-flex is-justify-content-flex-end">
+        <a class="has-text-grey has-text-weight-light is-size-7" href="https://www.github.com/joegaebel/website">
+            joegaebel.com is also a
+            project <span style="font-size: 0.5rem" class="tag is-info is-light mr-1 mt-1">TypeScript</span><span style="font-size: 0.5rem" class="tag is-info is-light mr-1 mt-1">Astro</span><span style="font-size: 0.5rem" class="tag is-info is-light mr-1 mt-1">Bulma</span></a>
+    </div>
+</Section>

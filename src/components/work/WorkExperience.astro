@@ -1,0 +1,64 @@
+---
+interface Props {
+    companyName: string
+    city: string
+    titles: string[]
+    dateString: string[]
+    description?: string
+    years?: number | string
+    imageContainerMarginRight?: string
+}
+
+const {companyName, city, titles, dateString, years, imageContainerMarginRight} = Astro.props
+
+let yearString: string | undefined
+if (years && typeof years === "string") {
+    yearString = years
+} else if (years) {
+    yearString = `${years} yrs.`
+}
+
+const containerStyle = imageContainerMarginRight ? `margin-right: ${imageContainerMarginRight}` : ""
+---
+<div style="margin-bottom: 10rem">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap">
+        <div style="display: flex; flex-wrap: wrap; margin-bottom: -0.25rem">
+            <div class="image-container" style={containerStyle}>
+                <slot name="image" />
+            </div>
+            <div style="min-width: 233px">
+                <div class="is-flex-desktop">
+                    <div class="is-flex is-flex-wrap-nowrap">
+                        <div class="is-size-4 header-font has-text-weight-light has-text-weight-semibold">{companyName}</div>
+                        {years && <div class="ml-2 has-text-weight-light has-text-grey is-size-6 header-font" style="margin-top: 0.5rem">
+                            {yearString}
+                        </div>}
+                    </div>
+                </div>
+                <div class="is-size-6 header-font has-text-weight-normal has-text-grey mb-4" style="margin-top: -0.4rem">
+                    {city}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 1rem">
+        {titles.map((title, index) => (
+            <div class="is-flex is-flex-wrap-wrap">
+                <div class="is-size-6 header-font has-text-weight-semibold">
+                    {title},&nbsp;&nbsp;
+                </div>
+                <div class="has-text-weight-light has-text-grey" style="min-width: 200px">
+                    {dateString[index]}
+                </div>
+                <div class="is-hidden-tablet" style="height: 2rem" />
+            </div>
+        ))}
+    </div>
+
+    <div class="is-size-6 body-font mb-5">
+        <slot name="description" />
+    </div>
+
+    <slot />
+</div>

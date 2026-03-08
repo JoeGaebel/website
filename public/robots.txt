@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Block mission-statement PDF from search results
-Disallow: /static/media/mission-statement*.pdf
+Disallow: /mission-statement.pdf
 
 # Sitemap location
-Sitemap: https://www.joegaebel.com/sitemap.xml
+Sitemap: https://www.joegaebel.com/sitemap-index.xml

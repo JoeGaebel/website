@@ -1,0 +1,63 @@
+---
+import ClientList from "../react/ClientList"
+import iag from "../../assets/logos/iag.png"
+import service from "../../assets/logos/service.png"
+import corelogic from "../../assets/logos/corelogic.png"
+import telstra from "../../assets/logos/telstra.png"
+import sonic from "../../assets/logos/sonic.png"
+
+interface ClientItem {
+    name: string
+    projectName: string
+    image: ImageMetadata
+    description: string
+    imageSizeOverride?: string
+    tech?: string[]
+    testing?: string[]
+    link?: string
+}
+
+const clients: ClientItem[] = [
+    {name: "MyRIS Team at Sonic Healthcare", imageSizeOverride: "45px", projectName: "MyRIS Appointment Manager", image: sonic, description: "Helped build and scale the appointment manager used across Sonic imaging centres in Australia. Responsible for helping hire and upskill Sonic's in-house engineering team with modern software engineering practices.", tech: ["Angular", "TypeScript", "DotNet", "TailwindCSS", "Kubernetes"], testing: ["Angular Testing Library", "TestCafe", "WireMock"]},
+    {name: "Serenity Team at IAG", imageSizeOverride: "40px", projectName: "Car Insurance Quotes", image: iag, description: "Rapidly developed a fully functional motor insurance quote web-app that dynamically generates UI inputs and controls based on metadata provided by IAG backend systems. Provided architecture analysis and productization advice to enable third parties to seamlessly integrate.", tech: ["React", "React Hooks", "TypeScript", "Node.js"], testing: ["Jest", "React Testing Library", "WireMock", "TestCafe"]},
+    {name: "Mobile App team at Service NSW", projectName: "COVID Safe Check-in", image: service, description: "Helped deliver venue check-ins for COVID-19 contact tracing on the Service NSW Mobile App within an extremely short timeline. Led the backend development and system integrations. Responsible for millions of checkins across NSW.", tech: ["React Hooks", "React Native", "Redux", "TypeScript", "Node.js", "Firebase"], testing: ["Jest", "React Testing Library", "Detox", "WireMock"]},
+    {name: "RMS Transactions team at Service NSW", projectName: "Vehicle Registration Renewal", image: service, description: "Led the replacement of the legacy system into a Test-Driven and easily maintainable Spring Boot application, enabling significant cost savings from system stability.", tech: ["Spring Boot", "Kotlin", "React", "TypeScript", "Apigee"], testing: ["JUnit 5", "Spring Boot Test", "MockK", "Jest", "TestCafe", "WireMock"], link: "https://www.service.nsw.gov.au/transaction/renew-vehicle-registration"},
+    {name: "Mobile App team at Service NSW", projectName: "COVID-19 Test Result Notifications", image: service, description: "Led the Mobile App Team in delivering COVID-19 test results through push notifications in the Service NSW Mobile App. Responsible for delivering tens of thousands of COVID-19 test results per day.", tech: ["React Native", "Redux", "TypeScript", "Node.js", "Firebase"], testing: ["Jest", "React Testing Library", "Detox", "WireMock"]},
+    {name: "Payments team at Service NSW", projectName: "Government Payments Platform", image: service, description: "Helped the Payments team build the NSW Government Payment System, responsible for processing tens of millions of dollars daily.", tech: ["Spring Boot", "Kotlin", "Vue", "VueX", "ES6+", "RabbitMQ", "Postgres", "Apigee"], testing: ["JUnit 5", "Spring Boot Test", "Mockito", "Jest", "WireMock", "Cypress"]},
+    {name: "Service For Business at Service NSW", projectName: "Contractor Licence", image: service, description: "Led the transformation of the time-consuming contractor licence application form into a digital experience, enabling significant time savings for Tradespeople and back office staff.", tech: ["Spring Boot", "Kotlin", "React", "Redux", "ES6+", "Postgres", "Apigee"], testing: ["JUnit 5", "Spring Boot Test", "Mockito", "Jest", "TestCafe", "WireMock"], link: "https://mybusiness.service.nsw.gov.au/transactions/electrical-individual-contractor-licence/ready-to-start"},
+    {name: "Vouchers and Rebates team at Service NSW", projectName: "Active Kids and Creative Kids vouchers", image: service, description: "Helped the Vouchers and Rebates team create the Active Kids/Creative Kids voucher website and backend system from scratch to replace the legacy application.", tech: ["Spring Boot", "Kotlin", "Vue", "VueX", "ES6+", "Postgres", "Apigee"], testing: ["JUnit 5", "Spring Boot Test", "Mockito", "Jest", "Cypress"], link: "https://www.service.nsw.gov.au/campaign/active-kids"},
+    {name: "Tell Government Once team at Service NSW", projectName: "Notification API", image: service, description: "Helped the TGO team create a microservice responsible for maintaining citizens most recent contact information and contact preferences. If you've gotten an email notification from Service NSW, it's gone through this API.", tech: ["Spring Boot", "Kotlin", "React", "ES6+", "Postgres", "Apigee"], testing: ["JUnit 4", "Spring Boot Test", "Mockito", "Jest", "Cypress"]},
+    {name: "Service For Business at Service NSW", projectName: "Cafe, Restaurant and Small Business application", image: service, description: "Helped Service NSW digitize forms for opening a cafe, restaurant, or small Business", tech: ["Spring Boot", "Kotlin", "React", "Unistore", "ES6+", "Postgres", "Apigee"], testing: ["JUnit 5", "Spring Boot Test", "Mockito", "Jest", "Cypress"], link: "https://mybusiness.service.nsw.gov.au/dashboard"},
+    {name: "CoreLogic", projectName: "ValConnect", image: corelogic, description: "Helped CoreLogic build and deliver a mobile app for quickly performing property assessments.", tech: ["React Native", "Redux", "ES6+", "Java", "Spring"], testing: ["Detox", "Jest"]},
+    {name: "Telstra", projectName: "Telstra Essential Sales Assistant", image: telstra, imageSizeOverride: "35px", description: "Built an internal application used by the sales organization as a one-stop-shop for supporting enterprise sales.", tech: ["Kotlin", "Spring Boot", "React", "Redux", "Semantic UI", "ES6+", "Apigee"], testing: ["Jest", "JUnit 4", "Spring Boot Test", "Cypress"]},
+    {name: "Telstra", projectName: "Prepaid Recharge", image: telstra, imageSizeOverride: "35px", description: "Built the system to collect payments and reinstate service for Telstra's prepaid service customers.", tech: ["Kotlin", "Spring Boot", "React", "Redux", "ES6+"], testing: ["Jest", "Spring Boot Test"], link: "https://www.telstra.com.au/mobile-phones/prepaid-mobiles/prepaid-recharge"},
+]
+---
+<ClientList client:visible>
+    {clients.map(client => (
+        <div class="column is-one-third mb-0">
+            <div class="card">
+                <div class="card-content">
+                    <div class="mb-2" style="display: flex; justify-content: space-between">
+                        <div>
+                            <div class="header-font is-size-6 subtitle mb-1 has-text-weight-semibold">{client.projectName}</div>
+                            <div class="header-font is-size-7 subtitle mb-0">{client.name}</div>
+                        </div>
+                        <div class="pl-2" style="flex-shrink: 0; flex-grow: 0">
+                            <img width={client.imageSizeOverride || "80px"} height="auto" src={client.image.src} />
+                        </div>
+                    </div>
+                    {!client.link && <div class="mt-4" />}
+                    {client.link && <div class="mb-2 body-font" style="line-height: 16px"><a target="_blank" class="is-size-7" href={client.link}>{client.link}</a></div>}
+                    <div>{client.description}</div>
+                    {(client.tech || client.testing) && (
+                        <div class="mt-4">
+                            {client.tech?.map(t => <span class="tag is-info is-light mr-1 mt-1 is-size-7">{t}</span>)}
+                            {client.testing?.map(t => <span class="tag is-success is-light mr-1 mt-1 is-size-7">{t}</span>)}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    ))}
+</ClientList>

@@ -1,0 +1,23 @@
+---
+import SlidingList from "./react/SlidingList"
+import joe from "../assets/projects/joe.jpg"
+---
+<div class="is-flex is-flex-wrap-wrap" style="margin: 10rem 1rem">
+    <div class="image-container">
+        <figure class="image is-256x256" style="margin-top: -2.8rem; margin-right: 2.3rem; margin-left: 2rem">
+            <img class="is-rounded" src={joe.src} />
+        </figure>
+    </div>
+    <div class="mt-4">
+        <div class="title header-font is-size-1" style="margin-bottom: 0.5rem">Joe Gaebel</div>
+        <div class="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
+            <div>Full Stack Engineer,&nbsp;</div>
+            <SlidingList client:load />
+        </div>
+        <div class="subtitle header-font is-size-6 mt-2">Read my <a
+            class="has-text-info"
+            href="/mission-statement.pdf"
+            target="_blank" rel="noreferrer"
+        >Mission Statement</a></div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+---
+import Section from "./Section.astro"
+import SectionHeader from "./SectionHeader.astro"
+import surfLifeSaving from "../assets/logos/surf-life-saving.png"
+import szc from "../assets/logos/SZC.png"
+
+interface VolunteeringItem {
+    image: ImageMetadata
+    website?: string
+    description: string
+    title: string
+    roles: string[]
+}
+
+const items: VolunteeringItem[] = [
+    {
+        image: szc,
+        website: "www.szc.org.au",
+        description: "Sydney Zen Centre is Australia's original Zen Buddhist community, founded in 1979. We offer weekly meditation sessions and retreats at our bushland retreat site. Currently serving around 70 members.",
+        title: "Board of Directors, Sydney Zen Centre",
+        roles: ["2020 to Present"],
+    },
+    {
+        image: surfLifeSaving,
+        website: "www.manlylsc.com",
+        title: "Manly Surf Life Saving Club",
+        description: "The Manly Life Saving Club is one of Australia's oldest Surf Life Saving Clubs, founded in 1911. We represent one of the most iconic beaches in Sydney, providing beach safety, maintenance of the aquatic environment, education, and training.",
+        roles: ["Active Beach Patrol, 2022 to 2024", "Rescue Boat Crew Member, 2022 to 2024"],
+    },
+]
+---
+<Section id="volunteering" style="margin-top: 0rem">
+    <SectionHeader>Volunteering</SectionHeader>
+    {items.map(({image, title, roles, description, website}) => (
+        <div class="is-full mb-2">
+            <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+                <div class="is-align-self-center mt-5" style="margin-right: 30px">
+                    <figure class="image is-96x96">
+                        <img class="is-rounded" src={image.src} />
+                    </figure>
+                </div>
+                <div class="mt-5" style="flex: 1; min-width: 300px">
+                    <div><p class="title header-font is-5 mb-0">{title}</p></div>
+                    {roles.map(role => <p class="body-font has-text-weight-bold subtitle is-7 mb-0">{role}</p>)}
+                    <div class="mt-2">{website && <a target="_blank" rel="noreferrer" href={`http://${website}`}>{website}</a>}</div>
+                    <p class="subtitle is-6 body-font mt-2" style="max-width: 900px">{description}</p>
+                </div>
+            </div>
+        </div>
+    ))}
+</Section>

@@ -5,7 +5,7 @@ export default defineConfig({
     snapshotPathTemplate: "{testDir}/__screenshots__/{projectName}/{testName}/{arg}{ext}",
     timeout: 30000,
     use: {
-        baseURL: "http://localhost:3000",
+        baseURL: "http://localhost:4321",
         viewport: {width: 1280, height: 720},
     },
     projects: [
@@ -19,8 +19,8 @@ export default defineConfig({
         },
     ],
     webServer: {
-        command: "npm start",
-        port: 3000,
+        command: "npm run dev",
+        port: 4321,
         reuseExistingServer: true,
         timeout: 60000,
     },
