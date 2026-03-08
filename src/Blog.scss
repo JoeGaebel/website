@@ -165,9 +165,14 @@
     }
 
     .post-description {
+      display: block;
       font-size: 1.05rem;
       color: #555;
       line-height: 1.5;
+
+      &:hover {
+        color: #333;
+      }
     }
   }
 }

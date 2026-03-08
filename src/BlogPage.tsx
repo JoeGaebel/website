@@ -13,7 +13,7 @@ const BlogPage = () => {
                         <h2>{post.title}</h2>
                     </Link>
                     <p className="post-date">{post.date}</p>
-                    <p className="post-description">{post.description}</p>
+                    <Link to={`/blog/${post.slug}`} className="post-description">{post.description}</Link>
                 </div>
             ))}
         </div>
