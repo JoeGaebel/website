@@ -3,6 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro"
 import {getCollection} from "astro:content"
 import "../../styles/blog.scss"
 
+function formatDate(date: string) {
+    return new Date(date + "T00:00:00").toLocaleDateString("en-US", {year: "numeric", month: "long", day: "numeric"})
+}
+
 const posts = (await getCollection("blog", ({data}) => !data.draft)).sort((a, b) =>
     new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 )
@@ -16,7 +20,7 @@ const posts = (await getCollection("blog", ({data}) => !data.draft)).sort((a, b)
                     <a href={`/blog/${post.id}`}>
                         <h2>{post.data.title}</h2>
                     </a>
-                    <p class="post-date">{post.data.date}</p>
+                    <p class="post-date">{formatDate(post.data.date)}</p>
                     <a href={`/blog/${post.id}`} class="post-description">{post.data.description}</a>
                 </div>
             ))}
