@@ -1,4 +1,5 @@
 ---
+import {Image} from "astro:assets"
 import WorkExperience from "./WorkExperience.astro"
 import pivotal from "../../assets/logos/pivotal.png"
 import FilledClientList from "./FilledClientList.astro"
@@ -15,7 +16,7 @@ const testingTech = ["Testing Library", "Jest", "Enzyme", "JUnit 5", "MockK", "M
     years={4.5}
     imageContainerMarginRight="-1.5rem"
 >
-    <img slot="image" style="margin-top: -1.5rem; margin-left: -1.25rem; width: 120px" src={pivotal.src} alt="VMware Pivotal Labs logo" />
+    <Image slot="image" style="margin-top: -1.5rem; margin-left: -1.25rem; width: 120px" src={pivotal} alt="VMware Pivotal Labs logo" width={200} height={200} />
     <Fragment slot="description">
         <div class="mb-[0.8rem]">Pivotal Labs partners with organizations worldwide to accelerate the delivery of software and establish best practices for modern application development.</div>
         <div class="mb-[0.8rem]">At Pivotal Labs, I did two things:</div>

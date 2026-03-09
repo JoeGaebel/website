@@ -187,7 +187,7 @@ const items: ReviewItem[] = [
             if (item.type === "label") {
                 return (
                     <div class={`flex items-center justify-center w-full px-3 py-3 ${item.extraClasses || ""}`}>
-                        <div><img width={item.imageWidth || "100px"} src={item.image.src} class={item.imageClasses || ""} alt={`${item.name} logo`} /></div>
+                        <div><Image style={`width: ${item.imageWidth || "100px"}; height: auto;`} src={item.image} class={item.imageClasses || ""} alt={`${item.name} logo`} width={200} /></div>
                         <div class="font-header text-[1.5rem] font-normal leading-[1.125] text-dark pb-1">{item.name}</div>
                     </div>
                 )

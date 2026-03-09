@@ -1,4 +1,5 @@
 ---
+import {Image} from "astro:assets"
 import ClientList from "../react/ClientList"
 import iag from "../../assets/logos/iag.png"
 import service from "../../assets/logos/service.png"
@@ -44,7 +45,7 @@ const clients: ClientItem[] = [
                             <div class="font-header text-[0.75rem] text-[#4a4a4a] leading-[1.25] mb-0">{client.name}</div>
                         </div>
                         <div class="pl-2" style="flex-shrink: 0; flex-grow: 0">
-                            <img width={client.imageSizeOverride || "80px"} height="auto" src={client.image.src} alt={`${client.name} logo`} />
+                            <Image style={`width: ${client.imageSizeOverride || "80px"}; height: auto;`} src={client.image} alt={`${client.name} logo`} width={160} />
                         </div>
                     </div>
                     {!client.link && <div class="mt-4" />}

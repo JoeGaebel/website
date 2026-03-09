@@ -107,11 +107,11 @@ const projects: Project[] = [
                         <div class="flex mb-[0.8rem]" style="margin-bottom: 0.75rem">
                             {projectLink && (
                                 <div class="font-body text-[0.75rem] mb-0">
-                                    <a target="_blank" href={projectLink} rel="noreferrer"><img width="30px" src={linkIcon.src} alt="Project link" /></a>
+                                    <a target="_blank" href={projectLink} rel="noreferrer"><img width="30" height="30" src={linkIcon.src} alt="Project link" /></a>
                                 </div>
                             )}
                             <div class="font-body text-[0.75rem] mb-0">
-                                <a target="_blank" href={githubLink} rel="noreferrer"><img width="30px" src={githubIcon.src} alt="GitHub link" /></a>
+                                <a target="_blank" href={githubLink} rel="noreferrer"><Image src={githubIcon} alt="GitHub link" width={30} height={30} /></a>
                             </div>
                         </div>
                         <div class="relative mb-[0.8rem]">

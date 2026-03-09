@@ -1,7 +1,7 @@
 ---
 import {Image} from "astro:assets"
 import WorkExperience from "./WorkExperience.astro"
-import kffab from "../../assets/logos/kffab.png"
+import kffab from "../../assets/logos/kffab.svg"
 import afrArticle from "../../assets/logos/afr-article.png"
 
 const principles = ["Principle-centered leadership", "Lean manufacturing"]
@@ -15,7 +15,7 @@ const technologies = ["React", "Next.js"]
     years=""
     imageContainerMarginRight="-1.5rem"
 >
-    <img slot="image" style="width: 68px; margin-top: -0.4rem; margin-right: 2rem; margin-bottom: 1rem; margin-left: 0rem" src={kffab.src} alt="K&F Fabrications logo" />
+    <img slot="image" style="width: 68px; margin-top: -0.4rem; margin-right: 2rem; margin-bottom: 1rem; margin-left: 0rem" src={kffab.src} width="68" height="68" alt="K&F Fabrications logo" />
     <Fragment slot="description">
         <div class="mb-[0.8rem]"><p>K&F Fabrications is a small aluminium and steel fabrication business on the Sunshine Coast.</p><p>We fabricate gates, fences, privacy screens, and custom projects.</p></div>
         <div class="mb-[0.8rem]"><b>I build custom shop floor and business software</b>, handle IT and infrastructure, and work on streamlining operations around the shop. I work with my partner on strategy and operations, implementing equipment upgrades, and shaping our people practices (hiring, values/mission work, org-structure, incentives).</div>

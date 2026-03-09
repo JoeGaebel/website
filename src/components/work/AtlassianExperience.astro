@@ -1,4 +1,5 @@
 ---
+import {Image} from "astro:assets"
 import WorkExperience from "./WorkExperience.astro"
 import atlassian from "../../assets/logos/atlassian.png"
 
@@ -14,7 +15,7 @@ const testingTech = ["JUnit 5", "Mockito"]
     years="2.5 yrs"
     imageContainerMarginRight="-1.5rem"
 >
-    <img slot="image" style="width: 68px; margin-top: -0.7rem; margin-right: 2rem; margin-bottom: 1rem; margin-left: 0rem" src={atlassian.src} alt="Atlassian logo" />
+    <Image slot="image" style="width: 68px; margin-top: -0.7rem; margin-right: 2rem; margin-bottom: 1rem; margin-left: 0rem" src={atlassian} alt="Atlassian logo" width={136} height={136} />
     <Fragment slot="description">
         <div class="mb-[0.8rem]">I spent two years on a Jira platform team <b>delivering significant improvements to performance, scale, and cost efficiency.</b></div>
         <div class="mb-[0.8rem]">Currently, I'm helping to provide a centralised messaging system for all messages across products at Atlassian.</div>
