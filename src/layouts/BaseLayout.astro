@@ -5,12 +5,31 @@ import Navigation from "../components/Navigation.astro"
 interface Props {
     title?: string
     description?: string
+    canonicalPath?: string
+    type?: string
+    jsonLd?: Record<string, unknown>
 }
 
+const siteUrl = "https://www.joegaebel.com"
+const defaultDescription = "Joe Gaebel is a Senior Full-Stack Engineer specialising in XP and TDD, based in Queensland, Australia."
+
 const {
-    title = "Joe Gaebel",
-    description = "Full-Stack XP/TDD Engineer, Small Business owner"
+    title = "Joe Gaebel - Senior Full-Stack Engineer",
+    description = defaultDescription,
+    canonicalPath,
+    type = "website",
+    jsonLd,
 } = Astro.props
+
+const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : `${siteUrl}${Astro.url.pathname}`
+const defaultJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joe Gaebel",
+    "url": siteUrl,
+    "jobTitle": "Senior Full-Stack Engineer",
+    "description": defaultDescription,
+}
 ---
 <!DOCTYPE html>
 <html lang="en" class="has-navbar-fixed-top">
@@ -29,17 +48,14 @@ const {
     <meta name="theme-color" content="#000000" />
     <meta name="description" content={description} />
 
+    <link rel="canonical" href={canonicalUrl} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Joe Gaebel",
-        "jobTitle": "Full-Stack XP/TDD Engineer",
-        "description": "Full-Stack XP/TDD Engineer, Small Business owner"
-    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd || defaultJsonLd)} />
 
     <title>{title}</title>
 </head>

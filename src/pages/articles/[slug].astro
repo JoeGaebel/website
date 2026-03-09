@@ -18,7 +18,19 @@ function formatDate(date: string) {
 const {post} = Astro.props
 const {Content} = await render(post)
 ---
-<BaseLayout title={`${post.data.title} - Joe Gaebel`}>
+<BaseLayout
+    title={`${post.data.title} - Joe Gaebel`}
+    description={post.data.description}
+    type="article"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.data.title,
+        "description": post.data.description,
+        "datePublished": post.data.date,
+        "author": {"@type": "Person", "name": "Joe Gaebel", "url": "https://www.joegaebel.com"},
+    }}
+>
     <div class="blog-post section">
         <a class="back-link" href="/articles">&larr; Back to articles</a>
         <p class="post-date">{formatDate(post.data.date)}</p>
