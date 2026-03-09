@@ -1,11 +1,12 @@
 ---
+import {Image} from "astro:assets"
 import SlidingList from "./react/SlidingList"
 import joe from "../assets/projects/joe.jpg"
 ---
 <div class="flex flex-wrap" style="margin: 10rem 1rem">
     <div class="image-container">
         <figure class="block relative w-64 h-64" style="margin-top: -2.8rem; margin-right: 2.3rem; margin-left: 2rem">
-            <img class="rounded-full w-full h-full" src={joe.src} alt="Joe Gaebel" />
+            <Image class="rounded-full w-full h-full" src={joe} alt="Joe Gaebel" width={512} height={512} quality={90} loading="eager" fetchpriority="high" />
         </figure>
     </div>
     <div class="mt-4">

@@ -8,6 +8,7 @@ interface Props {
     canonicalPath?: string
     type?: string
     jsonLd?: Record<string, unknown>
+    preloadImage?: string
 }
 
 const siteUrl = "https://www.joegaebel.com"
@@ -19,6 +20,7 @@ const {
     canonicalPath,
     type = "website",
     jsonLd,
+    preloadImage,
 } = Astro.props
 
 const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : `${siteUrl}${Astro.url.pathname}`
@@ -44,10 +46,15 @@ const defaultJsonLd = {
 
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content={description} />
 
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
     <link rel="canonical" href={canonicalUrl} />
 
     <meta property="og:title" content={title} />

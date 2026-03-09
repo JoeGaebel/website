@@ -1,4 +1,5 @@
 ---
+import {getImage} from "astro:assets"
 import BaseLayout from "../layouts/BaseLayout.astro"
 import HeaderSection from "../components/HeaderSection.astro"
 import VolunteeringSection from "../components/VolunteeringSection.astro"
@@ -6,8 +7,11 @@ import ExperienceSection from "../components/work/ExperienceSection.astro"
 import ReviewsSection from "../components/ReviewsSection.astro"
 import EducationSection from "../components/EducationSection.astro"
 import ContactSection from "../components/ContactSection.astro"
+import heroImage from "../assets/projects/joe.jpg"
+
+const optimizedHero = await getImage({src: heroImage, width: 512, height: 512, format: "webp", quality: 90})
 ---
-<BaseLayout>
+<BaseLayout preloadImage={optimizedHero.src}>
     <div class="min-[1024px]:max-w-[960px] min-[1216px]:max-w-[1152px] min-[1408px]:max-w-[1200px] mx-auto">
         <HeaderSection />
         <VolunteeringSection />

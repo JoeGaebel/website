@@ -1,4 +1,5 @@
 ---
+import {Image} from "astro:assets"
 import Section from "./Section.astro"
 import SectionHeader from "./SectionHeader.astro"
 import joe from "../assets/projects/joe-boat.jpg"
@@ -10,7 +11,7 @@ import sailboat from "../assets/icons/sailboat.svg"
         <div class="card" style="width: 500px">
             <div>
                 <figure class="block relative">
-                    <img class="block w-full h-auto" src={joe.src} alt="Joe Gaebel on a boat" />
+                    <Image class="block w-full h-auto" src={joe} alt="Joe Gaebel on a boat" width={1000} quality={90} />
                 </figure>
             </div>
             <div class="p-6">

@@ -1,4 +1,5 @@
 ---
+import {Image} from "astro:assets"
 import Section from "./Section.astro"
 import SectionHeader from "./SectionHeader.astro"
 import githubIcon from "../assets/icons/github.png"
@@ -96,7 +97,7 @@ const projects: Project[] = [
                     <div class="p-6">
                         <div class="mb-6">
                             <figure class="block relative">
-                                <a target="_blank" href={projectLink || githubLink} rel="noreferrer"><img class="block w-full h-auto" src={image.src} alt={name} /></a>
+                                <a target="_blank" href={projectLink || githubLink} rel="noreferrer"><Image class="block w-full h-auto" src={image} alt={name} width={600} /></a>
                             </figure>
                         </div>
                         <div class="font-header font-semibold text-[1.5rem] text-[#4a4a4a] leading-[1.25] mb-6">{name}</div>
