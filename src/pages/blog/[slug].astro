@@ -4,7 +4,7 @@ import {getCollection, render} from "astro:content"
 import "../../styles/blog.scss"
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog")
+    const posts = await getCollection("blog", ({data}) => !data.draft)
     return posts.map(post => ({
         params: {slug: post.id},
         props: {post},
@@ -24,6 +24,9 @@ const {Content} = await render(post)
     </div>
     <script>
         import mermaid from "mermaid"
+        document.querySelectorAll("pre.mermaid").forEach(el => {
+            el.textContent = el.textContent!.replace(/\\n/g, "\n")
+        })
         mermaid.initialize({startOnLoad: true})
     </script>
 </BaseLayout>
