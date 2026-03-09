@@ -1,7 +1,7 @@
 ---
-title: "Hello World"
+title: "Agentic Gold-Standard Development"
 date: "2026-02-23"
-description: "My first blog post."
+description: "Encoding gold-standard development practices in AI workflows"
 ---
 
 # Agentic Gold-Standard Development
