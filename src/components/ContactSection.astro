@@ -5,27 +5,27 @@ import joe from "../assets/projects/joe-boat.jpg"
 import sailboat from "../assets/icons/sailboat.svg"
 ---
 <Section id="contact">
-    <div class="is-flex is-flex-direction-column is-align-items-center">
+    <div class="flex flex-col items-center">
         <SectionHeader>Let's Talk!</SectionHeader>
         <div class="card" style="width: 500px">
-            <div class="card-image">
-                <figure class="image">
-                    <img src={joe.src} alt="Joe Gaebel on a boat" />
+            <div>
+                <figure class="block relative">
+                    <img class="block w-full h-auto" src={joe.src} alt="Joe Gaebel on a boat" />
                 </figure>
             </div>
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48" style="margin-top: 1.18rem">
-                            <img src={sailboat.src} alt="Sailboat icon" />
+            <div class="p-6">
+                <div class="flex items-start">
+                    <div class="mr-4 shrink-0">
+                        <figure class="block relative w-12 h-12" style="margin-top: 1.18rem">
+                            <img class="block w-full h-auto" src={sailboat.src} alt="Sailboat icon" />
                         </figure>
                     </div>
-                    <div class="media-content">
-                        <p class="is-size-4 has-text-dark has-text-weight-semibold">Joe Gaebel</p>
-                        <p class="is-size-6 mb-0 has-text-weight-normal" style="color: #4a4a4a; line-height: 1.25">
+                    <div class="flex-1 min-w-0 overflow-hidden break-words">
+                        <p class="text-[1.5rem] text-dark font-semibold">Joe Gaebel</p>
+                        <p class="text-[1rem] mb-0 font-normal" style="color: #4a4a4a; line-height: 1.25">
                             <a href="https://www.github.com/joegaebel" target="_blank">Github</a> | <a href="https://www.linkedin.com/in/joegaebel" target="_blank">LinkedIn</a> | <a href="/mission-statement.pdf" target="_blank">Mission Statement</a>
                         </p>
-                        <p class="is-size-6 mb-0 has-text-weight-normal" style="color: #4a4a4a; line-height: 1.25">joe@joegaebel.com</p>
+                        <p class="text-[1rem] mb-0 font-normal" style="color: #4a4a4a; line-height: 1.25">joe@joegaebel.com</p>
                     </div>
                 </div>
             </div>

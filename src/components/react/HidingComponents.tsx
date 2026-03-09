@@ -49,11 +49,11 @@ interface HidingButtonProps {
 export const HidingButton = ({showing, onClick}: HidingButtonProps) => {
     if (!showing) {
         return <div style={seeMoreStyle}>
-            <button className="button is-medium is-dark" onClick={onClick}>See more</button>
+            <button className="btn" onClick={onClick}>See more</button>
         </div>
     } else {
         return <div style={seeLessStyle}>
-            <button className="mt-4 button is-medium is-dark" onClick={onClick}>See less</button>
+            <button className="mt-4 btn" onClick={onClick}>See less</button>
         </div>
     }
 }

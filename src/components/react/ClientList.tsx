@@ -14,11 +14,11 @@ export default function ClientList({children}: PropsWithChildren) {
 
     return <div ref={ref}>
         <HidingWrapper showing={showing}>
-            <div className="mb-5 mt-6">
-                <div className="header-font title is-size-4 mb-4">Products I've helped build:</div>
+            <div className="mb-6 mt-12">
+                <div className="font-header text-[1.5rem] font-semibold leading-[1.125] text-dark mb-4">Products I've helped build:</div>
             </div>
 
-            <div className="columns is-multiline">
+            <div className="flex flex-wrap -mx-3">
                 {children}
             </div>
 

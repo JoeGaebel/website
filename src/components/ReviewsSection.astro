@@ -23,13 +23,13 @@ import mavenlink from "../assets/logos/mavenlink.png"
 import sightline from "../assets/logos/sightline.png"
 
 const reviewColors: Record<string, string> = {
-    "Pathzero": "has-background-primary-light",
-    "VMware Pivotal Labs": "has-background-success-light",
-    "Service NSW": "has-background-success-light",
-    "Sonic Healthcare": "has-background-success-light",
-    "IAG": "has-background-success-light",
-    "Mavenlink": "has-background-info-light",
-    "Sightline Innovation": "has-background-link-light",
+    "Pathzero": "bg-primary-light",
+    "VMware Pivotal Labs": "bg-success-light",
+    "Service NSW": "bg-success-light",
+    "Sonic Healthcare": "bg-success-light",
+    "IAG": "bg-success-light",
+    "Mavenlink": "bg-info-light",
+    "Sightline Innovation": "bg-link-light",
 }
 
 interface Review {
@@ -153,7 +153,7 @@ const items: ReviewItem[] = [
             "I've been working with Joe for several months now, he has an enthusiasm and vibrance worth cloning. Joe brings a wealth of engineering knowledge to the team and he is a great communicator, ensuring he always communicates for mutual understanding. It's been a pleasure working with Joe and I will miss his energy when he moves to another engagement.",
         ],
     },
-    {type: "label", name: "Mavenlink", image: mavenlink, extraClasses: "mt-5 mb-3"},
+    {type: "label", name: "Mavenlink", image: mavenlink, extraClasses: "mt-6 mb-3"},
     {
         name: "Paulette Carlson", title: "VP of Engineering", work: "Mavenlink", isFull: true,
         relationship: "October 28, 2016 - Paulette managed Joe directly", image: paulette,
@@ -168,7 +168,7 @@ const items: ReviewItem[] = [
             "Joe and I worked very closely together, and he was critical to the success of our team. No one cares more about continuously improving themselves, or about doing whatever it takes to help a team succeed. Also, Joe proved extremely technically capable. He participated in several large-scale projects, and managed one implementing ElasticSearch. Thank you Joe, for being a great teammate!",
         ],
     },
-    {type: "label", name: "Sightline Innovation", image: sightline, extraClasses: "mt-5 mb-3"},
+    {type: "label", name: "Sightline Innovation", image: sightline, extraClasses: "mt-6 mb-3"},
     {
         name: "Morgan Moskalyk", title: "Founder & Computer Researcher", work: "Deep6", sharedWork: "Sightline Innovation", isFull: true,
         relationship: "February 18, 2015 - Morgan managed Joe directly", image: morgan,
@@ -181,34 +181,34 @@ const items: ReviewItem[] = [
 <Section id="reviews" style="margin-top: -10rem">
     <SectionHeader>Reviews</SectionHeader>
     <ReviewsList client:visible heightOverride="50rem">
-        <div class="columns is-multiline">
+        <div class="flex flex-wrap -mx-3">
         {items.map(item => {
             if (item.type === "label") {
                 return (
-                    <div class={`is-flex is-align-items-center is-justify-content-center is-full column ${item.extraClasses || ""}`}>
+                    <div class={`flex items-center justify-center w-full px-3 py-3 ${item.extraClasses || ""}`}>
                         <div><img width={item.imageWidth || "100px"} src={item.image.src} class={item.imageClasses || ""} alt={`${item.name} logo`} /></div>
-                        <div class="title has-text-weight-normal is-size-4 pb-1">{item.name}</div>
+                        <div class="font-header text-[1.5rem] font-normal leading-[1.125] text-dark pb-1">{item.name}</div>
                     </div>
                 )
             }
             const backgroundColor = reviewColors[item.sharedWork || item.work]
             return (
-                <div class={`column ${item.isFull ? "is-full" : "is-half"}`}>
+                <div class={`px-3 py-3 ${item.isFull ? "w-full" : "w-full md:w-1/2"}`}>
                     <div class={`card ${backgroundColor}`}>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                        <img class="is-rounded" src={item.image.src} alt={item.name} />
+                        <div class="p-6">
+                            <div class="flex items-start mb-[0.8rem]">
+                                <div class="mr-4 shrink-0">
+                                    <figure class="block relative w-12 h-12">
+                                        <img class="rounded-full w-full h-full" src={item.image.src} alt={item.name} />
                                     </figure>
                                 </div>
-                                <div class="media-content">
-                                    <p class="title is-4 mb-0">{item.name}</p>
-                                    <p class="subtitle is-6">{item.title}, {item.work}</p>
+                                <div class="flex-1 min-w-0 overflow-hidden break-words">
+                                    <p class="text-[1.5rem] font-semibold leading-[1.125] text-dark mb-0">{item.name}</p>
+                                    <p class="text-[1rem] text-[#4a4a4a] font-normal leading-[1.25]">{item.title}, {item.work}</p>
                                 </div>
                             </div>
-                            <div class="content has-text-dark">
-                                {item.content.map(paragraph => <div class="block">{paragraph}</div>)}
+                            <div class="text-dark mb-[0.8rem]">
+                                {item.content.map(paragraph => <div class="mb-[0.8rem]">{paragraph}</div>)}
                             </div>
                             <time>{item.relationship} at {item.sharedWork || item.work}</time>
                         </div>

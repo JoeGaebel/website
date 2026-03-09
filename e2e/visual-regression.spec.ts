@@ -15,8 +15,15 @@ test.describe("Visual Regression", () => {
         await page.goto("/")
         await page.waitForLoadState("networkidle")
         await page.waitForTimeout(2000)
+        // Scroll to reviews to trigger client:visible hydration
+        await page.locator("#reviews").scrollIntoViewIfNeeded()
+        // Wait for the astro-island to hydrate
+        await page.waitForFunction(() => {
+            const island = document.querySelector("#reviews astro-island")
+            return island && island.hasAttribute("client-render-time")
+        }, {timeout: 10000})
+        await page.waitForTimeout(500)
         const seeMoreBtn = page.locator("#reviews button", {hasText: "See more"})
-        await seeMoreBtn.scrollIntoViewIfNeeded()
         await seeMoreBtn.click()
         await page.waitForTimeout(2000)
         await expect(page).toHaveScreenshot("home-reviews-expanded.png", {

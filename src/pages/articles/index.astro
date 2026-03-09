@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro"
 import {getCollection} from "astro:content"
-import "../../styles/blog.scss"
+import "../../styles/blog.css"
 
 function formatDate(date: string) {
     return new Date(date + "T00:00:00").toLocaleDateString("en-US", {year: "numeric", month: "long", day: "numeric"})
@@ -12,7 +12,7 @@ const posts = (await getCollection("articles", ({data}) => !data.draft)).sort((a
 )
 ---
 <BaseLayout title="Articles - Joe Gaebel" description="Articles on software engineering, TDD, and agile development by Joe Gaebel.">
-    <div class="blog-listing section">
+    <div class="blog-listing py-12 px-6">
         <h1 class="blog-listing-title">Articles</h1>
         <div>
             {posts.map(post => (

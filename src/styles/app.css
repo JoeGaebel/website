@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-info: #1a6699;
+  --color-info-light: #e0eef8;
+  --color-info-dark: #14507a;
+  --color-success: #207850;
+  --color-success-light: #e0f2e9;
+  --color-success-dark: #185e3d;
+  --color-grey: #6b6b6b;
+  --color-dark: #363636;
+  --color-primary-light: #effaf5;
+  --color-link-light: #eff1fa;
+  --color-link: #485fc7;
+  --font-header: 'Proza Libre', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --shadow-card: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+  --shadow-navbar: 0 2px 0 0 #f5f5f5;
+}
+
+/* Font faces */
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-BoldItalic.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-ExtraBold.ttf) format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-ExtraBoldItalic.ttf) format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Italic.ttf) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-MediumItalic.ttf) format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-SemiBold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Proza Libre';
+  src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-SemiBoldItalic.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    background-color: white;
+    line-height: normal;
+  }
+
+  html, body {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+  }
+
+  body {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #4a4a4a;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  strong, b {
+    color: #363636;
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: none;
+
+    &:hover {
+      color: #363636;
+    }
+  }
+}
+
+@layer components {
+  /* Card component */
+  .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow-card);
+    color: #4a4a4a;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Tag component */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    color: #4a4a4a;
+    font-size: 0.75rem;
+    height: 2em;
+    justify-content: center;
+    line-height: 1.5;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    white-space: nowrap;
+  }
+
+  .tag-info {
+    background-color: var(--color-info);
+    color: white;
+  }
+
+  .tag-success {
+    background-color: var(--color-success);
+    color: white;
+  }
+
+  .tag-info-light {
+    background-color: var(--color-info-light);
+    color: var(--color-info-dark);
+  }
+
+  .tag-success-light {
+    background-color: var(--color-success-light);
+    color: var(--color-success-dark);
+  }
+
+  /* Button component */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 2.5em;
+    padding: calc(0.5em - 1px) 1em;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    background-color: #363636;
+    color: white;
+
+    &:hover {
+      background-color: #4a4a4a;
+      color: white;
+    }
+  }
+
+  /* Animations */
+  .slide-in {
+    animation: 1.5s fadeIn;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Image container responsive */
+.image-container {
+  & > img {
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  @media only screen and (max-width: 414px) {
+    display: block;
+    margin: 0 auto !important;
+
+    & > img {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}

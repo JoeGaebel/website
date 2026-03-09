@@ -17,16 +17,16 @@ const testingTech = ["Testing Library", "Jest", "Enzyme", "JUnit 5", "MockK", "M
 >
     <img slot="image" style="margin-top: -1.5rem; margin-left: -1.25rem; width: 120px" src={pivotal.src} alt="VMware Pivotal Labs logo" />
     <Fragment slot="description">
-        <div class="block">Pivotal Labs partners with organizations worldwide to accelerate the delivery of software and establish best practices for modern application development.</div>
-        <div class="block">At Pivotal Labs, I did two things:</div>
-        <div class="block">First, I <b>built and delivered kick ass products</b> in teams and individually.</div>
-        <div class="block" style="max-width: 980px">Second, I <b>upskilled teams of engineers</b> in modern software development practices through bespoke training sessions, workshops, and most importantly, <b>pair programming on those products.</b></div>
-        <div class="mt-5">The practices I advocated for:</div>
-        <div class="mb-3">{principles.map(k => <span class="tag is-success mr-1 mt-1 is-size-6">{k}</span>)}</div>
-        <div class="mt-5">The technologies I used most:</div>
-        <div class="mb-3">{technologies.map(k => <span class="tag is-info mr-1 mt-1 is-size-6">{k}</span>)}</div>
-        <div class="mt-5">I test drove with:</div>
-        <div class="mb-3">{testingTech.map(k => <span class="tag is-success is-light mr-1 mt-1 is-size-6">{k}</span>)}</div>
+        <div class="mb-[0.8rem]">Pivotal Labs partners with organizations worldwide to accelerate the delivery of software and establish best practices for modern application development.</div>
+        <div class="mb-[0.8rem]">At Pivotal Labs, I did two things:</div>
+        <div class="mb-[0.8rem]">First, I <b>built and delivered kick ass products</b> in teams and individually.</div>
+        <div class="mb-[0.8rem]" style="max-width: 980px">Second, I <b>upskilled teams of engineers</b> in modern software development practices through bespoke training sessions, workshops, and most importantly, <b>pair programming on those products.</b></div>
+        <div class="mt-6">The practices I advocated for:</div>
+        <div class="mb-3">{principles.map(k => <span class="tag tag-success mr-1 mt-1 text-[1rem]">{k}</span>)}</div>
+        <div class="mt-6">The technologies I used most:</div>
+        <div class="mb-3">{technologies.map(k => <span class="tag tag-info mr-1 mt-1 text-[1rem]">{k}</span>)}</div>
+        <div class="mt-6">I test drove with:</div>
+        <div class="mb-3">{testingTech.map(k => <span class="tag tag-success-light mr-1 mt-1 text-[1rem]">{k}</span>)}</div>
     </Fragment>
     <FilledClientList />
 </WorkExperience>

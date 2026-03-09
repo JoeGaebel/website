@@ -27,15 +27,15 @@ const containerStyle = imageContainerMarginRight ? `margin-right: ${imageContain
                 <slot name="image" />
             </div>
             <div style="min-width: 233px">
-                <div class="is-flex-desktop">
-                    <div class="is-flex is-flex-wrap-nowrap">
-                        <div class="is-size-4 header-font has-text-weight-light has-text-weight-semibold">{companyName}</div>
-                        {years && <div class="ml-2 has-text-weight-light has-text-grey is-size-6 header-font" style="margin-top: 0.5rem">
+                <div class="lg:flex">
+                    <div class="flex flex-nowrap">
+                        <div class="text-[1.5rem] font-header font-semibold">{companyName}</div>
+                        {years && <div class="ml-2 font-light text-grey text-[1rem] font-header" style="margin-top: 0.5rem">
                             {yearString}
                         </div>}
                     </div>
                 </div>
-                <div class="is-size-6 header-font has-text-weight-normal has-text-grey mb-4" style="margin-top: -0.4rem">
+                <div class="text-[1rem] font-header font-normal text-grey mb-4" style="margin-top: -0.4rem">
                     {city}
                 </div>
             </div>
@@ -44,19 +44,19 @@ const containerStyle = imageContainerMarginRight ? `margin-right: ${imageContain
 
     <div style="margin-bottom: 1rem">
         {titles.map((title, index) => (
-            <div class="is-flex is-flex-wrap-wrap">
-                <div class="is-size-6 header-font has-text-weight-semibold">
+            <div class="flex flex-wrap">
+                <div class="text-[1rem] font-header font-semibold">
                     {title},&nbsp;&nbsp;
                 </div>
-                <div class="has-text-weight-light has-text-grey" style="min-width: 200px">
+                <div class="font-light text-grey" style="min-width: 200px">
                     {dateString[index]}
                 </div>
-                <div class="is-hidden-tablet" style="height: 2rem" />
+                <div class="md:hidden" style="height: 2rem" />
             </div>
         ))}
     </div>
 
-    <div class="is-size-6 body-font mb-5">
+    <div class="text-[1rem] font-body mb-6">
         <slot name="description" />
     </div>
 

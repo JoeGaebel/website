@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro"
 import {getCollection, render} from "astro:content"
-import "../../styles/blog.scss"
+import "../../styles/blog.css"
 
 export async function getStaticPaths() {
     const posts = await getCollection("articles", ({data}) => !data.draft)
@@ -31,7 +31,7 @@ const {Content} = await render(post)
         "author": {"@type": "Person", "name": "Joe Gaebel", "url": "https://www.joegaebel.com"},
     }}
 >
-    <div class="blog-post section">
+    <div class="blog-post py-12 px-6 min-[1024px]:px-12">
         <a class="back-link" href="/articles">&larr; Back to articles</a>
         <p class="post-date">{formatDate(post.data.date)}</p>
         <div class="content">

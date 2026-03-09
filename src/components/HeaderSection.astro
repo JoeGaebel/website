@@ -2,20 +2,20 @@
 import SlidingList from "./react/SlidingList"
 import joe from "../assets/projects/joe.jpg"
 ---
-<div class="is-flex is-flex-wrap-wrap" style="margin: 10rem 1rem">
+<div class="flex flex-wrap" style="margin: 10rem 1rem">
     <div class="image-container">
-        <figure class="image is-256x256" style="margin-top: -2.8rem; margin-right: 2.3rem; margin-left: 2rem">
-            <img class="is-rounded" src={joe.src} alt="Joe Gaebel" />
+        <figure class="block relative w-64 h-64" style="margin-top: -2.8rem; margin-right: 2.3rem; margin-left: 2rem">
+            <img class="rounded-full w-full h-full" src={joe.src} alt="Joe Gaebel" />
         </figure>
     </div>
     <div class="mt-4">
-        <h1 class="title header-font is-size-1" style="margin-bottom: 0.5rem">Joe Gaebel</h1>
-        <div class="subtitle header-font is-size-4 is-flex is-flex-wrap-wrap">
+        <h1 class="font-header text-[3rem] font-semibold leading-[1.125] text-dark" style="margin-bottom: 0.5rem">Joe Gaebel</h1>
+        <div class="font-header text-[1.5rem] text-[#4a4a4a] font-normal leading-[1.25] flex flex-wrap">
             <div>Full Stack Engineer,&nbsp;</div>
             <SlidingList client:load />
         </div>
-        <div class="subtitle header-font is-size-6 mt-2">Read my <a
-            class="has-text-info"
+        <div class="font-header text-[1rem] text-[#4a4a4a] font-normal leading-[1.25] mt-2 mb-6">Read my <a
+            class="text-info"
             href="/mission-statement.pdf"
             target="_blank" rel="noreferrer"
         >Mission Statement</a></div>
