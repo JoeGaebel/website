@@ -44,7 +44,7 @@ const clients: ClientItem[] = [
                             <div class="header-font is-size-7 subtitle mb-0">{client.name}</div>
                         </div>
                         <div class="pl-2" style="flex-shrink: 0; flex-grow: 0">
-                            <img width={client.imageSizeOverride || "80px"} height="auto" src={client.image.src} />
+                            <img width={client.imageSizeOverride || "80px"} height="auto" src={client.image.src} alt={`${client.name} logo`} />
                         </div>
                     </div>
                     {!client.link && <div class="mt-4" />}

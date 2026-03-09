@@ -186,7 +186,7 @@ const items: ReviewItem[] = [
             if (item.type === "label") {
                 return (
                     <div class={`is-flex is-align-items-center is-justify-content-center is-full column ${item.extraClasses || ""}`}>
-                        <div><img width={item.imageWidth || "100px"} src={item.image.src} class={item.imageClasses || ""} /></div>
+                        <div><img width={item.imageWidth || "100px"} src={item.image.src} class={item.imageClasses || ""} alt={`${item.name} logo`} /></div>
                         <div class="title has-text-weight-normal is-size-4 pb-1">{item.name}</div>
                     </div>
                 )
@@ -199,7 +199,7 @@ const items: ReviewItem[] = [
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-48x48">
-                                        <img class="is-rounded" src={item.image.src} alt="Placeholder image" />
+                                        <img class="is-rounded" src={item.image.src} alt={item.name} />
                                     </figure>
                                 </div>
                                 <div class="media-content">

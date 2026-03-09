@@ -1,4 +1,11 @@
 $block-spacing: 0.8rem;
+$grey: #6b6b6b;
+$info: #1a6699;
+$success: #207850;
+$info-light: #e0eef8;
+$info-dark: #14507a;
+$success-light: #e0f2e9;
+$success-dark: #185e3d;
 
 //noinspection CssUnknownTarget
 @import "bulma/bulma.sass";
@@ -9,60 +16,70 @@ $block-spacing: 0.8rem;
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Bold.ttf) format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-BoldItalic.ttf) format('truetype');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-ExtraBold.ttf) format('truetype');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-ExtraBoldItalic.ttf) format('truetype');
   font-weight: 900;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Italic.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Medium.ttf) format('truetype');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-MediumItalic.ttf) format('truetype');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-SemiBold.ttf) format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Proza Libre';
   src: local('Proza Libre'), url(../assets/fonts/ProzaLibre-SemiBoldItalic.ttf) format('truetype');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 html, body {
