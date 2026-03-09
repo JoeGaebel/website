@@ -7,6 +7,9 @@ import {remarkMermaid} from "./src/plugins/remark-mermaid.mjs"
 export default defineConfig({
     site: "https://www.joegaebel.com",
     output: "static",
+    build: {
+        inlineStylesheets: "always",
+    },
     integrations: [react(), sitemap()],
     markdown: {
         remarkPlugins: [remarkMermaid],
