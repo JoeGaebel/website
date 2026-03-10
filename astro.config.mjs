@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import {remarkMermaid} from "./src/plugins/remark-mermaid.mjs"
 import {remarkGithubCard} from "./src/plugins/remark-github-card.mjs"
+import {remarkImageSize} from "./src/plugins/remark-image-size.mjs"
 
 export default defineConfig({
     site: "https://www.joegaebel.com",
@@ -13,7 +14,7 @@ export default defineConfig({
     },
     integrations: [react(), sitemap()],
     markdown: {
-        remarkPlugins: [remarkMermaid, remarkGithubCard],
+        remarkPlugins: [remarkMermaid, remarkGithubCard, remarkImageSize],
         shikiConfig: {
             theme: "one-dark-pro",
         },

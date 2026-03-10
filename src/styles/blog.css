@@ -266,6 +266,9 @@
       border-collapse: collapse;
       border-spacing: 0;
       margin-bottom: 1.4rem;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     & th, & td {
@@ -273,6 +276,11 @@
       vertical-align: top;
       text-align: start;
       border-bottom: 1px solid #dbdbdb;
+
+      @media (max-width: 640px) {
+        font-size: 0.9em;
+        padding: 0.4em 0.5em;
+      }
     }
 
     & hr {
