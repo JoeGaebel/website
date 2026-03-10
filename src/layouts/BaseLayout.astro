@@ -9,6 +9,7 @@ interface Props {
     type?: string
     jsonLd?: Record<string, unknown>
     preloadImage?: string
+    hideNav?: boolean
 }
 
 const siteUrl = "https://www.joegaebel.com"
@@ -21,6 +22,7 @@ const {
     type = "website",
     jsonLd,
     preloadImage,
+    hideNav = false,
 } = Astro.props
 
 const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : `${siteUrl}${Astro.url.pathname}`
@@ -55,7 +57,13 @@ const defaultJsonLd = {
     <title>{title}</title>
 </head>
 <body>
-    <Navigation />
+    {!hideNav && <Navigation />}
+    {hideNav && (
+        <Fragment>
+            <div class="site-home-link-bar"></div>
+            <a href="/" class="site-home-link">Joe Gaebel</a>
+        </Fragment>
+    )}
     <main>
         <slot />
     </main>

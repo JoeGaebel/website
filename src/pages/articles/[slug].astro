@@ -16,12 +16,14 @@ function formatDate(date: string) {
 }
 
 const {post} = Astro.props
-const {Content} = await render(post)
+const {Content, headings} = await render(post)
+const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3)
 ---
 <BaseLayout
     title={`${post.data.title} - Joe Gaebel`}
     description={post.data.description}
     type="article"
+    hideNav
     jsonLd={{
         "@context": "https://schema.org",
         "@type": "Article",
@@ -35,7 +37,24 @@ const {Content} = await render(post)
         <a class="back-link" href="/articles">&larr; Back to articles</a>
         <p class="post-date">{formatDate(post.data.date)}</p>
         <div class="content">
-            <Content />
+            <h1>{post.data.title}</h1>
+            {tocHeadings.length > 2 && (
+                <nav class="toc">
+                    <details>
+                        <summary>Table of Contents</summary>
+                        <ul>
+                            {tocHeadings.map(h => (
+                                <li class={h.depth === 3 ? "toc-h3" : ""}>
+                                    <a href={`#${h.slug}`}>{h.text}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </details>
+                </nav>
+            )}
+            <div class="content-body">
+                <Content />
+            </div>
         </div>
     </div>
     <script>

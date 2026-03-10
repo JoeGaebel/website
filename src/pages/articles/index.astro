@@ -11,8 +11,8 @@ const posts = (await getCollection("articles", ({data}) => !data.draft)).sort((a
     new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 )
 ---
-<BaseLayout title="Articles - Joe Gaebel" description="Articles on software engineering, TDD, and agile development by Joe Gaebel.">
-    <div class="blog-listing py-12 px-6">
+<BaseLayout title="Articles - Joe Gaebel" description="Articles on software engineering, TDD, and agile development by Joe Gaebel." hideNav>
+    <div class="blog-listing py-12 px-6 min-[1024px]:px-12">
         <h1 class="blog-listing-title">Articles</h1>
         <div>
             {posts.map(post => (
