@@ -9,7 +9,7 @@ import EducationSection from "../components/EducationSection.astro"
 import ContactSection from "../components/ContactSection.astro"
 import heroImage from "../assets/projects/joe.jpg"
 
-const optimizedHero = await getImage({src: heroImage, width: 512, height: 512, format: "webp", quality: 95})
+const optimizedHero = await getImage({src: heroImage, width: 512, height: 512, format: "webp", quality: 85})
 ---
 <BaseLayout preloadImage={optimizedHero.src}>
     <div class="min-[1024px]:max-w-[960px] min-[1216px]:max-w-[1152px] min-[1408px]:max-w-[1200px] mx-auto">

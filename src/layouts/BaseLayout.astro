@@ -60,14 +60,21 @@ const defaultJsonLd = {
         <slot />
     </main>
     <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-PEYCKJPRR2');
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PEYCKJPRR2';
-        s.async = true;
-        document.body.appendChild(s);
+        function loadGtag() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PEYCKJPRR2');
+            var s = document.createElement('script');
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PEYCKJPRR2';
+            s.async = true;
+            document.body.appendChild(s);
+        }
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGtag, {timeout: 5000});
+        } else {
+            setTimeout(loadGtag, 3000);
+        }
     </script>
 </body>
 </html>
