@@ -1,0 +1,22 @@
+<div class="slide-in" id="sliding-list">Surfer</div>
+<script>
+    const proofs = [
+        "Surfer",
+        "Canadian Australian",
+        "Fitness Enthusiast",
+        "Amateur Sailor",
+        "Meditator",
+        "Motorcyclist",
+        "Adventurer",
+        "Sticky Chai Addict"
+    ]
+    let index = 0
+    const el = document.getElementById("sliding-list")!
+    setInterval(() => {
+        index = (index + 1) % proofs.length
+        el.textContent = proofs[index]
+        el.classList.remove("slide-in")
+        void el.offsetWidth
+        el.classList.add("slide-in")
+    }, 4500)
+</script>

@@ -1,6 +1,6 @@
 ---
 import {Image} from "astro:assets"
-import SlidingList from "./react/SlidingList"
+import SlidingList from "./SlidingList.astro"
 import joe from "../assets/projects/joe.jpg"
 ---
 <div class="flex flex-wrap" style="margin: 10rem 1rem">
@@ -13,7 +13,7 @@ import joe from "../assets/projects/joe.jpg"
         <h1 class="font-header text-[3rem] font-semibold leading-[1.125] text-dark" style="margin-bottom: 0.5rem">Joe Gaebel</h1>
         <div class="font-header text-[1.5rem] text-[#4a4a4a] font-normal leading-[1.25] flex flex-col md:flex-row md:flex-wrap">
             <div>Full Stack Engineer,&nbsp;</div>
-            <SlidingList client:idle />
+            <SlidingList />
         </div>
         <div class="font-header text-[1rem] text-[#4a4a4a] font-normal leading-[1.25] mt-2 mb-6" style="padding-left: 1px">Read my <a
             class="text-info"

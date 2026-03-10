@@ -39,14 +39,6 @@ const defaultJsonLd = {
 <!DOCTYPE html>
 <html lang="en" class="pt-[3.25rem]">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PEYCKJPRR2"></script>
-    <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-PEYCKJPRR2');
-    </script>
-
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preload" as="font" type="font/woff2" href={prozaRegularUrl} crossorigin />
@@ -76,5 +68,15 @@ const defaultJsonLd = {
     <main>
         <slot />
     </main>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PEYCKJPRR2');
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PEYCKJPRR2';
+        s.async = true;
+        document.body.appendChild(s);
+    </script>
 </body>
 </html>
