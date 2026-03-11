@@ -12,7 +12,7 @@ previousSlugs:
 
 **TLDR**: Using Agent and Skill definitions, you can encode engineering principles and practices like **Outside-in Test-Driven Development**, **Mutation testing**, and others into workflows that agents actually follow.
 
-I've found this significantly increases test quality, implementation quality, as well as my ability as a developer to assert that what was built was the right thing, and the product continues to behave expected over time. 
+I've found this significantly increases test quality, implementation quality, as well as my ability as a developer to assert that what was built was the right thing, and the product continues to behave as expected over time. 
 
 Try it out for yourself:
 
