@@ -42,7 +42,7 @@ test.describe("Visual Regression", () => {
     })
 
     test("article post", async ({page}) => {
-        await page.goto("/articles/agentic-gold-standard-development")
+        await page.goto("/articles/principled-agentic-software-development")
         await page.waitForLoadState("networkidle")
         await page.waitForTimeout(3000)
         await expect(page).toHaveScreenshot("article-post.png", {
@@ -50,4 +50,5 @@ test.describe("Visual Regression", () => {
             maxDiffPixelRatio: 0.01,
         })
     })
+
 })

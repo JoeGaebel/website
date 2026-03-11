@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite"
 import {remarkMermaid} from "./src/plugins/remark-mermaid.mjs"
 import {remarkGithubCard} from "./src/plugins/remark-github-card.mjs"
 import {remarkImageSize} from "./src/plugins/remark-image-size.mjs"
+import {articleRedirects} from "./src/plugins/article-redirects.mjs"
 
 export default defineConfig({
     site: "https://www.joegaebel.com",
@@ -12,7 +13,7 @@ export default defineConfig({
     build: {
         inlineStylesheets: "always",
     },
-    integrations: [react(), sitemap()],
+    integrations: [react(), sitemap(), articleRedirects()],
     markdown: {
         remarkPlugins: [remarkMermaid, remarkGithubCard, remarkImageSize],
         shikiConfig: {

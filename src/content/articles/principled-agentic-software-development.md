@@ -1,10 +1,12 @@
 ---
-title: "Agentic Gold-Standard Development"
+title: "Principled Agentic Software Development"
 date: "2026-02-23"
-description: "Encoding gold-standard development practices in AI workflows"
+description: "Encoding engineering principles in AI workflows"
+previousSlugs:
+  - agentic-gold-standard-development
 ---
 
-# Agentic Gold-Standard Development
+# Principled Agentic Software Development
 
 In the last few months, something shifted - rather than using chatbots to make code edits, I've been able to rely on agentic coding - Claude Code, to write implementation code. It used to take longer to correct what the agent wrote than to just write the code myself. With Opus 4.5 and now 4.6, this is no longer the case.
 
@@ -12,7 +14,7 @@ The models have leveled up. It's now possible to "one-shot" whole features with 
 
 **Big caveat: It struggles with testing.**
 
-![A motorcycle with a massive engine and thick rear tire representing AI implementation power, but a tiny plastic wheel on the front representing its limited testing ability](/articles/agentic-gold-standard-development/implementation.webp)
+![A motorcycle with a massive engine and thick rear tire representing AI implementation power, but a tiny plastic wheel on the front representing its limited testing ability](/articles/principled-agentic-software-development/implementation.webp)
 
 With this increase in implementation firepower, **I haven't noticed the same increase in test firepower**. When asking Claude Code to write tests, I find they are inevitably coupled to implementation details, mockist, brittle, and missing coverage. It's like a powerful motorcycle with a tiny front-wheel: lots of implementation power, but limited steering. Without equal ability to test, verify, and control the behaviour of the application, how can developers rely on AI generated code in the long-term?
 
@@ -43,7 +45,7 @@ This is because the behaviour of the system quickly becomes impossible to reign 
 
 ## Why does AI struggle with testing?
 
-![A robot at a crossroads - the easy path leads to mocked unit tests, while the harder path to high-value integration and end-to-end tests is blocked by obstacles like missing domain context, unknown dependencies, and test conventions](/articles/agentic-gold-standard-development/testing.webp)
+![A robot at a crossroads - the easy path leads to mocked unit tests, while the harder path to high-value integration and end-to-end tests is blocked by obstacles like missing domain context, unknown dependencies, and test conventions](/articles/principled-agentic-software-development/testing.webp)
 
 Unless told otherwise, agents will write the implementation first, then go back and write tests. This makes the tests:
 - **Coupled to implementation** - they test implementation details, not behaviour
@@ -73,7 +75,7 @@ It turns out, this can be done with a combination of agents and skills. First, t
 
 At Pivotal Labs, we applied Extreme Programming (XP) and Lean Software Development principles to ensure quality. XP takes established best practices and turns them up to 10. In the case of testing, it means writing the tests first and having them drive the implementation.
 
-![The TDD Red, Green, Refactor cycle - write a failing test, make it pass, then clean up the code](/articles/agentic-gold-standard-development/rgr.webp)
+![The TDD Red, Green, Refactor cycle - write a failing test, make it pass, then clean up the code](/articles/principled-agentic-software-development/rgr.webp)
 
 In Test-Driven Development, you follow Red, Green, Refactor cycles (RGR):
 1. **Red** - You write the tests first, run them and see them fail
@@ -94,7 +96,7 @@ This is a massive improvement in test and implementation quality over writing th
 
 Outside-In TDD incorporates the different levels of testing into TDD in order to more comprehensively assert user value and system behaviour.
 
-![The testing sphere - concentric rings showing unit tests at the centre, surrounded by integration tests, end-to-end tests, and journey tests. Moving outward means higher test value but slower speed.](/articles/agentic-gold-standard-development/outsidein.webp)
+![The testing sphere - concentric rings showing unit tests at the centre, surrounded by integration tests, end-to-end tests, and journey tests. Moving outward means higher test value but slower speed.](/articles/principled-agentic-software-development/outsidein.webp)
 
 It requires understanding the different scopes of testing within the system. In codebases, this generally looks like:
 
@@ -109,13 +111,13 @@ In Outside-In TDD, the engineer is responsible for creating a feature acceptance
 
 Once the feature acceptance test is written, lower level Red-Green-Refactor cycles can take place to build the feature piece by piece. The engineer knows they are done when the feature-complete test passes.
 
-![Outside-In TDD flow - write a failing E2E test, then write a failing unit test, make it pass, refactor, and repeat](/articles/agentic-gold-standard-development/outsidein2.webp)
+![Outside-In TDD flow - write a failing E2E test, then write a failing unit test, make it pass, refactor, and repeat](/articles/principled-agentic-software-development/outsidein2.webp)
 
 This involves a clear traversal through the test layers - writing tests at the right layer to ensure the user value we want to deliver is asserted within the tests.
 
 ### Mutation Testing
 
-![Mutation testing vs code coverage - code coverage passively checks if code was traversed, while mutation testing actively mutates code and checks if tests catch the changes](/articles/agentic-gold-standard-development/mutation.webp)
+![Mutation testing vs code coverage - code coverage passively checks if code was traversed, while mutation testing actively mutates code and checks if tests catch the changes](/articles/principled-agentic-software-development/mutation.webp)
 
 Mutation testing is a tool for determining with confidence if implementation code is completely tested. Code coverage isn't this - code coverage is easily gamed - a test that traverses the code path but makes no assertions still yields 100% "coverage".
 
@@ -123,11 +125,11 @@ Mutation testing mutates the source code meaningfully (think turning ANDs to ORs
 
 TDD when run strictly significantly improves implementation being covered by tests - but it's not perfect. Mutation testing can be added to ensure that this coverage is added systematically.
 
-## Gold Standard development
+## Principled Development
 
-![The Gold Standard development pipeline - a factory assembly line with four stations: Planning Station, The Mold (feature-complete test), The Forge (Red-Green-Refactor loop), and Quality Gate (mutation testing and backfilling)](/articles/agentic-gold-standard-development/gold-standard.webp)
+![The Principled Development pipeline - a factory assembly line with four stations: Planning Station, The Mold (feature-complete test), The Forge (Red-Green-Refactor loop), and Quality Gate (mutation testing and backfilling)](/articles/principled-agentic-software-development/gold-standard.webp)
 
-Gold Standard development* utilises Outside-In TDD with mutation testing. It involves:
+Principled Development* utilises Outside-In TDD with mutation testing. It involves:
 - **Planning** the feature from a user's perspective - what user value are we trying to deliver
 - **Writing the Feature Complete test** (the lowest level test that the full value of the feature can be asserted - for features that touch multiple units, this usually means an end-to-end test)
 - **Performing Red-Green-Refactor cycles** until the feature-complete test passes
@@ -142,11 +144,11 @@ In detail, the workflow looks like this:
 6. **Evaluate**: The developer then re-evaluates. Was that cycle enough to complete the feature? If so, they re-run the feature-complete test to ensure it's working. Otherwise, they continue with RGR cycles until the feature is complete - which they'll only know once the feature-complete test is passing.
 7. **Mutate**: Since TDD isn't perfect, there could be scenarios where the code is untested. Running mutation testing and backfilling tests ensures that the behaviour of the system is fully asserted.
 
-\*This is just my opinion of what Gold Standard development includes. I'm sure there are other principles that could be encoded - Clean Code, User-Centred Design, Lean Software Development, etc. In my view, the definition of Gold Standard development I'm presenting significantly increases agent output quality, both of tests and implementation, and offers an example of how we can encode an organisation's definition of quality into agentic workflows.
+\*This is just my opinion of what principled development includes. I'm sure there are other principles that could be encoded - Clean Code, User-Centred Design, Lean Software Development, etc. In my view, the definition of principled development I'm presenting significantly increases agent output quality, both of tests and implementation, and offers an example of how we can encode an organisation's definition of quality into agentic workflows.
 
 ## Teaching agents
 
-Agents are now very good at following instructions. Through a combination of sub-agents and skills, they can follow a "Gold Standard" development workflow.
+Agents are now very good at following instructions. Through a combination of sub-agents and skills, they can follow a principled development workflow.
 
 The rigour of the workflow - starting with a feature-complete test, writing the tests first, and only then writing implementation - significantly increases quality of both tests and implementation. It's the rigour of the workflow which enables high quality.
 
@@ -176,7 +178,7 @@ I was spending a lot of time getting Claude Code to try to embody these principl
 
 The author's setup only includes unit tests, and single RGR cycles. So from there, I grew it to encapsulate Outside-In TDD with mutation testing, and a few other enhancements.
 
-![An isometric illustration of agents working together on a codebase - the tdd-planner creates the blueprint, tdd-test-writer defines the structure with failing tests, tdd-implementer fills the scaffolding with passing code, tdd-refactorer refines and organises, and test-backfiller seals gaps with mutation tests](/articles/agentic-gold-standard-development/in-practice.webp)
+![An isometric illustration of agents working together on a codebase - the tdd-planner creates the blueprint, tdd-test-writer defines the structure with failing tests, tdd-implementer fills the scaffolding with passing code, tdd-refactorer refines and organises, and test-backfiller seals gaps with mutation tests](/articles/principled-agentic-software-development/in-practice.webp)
 
 Here's my setup:
 
@@ -249,7 +251,7 @@ The `tdd-test-writer` on the other hand needs separate skills. This is because t
 
 ### The workflow in action
 
-![The TDD agent workflow and skills - a detailed flowchart showing all four phases (Plan, E2E Test, Inner TDD Cycles, Completion) with agent roles and their associated skills listed alongside](/articles/agentic-gold-standard-development/workflow.webp)
+![The TDD agent workflow and skills - a detailed flowchart showing all four phases (Plan, E2E Test, Inner TDD Cycles, Completion) with agent roles and their associated skills listed alongside](/articles/principled-agentic-software-development/workflow.webp)
 
 
 <details>
@@ -278,6 +280,6 @@ https://github.com/JoeGaebel/outside-in-tdd-starter
 - Agents have changed. They're capable of one-shotting features.
 - Agents can follow complex workflows and instructions.
 - Out of the box, our throughput for implementation code significantly outweighs our test throughput. If these remain unmatched, we risk losing control of the behaviour of our products.
-- Gold Standard engineering practices and standards can be encoded into workflows that agents follow, and this significantly increases code quality and an engineer's ability to verify and define the behaviour of the product.
+- Engineering practices and principles can be encoded into workflows that agents follow, and this significantly increases code quality and an engineer's ability to verify and define the behaviour of the product.
 
 A workflow like this gives developers and organisations the ability to significantly scale up production of high-quality software - in a way that developers can ensure the product is, and continues to behave as expected. It enables developers to review and release AI-generated features with confidence, because they were implemented aligning with engineering processes and standards.
