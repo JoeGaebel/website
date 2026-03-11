@@ -8,6 +8,19 @@ previousSlugs:
 
 # Principled Agentic Software Development
 
+<div class="tldr">
+
+**TLDR**: Using Agent and Skill definitions, you can encode engineering principles and practices like **Outside-in Test-Driven Development**, **Mutation testing**, and others into workflows that agents actually follow.
+
+I've found this significantly increases test quality, implementation quality, as well as my ability as a developer to assert that what was built was the right thing, and the product continues to behave expected over time. 
+
+Try it out for yourself:
+
+https://github.com/JoeGaebel/outside-in-tdd-starter
+
+</div>
+
+## Intro
 In the last few months, something shifted - rather than using chatbots to make code edits, I've been able to rely on agentic coding - Claude Code, to write implementation code. It used to take longer to correct what the agent wrote than to just write the code myself. With Opus 4.5 and now 4.6, this is no longer the case.
 
 The models have leveled up. It's now possible to "one-shot" whole features with a single prompt. Plug in planning steps, MCP servers, orchestration, and you've got a very powerful engine for writing implementation.
