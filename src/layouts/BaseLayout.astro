@@ -67,6 +67,24 @@ const defaultJsonLd = {
     <main>
         <slot />
     </main>
+    <script is:inline>
+      (function() {
+        var els = document.querySelectorAll('[data-github-stars]');
+        if (!els.length) return;
+        var repos = {};
+        els.forEach(function(el) { repos[el.dataset.githubStars] = true; });
+        Object.keys(repos).forEach(function(repo) {
+          fetch('https://api.github.com/repos/' + repo)
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .then(function(data) {
+              if (!data || !data.stargazers_count) return;
+              document.querySelectorAll('[data-github-stars="' + repo + '"] .github-card-star-count')
+                .forEach(function(el) { el.textContent = data.stargazers_count; });
+            })
+            .catch(function() {});
+        });
+      })();
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P3521Y09DF" is:inline></script>
     <script is:inline>
